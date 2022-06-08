@@ -14,11 +14,11 @@
 
 ## Core Information
 
-Title: SFdsf
-Publication Date: dsf
-Page Count: dsfds
-Genre: sfsdf
-Description: asds
+<b>Title: SFdsf</b>
+<p>Publication Date: dsf</p>
+<aside>Page Count: dsfds</aside>
+<div>Genre: sfsdf</div>
+<em>Description: asds</em>
 
 ## Quick start
 
