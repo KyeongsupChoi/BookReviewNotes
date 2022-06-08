@@ -15,10 +15,10 @@
 ## Core Information
 
 <b>Title: SFdsf</b>
-<p>Publication Date: dsf</p>
-<aside>Page Count: dsfds</aside>
-<div>Genre: sfsdf</div>
-<em>Description: asds</em>
+<b>Publication Date: dsf</b>
+<b>Page Count: dsfds</b>
+<b>Genre: sfsdf</b>
+<b>Description: asds</b>
 
 ## Quick start
 
