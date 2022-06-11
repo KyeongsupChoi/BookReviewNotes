@@ -1,6 +1,6 @@
 # Machine Learning Book
 
-Title: "SFdsf"  
+Title: "Machine Learning for Beginners"  
 
 Publication Date: 1997
 
