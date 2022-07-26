@@ -1,6 +1,6 @@
 # DjangoUnleashed
 
-Title: "Django Unleashed"  
+Title: "Django For Beginners"  
 
 Author: Andrew Pinkman  
 
