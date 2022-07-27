@@ -2,24 +2,24 @@
 
 Title: "Django For Beginners"  
 
-Author: Andrew Pinkman  
+Author: William S. Vincent  
 
-Publication Date: 1997  
+Publication Date: 2022  
 
-Page Count: 810  
+Page Count: 306  
 
 Genre: Non-Fiction
 
-ISBN: 978-0-321-98507-1
+ISBN: 978-1735467207
 
-Date Read: 2022-06-21
+Date Read: 2022-07-26
 ## Description
 
 Django Resource Book
 
 ## Summary
 
-###1. Starting a New Django Project: Building a Startup Categorizer with Blog  
+###Chapter 1: Initial Set Up
 ####1.1 Introduction.  
 This book assumes knowledge of Python but not web technologies.  
 ####1.2 Website Basics.  
