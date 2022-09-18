@@ -21,10 +21,31 @@ Django Resource Book
 
 __Terminal:__ The program that allows access to the command line through opening a new window.
 
+__Console:__ Text-based application.  
 
+__Shell:__ The program that uses the underlying operating system to run commands.
+
+__Prompt:__ Where commands are typed and run.   
+
+__PowerShell:__ The built-in terminal and shell for Windows.  
+
+-Instructions on how to install Python3.  
+
+__Text Editor:__ The program where code is written.  
+
+-Instructions on how to install Git.  
+
+-Django is used to build modern, robust web applications with a minimal amount of code by a large number of developers.
+
+### Chapter 2: Hello World, Docker
+
+-Things like different computers, operating systems, versions of Django, virtual environment options make it difficult to properly configure a local development environment.  
+
+-Docker makes it possible to faithfully and dependably reproduce a production environment locally which enables easy collaboration within development teams.  
+
+-Docker implements virtualization by isolating an entire operating system via Linux containers.  
 
 
 ## Thoughts/Opinions
 
-Thoughts/opinions
-sad
+Proper book to cover the basics and lay a decent foundation as a backend developer using the Django framework.
