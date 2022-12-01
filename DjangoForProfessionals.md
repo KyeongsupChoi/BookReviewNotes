@@ -45,6 +45,16 @@ __Text Editor:__ The program where code is written.
 
 -Docker implements virtualization by isolating an entire operating system via Linux containers.  
 
+__Virtual Machines:__  Complete copies of a computer system from the operating system on up.
+
+-Virtual machines have the disadvantage of requiring additional computing resources to run multiple guest operating systems on a single piece of hardware.
+
+-Docker provides an efficient solution with virtualization from the Linux layer with container.
+
+-The venv module that comes with the Python 3 standard library allows the creation of virtual environments to manage Python packages for different projects.
+
+-Docker containers have the advantage of isolating non-Python software as well
+
 
 ## Thoughts/Opinions
 
