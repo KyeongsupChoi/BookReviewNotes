@@ -46,3 +46,79 @@ __Plug N play:__ A specification that facilitates the recognition of a hardware 
 __OLE|Object Linking and Embedding:__ Technology developed by Microsoft that allows embedding and linking to documents and other objects.
 
 __DOS와 호환:__ A computer operating system that resides on and can use a disk storage device, such as a floppy disk, hard disk drive, or optical disc.
+
+### Section 003: UNIX/LINUX
+
+__UNIX:__ open source, time sharing, written in C
+
+Multi user, Multi tasking, good for network
+
+Hardware > Kernel > Shell > Utility > User
+
+__Kernel:__
+
+__Shell:__
+
+__LINUX:__
+
+### Section 003: 운영체제의 기본 명령어
+
+Windows Commands
+dir
+
+copy
+
+del
+
+type
+
+ren
+
+md
+
+cd
+
+cls
+
+find
+
+chkdsk
+
+format
+
+UNIX/LINUX Commands
+cat
+
+cd
+
+chmod
+
+chown
+
+cp
+
+rm
+
+find
+
+fsck
+
+kill
+
+killall
+
+ls
+
+mkdir
+
+rmdir
+
+mv
+
+ps
+
+pwd
+
+top
+
+who
