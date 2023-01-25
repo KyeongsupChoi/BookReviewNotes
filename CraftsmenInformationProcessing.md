@@ -49,76 +49,106 @@ __DOS와 호환:__ A computer operating system that resides on and can use a dis
 
 ### Section 003: UNIX/LINUX
 
-__UNIX:__ open source, time sharing, written in C
+__UNIX:__ A family of multitasking, multiuser, time-sharing computer operating systems written in C that derive from the original AT&T Unix open source.
 
-Multi user, Multi tasking, good for network
+[__UNIX Architecture__] - Hardware > Kernel > Shell > Utility > User
 
-Hardware > Kernel > Shell > Utility > User
+__커널/Kernel:__ A computer program at the core of a computer's operating system and generally has complete control over everything in the system. It is the portion of the operating system code that is always resident in memory and facilitates interactions between hardware and software components
 
-__Kernel:__
+__쉘/Shell:__ A command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
 
-__Shell:__
+__유틸리티/Utility:__ 
 
-__LINUX:__
+__LINUX:__ A family of open-source Unix-like operating systems based on the Linux kernel.
 
 ### Section 003: 운영체제의 기본 명령어
 
-Windows Commands
-dir
+Windows Commands  
+- dir -	List directory content 
 
-copy
+- copy - Copy files
 
-del
+- del - Delete one or more files
 
-type
+- type - Display content of text files
 
-ren
+- ren - Rename files
 
-md
+- md - Create a new directory
 
-cd
+- cd - Change directory
 
-cls
+- find - Find files
 
-find
+- chkdsk - Check volumes
 
-chkdsk
-
-format
+- format - Format volumes
 
 UNIX/LINUX Commands
-cat
 
-cd
+- cat - 
 
-chmod
+- cd
 
-chown
+- chmod
 
-cp
+- chown
 
-rm
+- cp
 
-find
+- rm
 
-fsck
+- find
 
-kill
+- fsck
 
-killall
+- kill
 
-ls
+- killall
 
-mkdir
+- ls
 
-rmdir
+- mkdir
 
-mv
+- rmdir
 
-ps
+- mv
 
-pwd
+- ps
 
-top
+- pwd
 
-who
+- top
+
+- who
+
+### Section 005: 기억장치 관리
+
+__반입 전략:__
+
+__요구 반입:__
+
+__예상 반입:__
+
+__최초 적합:__
+
+__최적 적합:__
+
+__최악 적합:__
+
+__교체 전략:__
+
+__OPT:__
+
+__FIFO:__
+
+__LRU:__
+
+__LFU:__
+
+__NUR:__
+
+__MRU:__
+
+### Section 006: 프로세스 관리 및 스케줄링
+
