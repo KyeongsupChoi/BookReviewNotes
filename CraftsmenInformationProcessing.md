@@ -14,6 +14,7 @@
 ## Summary
 
 ### Section 001: 운영체제의 개념
+
 > __운영체제/OS; Operating System:__ System software that manages computer hardware, software resources, and provides common services for computer programs.
 > 
 > __처리 능력/Throughput:__ The amount of something (such as material, data, etc.) that passes through something (such as a machine or system)
@@ -29,6 +30,7 @@
 > -Windows, UNIX, Linux, MacOS, MS-DOS, Android, iOS are some of the most well-known and used Operating Systems.
 
 ---
+<br/>
 
 ### Section 002: Windows
 
@@ -47,6 +49,7 @@
 > __DOS와 호환:__ A computer operating system that resides on and can use a disk storage device, such as a floppy disk, hard disk drive, or optical disc.
 
 ---
+<br/>
 
 ### Section 003: UNIX/LINUX
 
@@ -63,9 +66,10 @@
 > __LINUX:__ A family of open-source Unix-like operating systems based on the Linux kernel.
 
 ---
+<br/>
 
 ### Section 004: 운영체제의 기본 명령어
->
+
 > #### Windows Commands  
 > - dir -	List directory content 
 >
@@ -126,6 +130,7 @@
 > - who
 
 ---
+<br/>
 
 ### Section 005: 기억장치 관리
 
@@ -156,6 +161,7 @@ __NUR:__
 __MRU:__
 
 ---
+<br/>
 
 ### Section 006: 프로세스 관리 및 스케줄링
 
