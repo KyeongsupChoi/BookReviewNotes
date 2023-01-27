@@ -34,6 +34,7 @@
 
 ### Section 002: Windows
 
+---
 > __그래픽 사용자 인턴페이스/GUI:__ A form of user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation.
 > 
 > __선장형 멀티 태스킹/Preemptive Multi-Tasking:__ A type of multitasking that allows computer programs to share operating systems (OS) and underlying hardware resources. It divides the overall operating and computing time between processes, and the switching of resources between different processes occurs through predefined criteria.
@@ -61,7 +62,7 @@
 >
 > __쉘/Shell:__ A command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
 >
-> __유틸리티/Utility:__ 
+> __유틸리티/Utility:__ A well defined set of commands usable by portable shell scripts and specified by POSIX
 > 
 > __LINUX:__ A family of open-source Unix-like operating systems based on the Linux kernel.
 
