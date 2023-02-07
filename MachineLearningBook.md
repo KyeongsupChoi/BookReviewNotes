@@ -16,6 +16,4 @@ Description
 
 Summary
 
-## Thoughts/Opinions
-
-Thoughts/opinions
+### Chapter 1: Preface
