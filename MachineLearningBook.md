@@ -38,3 +38,20 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -Whereas data mining focuses on analyzing input variables to predict a new output, machine learning extends to analyzing both input and output variables.  
 
+-In unsupervised learning only the input is known and in reinforcement learning only the output is known.
+
+### Chapter 3: Machine Learning Categories
+
+-Supervised learning requires known input(labeled dataset) and includes regression analysis(i.e. linear regression, logisitc regression, non-linear regression) decision trees, k-nearest neighbors, neural networks and support vector machines.  
+
+-Unsupervised learning instead focuses on analyzing relationships between input variables and uncovering hidden patterns that can be extracted to create new labels regarding possible outputs. 
+
+-Unsupervised learning is hard to validate and can be subjective.  
+
+-Examples of unsupervised learning algorithms include social network analysis and descending dimension algorithms.  
+
+-Semi-supervised learning hybridizes labeled and unlabeled cases with the goal of leveraging unlabeled cases to improve the reliability of the prediction model.  
+
+-Reinforcement learning builds its prediction model by gaining feedback from random trial and error and leveraging insight from previous iterations.  
+
+-A specific algorithmic example of reinforcement learning is Q-learning. 
