@@ -54,4 +54,28 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -Reinforcement learning builds its prediction model by gaining feedback from random trial and error and leveraging insight from previous iterations.  
 
--A specific algorithmic example of reinforcement learning is Q-learning. 
+-A specific example of a reinforcement learning algorithm is Q-learning. 
+
+### Chapter 4: The Machine Learning Toolbox
+
+-Data constitutes the input needed to train the model and generate predictions.  
+
+-In a tabular dataset the columns would be a feature/variable/dimension/attribute and the rows would be a case/value.  
+
+-Machine learning infrastructure consists of platforms and tools for processing data. 
+
+-The central tools are the machine learning algorithms.  
+
+-Data visualization is used to communicate results to relevant decision-makers.  
+
+-Advanced machine learning uses, big data techniques, cloud infrastructure, and advanced algorithms.  
+
+### Chapter 5: Data Scrubbing  
+
+-Data scrubbing is the technical process of refining the dataset to make it more workable.  
+
+-
+
+
+
+
