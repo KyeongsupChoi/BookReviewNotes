@@ -7,7 +7,7 @@
 | Page Count       | 179                            |
 | Genre            | Non-Fiction                    |
 | ISBN             | 979-8558098426                 |
-| Date Read        | 2023-02-27                 |
+| Date Read        | 2023-02-07                     |
 ## Description
 
 Machine Learning Resource Book
@@ -74,8 +74,21 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -Data scrubbing is the technical process of refining the dataset to make it more workable.  
 
--
+-Feature selection is the identification of which variables are the most relevant to the objective or model. 
 
+-Row compression merges rows to reduce the total number of data points.  
+
+-One hot encoding converts values into binary form as text-based values are not compatible with most algorithms.  
+
+-Binning is a method of feature engineering used for converting continuous numeric values into multiple binary features called bins or buckets according to their range of values.  
+
+-Normalization rescales the range of values into a set range with a prescribed minimum or maximum, not recommended for features with an extreme range.  
+
+-Standardization converts unit variance to a standard normal distribution with a mean of zero and a standard deviation of one.  
+
+-Missing data can be replaced with the mode or median values or removed altogether.  
+
+### Chapter 6: Setting up your Data 
 
 
 
