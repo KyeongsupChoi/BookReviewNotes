@@ -3,7 +3,7 @@
 | Title            | Machine Learning for Beginners |
 |------------------|--------------------------------|
 | Author           | Oliver Theobald                |
-| Publication Date | 1997                           |
+| Publication Date | 2021                           |
 | Page Count       | 179                            |
 | Genre            | Non-Fiction                    |
 | ISBN             | 979-8558098426                 |
@@ -90,5 +90,28 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 ### Chapter 6: Setting up your Data 
 
+-Split validation is splitting the data into two segments for training and testing, usually 80/20, 70/30.  
 
+-Randomizing the row order helps to avoid bias in the model.  
 
+-It is imperative not to test your model with the same data you used for training.  
+
+-Classification tasks use performance metrics such as Area Under Curve(AUC), Receiver Operating Characteristics(ROC), confusion matrix, recall, and accuracy.
+
+-Models that provide a numeric output use performance metrics such as mean absolute error and root mean square error.  
+
+-If the average MAE or RMSE is much higher using the test data than the training data, this is usually an indication of overfitting in the model.  
+
+-Hyperparameters control and impact how fast the model learns patterns and which patterns to identify and analyze.  
+
+-Cross validation maximizes the availability of training data by splitting data into various combinations and testing each specific combination.  
+
+-Exhaustive cross validation involves finding and testing all possible combinations to divide the original sample into a training set and test set.  
+
+-K-fold validation divides the data into a k number of buckets and tests all combinations of the buckets as a training set made of k-1 buckets and one test set bucket. 
+
+-At an absolute minimum, a basic machine learning model should contain 10 times as much data points as the total number of features. 
+
+### Chapter 7: Linear Regression
+
+-
