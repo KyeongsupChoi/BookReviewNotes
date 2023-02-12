@@ -114,4 +114,30 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 ### Chapter 7: Linear Regression
 
--
+-Linear regression generates a straight line to describe linear relationships.  
+
+-The goal of linear regression is to split the data in a way that minimizes the distance between the hyperplane and the observed values.  
+
+-The distance between the best fit line and the observed values is called the residual or error.  
+
+-Multiple linear regression is linear regression with more than one independent variable.  
+
+-While the output of linear regression must be continuous in the form of a floating-point or integer value the input can be continuous or categorical.  
+
+-Multi-collinearity happens when a strong linear correlation exists between two independent variables and cancels each other out in the model.  
+
+-To avoid multi-collinearity the relationship between each combination of independent variables need to be checked.  
+
+### Chapter 8: Logistic Regression
+
+-Logistic regression is a supervised learning technique that produces a qualitative prediction, usually binary prediction.  
+
+-The logistic hyperplane represents a classification/decision boundary rather than a prediction trendline. 
+
+-Multinomial logistic regression solves multiclass problems with more than two possible discrete outcomes.  
+
+-In general, logistic regression normally doesn't work so well with large datasets and especially messy data containing outliers, complex relationships and missing values.  
+
+### Chapter 9: k-Nearest Neighbors 
+
+
