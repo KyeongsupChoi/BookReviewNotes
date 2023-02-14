@@ -140,4 +140,15 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 ### Chapter 9: k-Nearest Neighbors 
 
+-K-NN is a supervise learning algorithm that classifies new data points based on their position to nearby data points.  
+
+-K is the number of nearest data points used to classify the new data point, five is the default, an even number can lead to a stalemate.  
+
+-This algorithm works best with continuous variables but it is still possible to use binary categorical variables represented as 0 and 1.  
+
+-K-NN is computationally expensive and even more so with multiple dimensional data. 
+
+### Chapter 10: k-Means Clustering
+
+-
 
