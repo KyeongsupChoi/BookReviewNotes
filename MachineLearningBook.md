@@ -150,5 +150,19 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 ### Chapter 10: k-Means Clustering
 
+-K-means clustering is an unsupervised learning technique that involves grouping or clustering data points that share similar attributes.  
+
+-K is the number of discrete groups or clusters.  
+
+-K number of centroids are manually selected, then the Euclidean distance of each data point from the centroids are calculated and the minimum determines the cluster. Then a new centroid is calculated based on the cluster's mean value and repeated until the data points no longer switch clusters. 
+
+-Scree plot charts can be used to decide K.  
+
+-Square root of number of data points divided by 2 is also used to decide K.  
+
+-Domain knowledge can also be used to determine K.  
+
+### Chapter 11: Bias & Variance 
+
 -
 
