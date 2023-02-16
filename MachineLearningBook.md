@@ -164,5 +164,21 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 ### Chapter 11: Bias & Variance 
 
--
+-Bias refers to the gap between the value predicted by the model and the actual value of the data.  
+
+-Variance describes how scattered the predicted values are in relation to each other.  
+
+-Underfitting results in low variance and high bias.  
+
+-Overfitting results in high variance or low bias.  
+
+-Overfitting can occur if the training and testing data are not randomized.  
+
+-Underfitting can occur if the model is overly simple or has insufficient training data.  
+
+-Increasing K in K-NN or switching from a single decision tree to random forests with many decision trees can reduce variance.  
+
+-Regularization reduces the risk of overfitting by constraining the model to make it simpler, but it artificially amplifies bias error.  
+
+-Cross validation improves model accuracy by minimizing pattern discrepancies between the training and testing data.  
 
