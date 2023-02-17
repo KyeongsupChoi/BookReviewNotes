@@ -182,3 +182,16 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -Cross validation improves model accuracy by minimizing pattern discrepancies between the training and testing data.  
 
+### Chapter 12: Support Vector Machines
+
+-Support Vector Machines(SVM) are mostly used as a classification technique for predicting categorical outcomes at a position of maximum distance from the data points.  
+
+-The margin is the distance between the decision boundary and the nearest data point multiplied by two.  
+
+-SVM is used to untangle complex relationships and mitigate outliers and anomalies.  
+
+-The C value of the margin can be used to adjust accuracy.  
+
+-The kernel trick helps classify high-dimensional data by mapping to a 3 dimensional space.  
+
+
