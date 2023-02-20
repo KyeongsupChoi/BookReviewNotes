@@ -194,4 +194,25 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -The kernel trick helps classify high-dimensional data by mapping to a 3 dimensional space.  
 
+### Chapter 13: Artificial Neural Networks  
+
+-Artificial neural networks is a popular machine learning technique that utilized nodes, edges, and weights.  
+
+-Each edge in the network has a numeric weight that can be altered based on experience. If the sum of the connected edge satisfies a set threshold known as the activation function, it activates a neuron at the next layer.  
+
+-The cost or cost value is the difference between the predicted output and the actual output.  
+
+-Back-propogation is training the neural network to achieve the lowest cost value.  
+
+-Neural networks are black boxes with limited to no insight about how specific variables influences its decision.  
+
+-Neural networks generally fit prediction tasks with a large number of input features and complex patterns.  
+
+-The middle layers are considered hidden because they covertly process objects between the input and output layers. As more hidden layers are added to the network, the model's capacity to analyze complex patterns improves.
+
+-Deep learning usually has at least 5-10 node layers.  
+
+-Advanced deep learning techniques include multiplayer perceptions(MLP), convolution networks, recurrent networks, deep belief networks, and recursive neural tensor networks(RNTN).  
+
+
 
