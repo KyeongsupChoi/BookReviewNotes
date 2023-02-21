@@ -215,5 +215,28 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -Advanced deep learning techniques include multiplayer perceptions(MLP), convolution networks, recurrent networks, deep belief networks, and recursive neural tensor networks(RNTN).  
 
+### Chapter 14: Decision Trees    
 
+-A neural network requires a hug amount of input data and computational resources and also are a black box.  
 
+-Decision trees are easy to interpret, work with less data, and consume less computational resources.  
+
+-Decision trees are used primarily for solving classification problems but can also be used as a regression model to predict numeric outcomes.  
+
+-Splits are edges and leaves are nodes/decision points/terminal nodes.  
+
+-Entropy is a mathematical concept that explains the measure of variance in the data among the classes.  
+
+-A decision tree should reduce entropy at each layer.  
+
+-Decision trees are particularly vulnerable to overfitting.  
+
+-Bagging involves growing multiple decision trees using a randomized selection of input data for each tree and combining the result. 
+
+-Bootstrap sampling extracts a random variation of the data at each round.  
+
+-Random forests limit the choice of variables by capping the number of variables considered for each split.  
+
+-Boosting creates new decision trees from misclassified cases in the previous tree by adding weights.  
+
+-Gradient boosting selects variables that improve prediction accuracy with each tree. 
