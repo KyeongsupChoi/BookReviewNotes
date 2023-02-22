@@ -215,7 +215,7 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 
 -Advanced deep learning techniques include multiplayer perceptions(MLP), convolution networks, recurrent networks, deep belief networks, and recursive neural tensor networks(RNTN).  
 
-### Chapter 14: Decision Trees    
+### Chapter 15: Decision Trees    
 
 -A neural network requires a hug amount of input data and computational resources and also are a black box.  
 
@@ -240,3 +240,15 @@ __Test Data:__ The reserve of data used to evaluate the algorithm or training mo
 -Boosting creates new decision trees from misclassified cases in the previous tree by adding weights.  
 
 -Gradient boosting selects variables that improve prediction accuracy with each tree. 
+
+### Chapter 16: Ensemble Modeling  
+
+-Ensemble modeling combines algorithms or models to build a unified prediction model.  
+
+-Ensemble modeling covers the weaknesses of single models.  
+
+-Bagging draws upon randomly drawn data and combines predictions to design a unified model.  
+
+-Boosting is a homogenous ensemble that produces a sequential model.  
+
+-Stacking runs multiple models simultaneously on the data and combines those results to produce a final model.  
