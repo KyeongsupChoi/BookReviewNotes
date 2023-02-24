@@ -17,31 +17,31 @@ Korean Developer Principle Book
 
 ### Chapter 1: "덕업일치를 넘어서"
 
-__부정적인:__
+__부정적인:__ Pessimistic, negative
 
-__생소한:__
+__생소한:__ Unfamiliar
 
-__개발 조직:__
+__개발 조직:__ Development Organization/Structure
 
-__모색하다:__
+__모색하다:__ Seek
 
-__추구하다:__
+__추구하다:__ Pursue
 
-__진로:__
+__진로:__ Course/Path
 
-__여정:__
+__여정:__ Journey/Travel
 
-__타산지석:__
+__타산지석:__ Learning from someone else's mistake
 
-__반면교사:__
+__반면교사:__ On the other hand as a teacher
 
-__공채:__
+__공채:__ Bond/fund
 
-__혈안:__
+__혈안:__ Frantic
 
-__경직:__
+__경직:__ Stiffness
 
-__후보:__
+__후보:__ Candidate
 
-__은둔형:__
+__은둔형:__ Reclusive
 
