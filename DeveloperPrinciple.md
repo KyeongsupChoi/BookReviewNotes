@@ -45,19 +45,19 @@ __후보:__ Candidate
 
 __은둔형:__ Reclusive
 
-__수동적:__ 
+__수동적:__ Passive
 
-__천문 관측__:
+__천문 관측__: Astrology Observation
 
-__공상__:
+__공상하며__: Daydreaming
 
-__보급__:
+__보급__: Supply
 
-__이듬해__:
+__이듬해__: Next Year
 
-__전개__:
+__전개__: Development
 
-__창간__:
+__창간__: 
 
 __창발__:
 
