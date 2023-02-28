@@ -57,11 +57,11 @@ __이듬해__: Next Year
 
 __전개__: Development
 
-__창간__: 
+__창간__: First publication
 
-__창발__:
+__창발__: Emergence
 
-__영세__:
+__영세__: Poor
 
 __호황기__:
 
