@@ -63,10 +63,10 @@ __창발__: Emergence
 
 __영세__: Poor
 
-__호황기__:
+__호황기__: Boom times
 
-__대우__:
+__대우__: Treatment
 
-__구체화__:
+__구체화__: Embodiment
 
-__대규모__:
+__대규모__: Large-scale
