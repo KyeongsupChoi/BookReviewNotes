@@ -71,12 +71,12 @@ __구체화__: Embodiment
 
 __대규모__: Large-scale
 
-__협상__:
+__협상__: Negotiation
 
-__난관__:
+__난관__: Difficulty
 
-__선각 수용자__:
+__선각 수용자__: Early Adopter
 
-__여흥__:
+__여흥__: Sideshow
 
-__기기이자__:
+__기기이자__: Device interest
