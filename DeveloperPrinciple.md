@@ -81,17 +81,17 @@ __여흥__: Sideshow
 
 __기기이자__: Device interest
 
-__우망__: 
+__우망__: bull network
 
-__기대치__: 
+__기대치__: expectations
 
-__기술 촉발__: 
+__기술 촉발__: technology spark
 
-__과임 기대 정성__: 
+__과임 기대 정성__: Excessive Expectation Sincerity
 
 __한멸기__: 
 
-__겨몽기__: 
+__겨몽기__: winter season
 
 __수용__: 
 
