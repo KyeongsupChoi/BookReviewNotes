@@ -30,3 +30,9 @@ Status: Finished, and highly relevant to current job working on ML projects.
 Info: Useful nonfiction book about attention, focus, and factors that affect them
 
 Status: Active and almost finished.
+
+## SeaOfTranquility
+
+Info: Great Fiction Book
+
+Status: Active and almost finished.
