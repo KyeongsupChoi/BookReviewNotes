@@ -1,17 +1,17 @@
 # Sea of Tranquility
 
-| Title            | Stolen Focus     |
+| Title            | Sea of Tranquility     |
 |------------------|------------------|
-| Author           | Johann Hari      |
+| Author           | 	Emily St. John Mandel      |
 | Publication Date | 2022             |
-| Page Count       | 366              |
+| Page Count       | 255              |
 | Genre            | Fiction          |
-| ISBN             | 978-18384153-1-0 |
+| ISBN             | 	9780593321447 |
 | Date Read        | 2023-03-017      |
 
 ## Description
 
-Stolen Focus
+Speculative fiction
 
 ## Summary
 
