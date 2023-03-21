@@ -16,3 +16,8 @@ Speculative fiction
 ## Summary
 
 ### Chapter 1: Preface
+
+## Thoughts and Opinions
+
+A curious and beautiful symmetry in time.
+
