@@ -8,6 +8,7 @@
 | Genre            | Non-Fiction                    |
 | ISBN             | 979-8558098426                 |
 | Date Read        | 2023-02-07                     |
+| Date Finished    | 2023-02-22                     |
 
 ## Description
 

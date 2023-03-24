@@ -1,6 +1,24 @@
 # BookReviewNotes
 Notes and Reviews on Books I read
 
+```bash
+< PROJECT ROOT >
+   |
+   |-- Fiction/                              
+   |    |
+   |    |-- SeaOfTranquility                                      
+   |
+   |-- Non-Fiction/                          
+   |    |
+   |    |-- StolenFocus                                           
+   |
+   |-- Programming/                          
+   |    |-- views.py                         
+   |    |-- wsgi.py                         
+   |    |
+   |    |-- venv/                            
+   |-- ************************************************************************
+```
 ## CraftsmenInformationProcessing
 
 Info: Study book for the korean 정보처리기사 certification. Mostly theoretical knowledge.

@@ -8,6 +8,7 @@
 | Genre            | Non-Fiction              |
 | ISBN             | 978-1081582166           |
 | Date Read        | 2022-09-15               |
+| Date Finished    | NA                       |
 
 ## Description
 

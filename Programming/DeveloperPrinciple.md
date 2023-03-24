@@ -8,6 +8,7 @@
 | Genre            | Non-Fiction         |
 | ISBN             | 979-1191905236      |
 | Date Read        | 2023-02-20          |
+| Date Finished    | NA                  |
 
 ## Description
 

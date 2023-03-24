@@ -8,6 +8,7 @@
 | Genre            | Non-Fiction      |
 | ISBN             | 978-18384153-1-0 |
 | Date Read        | 2023-03-03       |
+| Date Finished    | 2023-03-20       |
 
 ## Description
 
