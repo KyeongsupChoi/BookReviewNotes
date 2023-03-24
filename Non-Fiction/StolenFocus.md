@@ -12,8 +12,32 @@
 
 ## Description
 
-Stolen Focus
+Book investigating the shrinking attention span of people and the root cause.
 
 ## Summary
 
-### Chapter 1: Preface
+### Cause One: The Increase in Speed, Switching, and Filtering
+
+### Cause Two: The Crippling of Our Flow States
+
+### Cause Three: The Rise of Physical and Mental Exhaustion
+
+### Cause Four: The Collapse of Sustained Reading
+
+### Cause Five: The Disruption of Mind-Wandering
+
+### Cause Six: The Rise of Technology That Can Track And Manipulate You (Part One)
+
+### Cause Seven: The Rise of Technology That Can Track And Manipulate You (Part Two)
+
+### Cause Eight: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
+
+### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution: 
+
+### Cause Eleven: The Rise of ADHD and How We Are Responding to it
+
+### Cause Twelve: The Confinement of Out Children, Both Physically and Psychologically
+
+
+
+
