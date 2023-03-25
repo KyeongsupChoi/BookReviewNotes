@@ -38,6 +38,8 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Twelve: The Confinement of Out Children, Both Physically and Psychologically
 
+## Thoughts and Opinions
+
 
 
 
