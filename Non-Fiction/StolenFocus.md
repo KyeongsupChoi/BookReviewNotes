@@ -40,6 +40,6 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ## Thoughts and Opinions
 
-
+-Very important book and need to apply lessons.
 
 
