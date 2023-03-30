@@ -16,7 +16,20 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ## Summary
 
+### Introduction: Walking in Memphis
+
+- The author takes his teenage nephew to Memphis and notices a disturbing trend of people glues to their phones. 
+- He decides to take a sabbatical to Provincetown and be without a smartphone or internet access as a digital cleanse of sorts.
+
 ### Cause One: The Increase in Speed, Switching, and Filtering
+
+- A professor noticed how a topic would trend on Twitter for increasingly shorter amounts of time.
+
+- A similar churn occurred in Wikipedia, Reddit, and Google.  
+
+- An increase in reading speed results in a decrease of reading comprehension. 
+
+- Human minds are incapable of multitasking but rather speed switching.
 
 ### Cause Two: The Crippling of Our Flow States
 
