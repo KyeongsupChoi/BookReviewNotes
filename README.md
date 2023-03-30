@@ -10,13 +10,17 @@ Notes and Reviews on Books I read
    |
    |-- Non-Fiction/                          
    |    |
-   |    |-- StolenFocus                                           
+   |    |-- StolenFocus  
+   |    |-- AtlasoftheHeart                                       
    |
-   |-- Programming/                          
-   |    |-- views.py                         
-   |    |-- wsgi.py                         
-   |    |
-   |    |-- venv/                            
+   |-- Programming/  
+   |    |                        
+   |    |-- CraftsmenInformationProcessing                        
+   |    |-- DeveloperPrinciple                         
+   |    |-- DjangoForProfessionals       
+   |    |-- MachineLearningBook  
+   |
+   |                          
    |-- ************************************************************************
 ```
 ## CraftsmenInformationProcessing
