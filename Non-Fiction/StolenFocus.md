@@ -33,6 +33,10 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Two: The Crippling of Our Flow States
 
+- The flow state of total concentration on a single task is central to our well-being.  
+
+- Flow states require a task of optimal difficulty and is easily broken.  
+
 ### Cause Three: The Rise of Physical and Mental Exhaustion
 
 ### Cause Four: The Collapse of Sustained Reading
@@ -45,7 +49,7 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Eight: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
 
-### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution: 
+### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution 
 
 ### Cause Eleven: The Rise of ADHD and How We Are Responding to it
 
