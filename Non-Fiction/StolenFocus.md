@@ -40,6 +40,10 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Three: The Rise of Physical and Mental Exhaustion
 
+- Mental and Physical exhaustion negatively affect focus.  
+
+- A lack of sleep has become normalized.  
+
 ### Cause Four: The Collapse of Sustained Reading
 
 ### Cause Five: The Disruption of Mind-Wandering
