@@ -19,6 +19,7 @@ Book investigating the shrinking attention span of people and the root cause.
 ### Introduction: Walking in Memphis
 
 - The author takes his teenage nephew to Memphis and notices a disturbing trend of people glues to their phones. 
+
 - He decides to take a sabbatical to Provincetown and be without a smartphone or internet access as a digital cleanse of sorts.
 
 ### Cause One: The Increase in Speed, Switching, and Filtering
