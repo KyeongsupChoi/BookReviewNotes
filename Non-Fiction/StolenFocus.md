@@ -46,7 +46,17 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Four: The Collapse of Sustained Reading
 
+- The amount of sustained reading and focusing for long periods has gone down dramatically.  
+
+- The method of information delivery is just as important as the content.  
+
+- Reading novels has numerous benefits.  
+
 ### Cause Five: The Disruption of Mind-Wandering
+
+- Allowing your mind to wander and daydream is an important activity for the brain.  
+
+- This mind-wandering allows for new connections and creative thinking.  
 
 ### Cause Six: The Rise of Technology That Can Track And Manipulate You (Part One)
 
