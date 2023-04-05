@@ -60,9 +60,17 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Six: The Rise of Technology That Can Track And Manipulate You (Part One)
 
+- Big Tech companies are motivated to drive up engagement or distraction as it profits them.  
+
+- One of the worst offenders is the design of infinite scroll.  
+
 ### Cause Seven: The Rise of Technology That Can Track And Manipulate You (Part Two)
 
+### The First Glimpses of the Deeper Solution
+
 ### Cause Eight: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
+
+### The Places that Figured Out How to Reverse the Surge in Speed and Exhaustion
 
 ### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution 
 
