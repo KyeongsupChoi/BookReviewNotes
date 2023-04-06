@@ -64,13 +64,27 @@ Book investigating the shrinking attention span of people and the root cause.
 
 - One of the worst offenders is the design of infinite scroll.  
 
-### Cause Seven: The Rise of Technology That Can Track And Manipulate You (Part Two)
+### Cause Six: The Rise of Technology That Can Track And Manipulate You (Part Two)
+
+- Big Tech companies make money through advertising and showing more and more personalized ads.
+
+- Showing content that angers and provokes a reaction promotes engagement.  
+
+- The algorithms used also turns people against each other on a social scale.  
 
 ### The First Glimpses of the Deeper Solution
 
-### Cause Eight: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
+- Legislating Big Tech companies would be a start.  
+
+- The business model could be changed to improve people's lives rather than monetize peoples' attention.  
+
+- History has shown that positive societal change on this scale is possible.  
+
+### Cause Seven: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
 
 ### The Places that Figured Out How to Reverse the Surge in Speed and Exhaustion
+
+### Cause Eight: The Surge in Stress and How it is Triggering Vigilance
 
 ### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution 
 
