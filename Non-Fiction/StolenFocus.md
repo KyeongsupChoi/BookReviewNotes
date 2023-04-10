@@ -103,3 +103,5 @@ Book investigating the shrinking attention span of people and the root cause.
 -Very important book and need to apply lessons.
 
 -Need to use phone less.
+
+-Need to meditate more. 
