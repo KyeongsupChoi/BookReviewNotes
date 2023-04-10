@@ -82,7 +82,13 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Seven: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
 
+- Cruel optimism is taking a larger societal problem and offering a simplistic individual solution.  
+
 ### The Places that Figured Out How to Reverse the Surge in Speed and Exhaustion
+
+- People self-reported the biggest causes of worsening attention as stress, change in life circumstances, or disturbed sleep.  
+
+- Addressing environmental, economic and root causes had a significant effect in helping attention deficits.
 
 ### Cause Eight: The Surge in Stress and How it is Triggering Vigilance
 
