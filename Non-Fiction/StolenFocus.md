@@ -88,17 +88,25 @@ Book investigating the shrinking attention span of people and the root cause.
 
 - People self-reported the biggest causes of worsening attention as stress, change in life circumstances, or disturbed sleep.  
 
-- Addressing environmental, economic and root causes had a significant effect in helping attention deficits.
+- Addressing environmental, economic, and root causes had a significant effect in helping attention deficits.
 
 ### Cause Eight: The Surge in Stress and How it is Triggering Vigilance
 
+- There is a causal link between a stressful environment and worsened focus.  
+
+- A UBI program had a positive effect on focus.  
+
 ### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution 
+
+- Highly processed and added sugar in foods negatively impact focus in kids.  
+
+- Air pollution has a negative impact on brain function.  
 
 ### Cause Eleven: The Rise of ADHD and How We Are Responding to it
 
 ### Cause Twelve: The Confinement of Out Children, Both Physically and Psychologically
 
-## Thoughts and Opinions
+## Thoughts and OpinionsW
 
 -Very important book and need to apply lessons.
 
