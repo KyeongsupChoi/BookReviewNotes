@@ -16,7 +16,7 @@ If we want to find the way back to ourselves and one another, we need language a
 
 ## Summary
 
-### Cause One: The Increase in Speed, Switching, and Filtering
+### Introduction
 
 ### Cause Two: The Crippling of Our Flow States
 
