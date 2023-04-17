@@ -19,6 +19,8 @@
 
 ## Summary
 
+### Introduction
+
 ### #1: Places We Go When Things Are Uncertain or Too Much 
 
 Stressed
