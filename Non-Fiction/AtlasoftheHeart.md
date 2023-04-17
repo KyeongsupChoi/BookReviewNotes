@@ -12,11 +12,49 @@
 
 ## Description
 
-If we want to find the way back to ourselves and one another, we need language and the grounded confidence to both tell our stories and to be stewards of the stories that we hear. In Atlas of the Heart, we explore eighty-seven of the emotions and experiences that define what it means to be human and walk through a new framework for cultivating meaningful connection. This is for the mapmakers and travelers in all of us.
+- If we want to find the way back to ourselves and one another, we need language and the grounded confidence to both tell our stories 
+- and to be stewards of the stories that we hear. 
+- In Atlas of the Heart, we explore eighty-seven of the emotions and experiences that define what it means to be human 
+- and walk through a new framework for cultivating meaningful connection. This is for the mapmakers and travelers in all of us.
 
 ## Summary
 
-### Cause One: The Increase in Speed, Switching, and Filtering
+### #1: Places We Go When Things Are Uncertain or Too Much 
+
+Stressed
+We feel stressed when we evaluate environmental demand as beyond
+our ability to cope successfully. This includes elements of
+unpredictability, uncontrollability, and feeling overloaded.
+
+Overwhelmed 
+means an extreme level of stress, an emotional
+and/or cognitive intensity to the point of feeling unable to function. 
+
+anxiety as “an
+emotion characterized by feelings of tension, worried thoughts and
+physical changes like increased blood pressure.” 
+
+Worry is described as a chain of negative
+thoughts about bad things that might happen in the future.
+
+Avoidance, the second coping strategy for anxiety, is not showing up
+and often spending a lot of energy zigzagging around and away from
+that thing that already feels like it’s consuming us.
+
+excitement is described as an energized state of enthusiasm
+leading up to or during an enjoyable activity, 
+
+Dread occurs frequently in response to high-probability negative
+events; its magnitude increases as the dreaded event draws nearer.
+
+Fear is a negative, short-lasting, high-alert emotion in
+response to a perceived threat, and, like anxiety, it can be measured as
+a state or trait. 
+
+Vulnerability is the emotion that we experience during times of
+uncertainty, risk, and emotional exposure.
+
+Vulnerability is not weakness; it’s our greatest measure of courage.
 
 ### Cause Two: The Crippling of Our Flow States
 

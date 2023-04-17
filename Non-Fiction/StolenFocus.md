@@ -104,9 +104,15 @@ Book investigating the shrinking attention span of people and the root cause.
 
 ### Cause Eleven: The Rise of ADHD and How We Are Responding to it
 
+- ADHD is more a group of symptoms that arise because of circumstances.  
+
 ### Cause Twelve: The Confinement of Out Children, Both Physically and Psychologically
 
-## Thoughts and OpinionsW
+- Confining children and preventing free play is harming them.  
+
+- More freedom allows children to develop intrinsic motivations.  
+
+## Thoughts and Opinions
 
 -Very important book and need to apply lessons.
 
