@@ -58,7 +58,48 @@ uncertainty, risk, and emotional exposure.
 
 Vulnerability is not weakness; it’s our greatest measure of courage.
 
-### Cause Two: The Crippling of Our Flow States
+### #2: PLaces We Go When We Compare:
+
+Comparison is the crush of conformity from one side and competition
+from the other—it’s trying to simultaneously fit in and stand out.
+
+Comparison says, “Be like everyone else, but better.”
+
+We feel admiration when someone’s abilities, accomplishments, or
+character inspires us, or when we see something else that inspires us,
+like art or nature.
+
+Reverence, which is sometimes called adoration, worship, or
+veneration, is a deeper form of admiration or respect and is often
+combined with a sense of meaningful connection with something
+greater than ourselves.
+
+Envy occurs when we want something that another person has
+
+Jealousy is when we fear losing a relationship or a valued part of a
+relationship that we already have
+
+Resentment is the feeling of frustration, judgment, anger, “better
+than,” and/or hidden envy related to perceived unfairness or
+injustice. It’s an emotion that we often experience when we fail
+to set boundaries or ask for what we need, or when expectations
+let us down because they were based on things we can’t control,
+like what other people think, what they feel, or how they’re
+going to react.
+
+In the case of “schadenfreude,” it simply means
+pleasure or joy derived from someone else’s suffering or misfortune.
+
+freudenfreude, which
+is the opposite of schadenfreude—it’s the enjoyment of another’s
+success. It’s also a subset of empathy.
+
+Shoy: intentionally sharing the joy of someone relating a
+success story by showing interest and asking follow-up
+questions.
+
+Bragitude: intentionally tying words of gratitude toward the
+listener following discussion of personal successes
 
 ### Cause Three: The Rise of Physical and Mental Exhaustion
 
