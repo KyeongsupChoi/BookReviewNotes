@@ -47,59 +47,42 @@
 
 #### 1.1.4 The “deep” in deep learning
 
-The deep in deep learning isn’t a reference to any kind of
-deeper understanding achieved by the approach; rather, it stands for this idea of successive layers of representations
+- The deep in deep learning isn’t a reference to any kind of deeper understanding achieved by the approach; rather, it stands for this idea of successive layers of representations
 
-In deep learning, these layered representations are (almost always) learned via
-models called neural networks
+- In deep learning, these layered representations are (almost always) learned via models called neural networks
 
-You can think of a deep network as a multistage
-information-distillation operation, where information goes through successive filters
-and comes out increasingly purified
+- You can think of a deep network as a multistage information-distillation operation, where information goes through successive filters and comes out increasingly purified
 
 #### 1.1.5 Understanding how deep learning works, in three figures
 
-The specification of what a layer does to its input data is stored in the layer’s
-weights, which in essence are a bunch of numbers
+- The specification of what a layer does to its input data is stored in the layer’s weights, which in essence are a bunch of numbers
 
-. In technical terms, we’d say that the
-transformation implemented by a layer is parameterized by its weights
+- In technical terms, we’d say that the transformation implemented by a layer is parameterized by its weights
 
-In this context, learning
-means finding a set of values for the weights of all layers in a network, such that the
-network will correctly map example inputs to their associated targets.
+- In this context, learning means finding a set of values for the weights of all layers in a network, such that the network will correctly map example inputs to their associated targets.
 
-The loss function takes the predictions of the network and the true target
-(what you wanted the network to output) and computes a distance score, capturing
-how well the network has done on this specific example
+- The loss function takes the predictions of the network and the true target(what you wanted the network to output) and computes a distance score, capturing how well the network has done on this specific example
 
-The fundamental trick in deep learning is to use this score as a feedback signal to
-adjust the value of the weights a little, in a direction that will lower the loss score for
-the current example (see figure 1.9). This adjustment is the job of the optimizer, which
-implements what’s called the Backpropagation algorithm: the central algorithm in deep
-learning
+- The fundamental trick in deep learning is to use this score as a feedback signal to adjust the value of the weights a little, in a direction that will lower the loss score for the current example. This adjustment is the job of the optimizer, which implements what’s called the Backpropagation algorithm: the central algorithm in deep learning
 
-Initially, the weights of the network are assigned random values, so the network
-merely implements a series of random transformations. Naturally, its output is far
-from what it should ideally be, and the loss score is accordingly very high. But with
-every example the network processes, the weights are adjusted a little in the correct
-direction, and the loss score decreases. This is the training loop, which, repeated a sufficient number of times (typically tens of iterations over thousands of examples), yields
-weight values that minimize the loss function
+- Initially, the weights of the network are assigned random values, so the network merely implements a series of random transformations. Naturally, its output is far from what it should ideally be, and the loss score is accordingly very high. But with every example the network processes, the weights are adjusted a little in the correct direction, and the loss score decreases. 
+
+- This is the training loop, which, repeated a sufficient number of times (typically tens of iterations over thousands of examples), yields weight values that minimize the loss function
 
 #### 1.1.6 What deep learning has achieved so far
 
  In particular, deep learning has achieved the following breakthroughs, all in historically difficult areas of machine learning:
- Near-human-level image classification
- Near-human-level speech recognition
- Near-human-level handwriting transcription
- Improved machine translation
- Improved text-to-speech conversion
- Digital assistants such as Google Now and Amazon Alexa
- Near-human-level autonomous driving
- Improved ad targeting, as used by Google, Baidu, and Bing
- Improved search results on the web
- Ability to answer natural-language questions
- Superhuman Go playing
+1. Near-human-level image classification
+2. Near-human-level speech recognition
+3. Near-human-level handwriting transcription
+4. Improved machine translation
+5. Improved text-to-speech conversion
+6. Digital assistants such as Google Now and Amazon Alexa
+7. Near-human-level autonomous driving
+8. Improved ad targeting, as used by Google, Baidu, and Bing
+9. Improved search results on the web
+10. Ability to answer natural-language questions
+11. Superhuman Go playing
 
 #### 1.1.7 Don’t believe the short-term hype
 
