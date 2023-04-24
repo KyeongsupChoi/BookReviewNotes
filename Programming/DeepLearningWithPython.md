@@ -86,28 +86,23 @@
 
 #### 1.1.7 Don’t believe the short-term hype
 
-Although deep learning has led to remarkable achievements in recent years, expectations for what the field will be able to achieve in the next decade tend to run much
-higher than what will likely be possible.
+- Although deep learning has led to remarkable achievements in recent years, expectations for what the field will be able to achieve in the next decade tend to run much higher than what will likely be possible.
 
-Twice in the past, AI went through a cycle of intense
-optimism followed by disappointment and skepticism, with a dearth of funding as a
-result. 
+- Twice in the past, AI went through a cycle of intense optimism followed by disappointment and skepticism, with a dearth of funding as a result. 
 
 #### 1.1.8 The promise of AI
 
-Although we may have unrealistic short-term expectations for AI, the long-term picture is looking bright. 
+- Although we may have unrealistic short-term expectations for AI, the long-term picture is looking bright. 
 
 #### 1.2 Before deep learning: a brief history of machine learning
 
-Deep learning is popular but not the only form of machine learning used.
+- Deep learning is popular but not the only form of machine learning used.
 
 ####  1.2.1 Probabilistic modeling
 
-Probabilistic modeling is the application of the principles of statistics to data analysis. It
-was one of the earliest forms of machine learning, and it’s still widely used to this day.
-One of the best-known algorithms in this category is the Naive Bayes algorithm.
+- Probabilistic modeling is the application of the principles of statistics to data analysis. It was one of the earliest forms of machine learning, and it’s still widely used to this day. One of the best-known algorithms in this category is the Naive Bayes algorithm.
 
- Naive Bayes is a type of machine-learning classifier based on applying Bayes’ theorem while assuming that the features in the input data are all independent
+- Naive Bayes is a type of machine-learning classifier based on applying Bayes’ theorem while assuming that the features in the input data are all independent
  
 A closely related model is the logistic regression (logreg for short), which is sometimes considered to be the “hello world” of modern machine learning. Don’t be misled by its name—logreg is a classification algorithm rather than a regression
 algorithm.
@@ -148,4 +143,60 @@ trees and then ensembling their outputs.
 A gradient boosting machine, much like a random forest, is a machine-learning
 technique based on ensembling weak prediction models, generally decision trees. It
 uses gradient boosting, a way to improve any machine-learning model by iteratively training new models that specialize in addressing the weak points of the previous models.
+
+#### 1.2.5 Back to neural networks
+
+- Since 2012, deep convolutional neural networks (convnets) have become the go-to
+algorithm for all computer vision tasks;
+
+- Deep learning has also found applications in many other types of problems, such as
+natural-language processing.
+
+#### 1.2.6 What makes deep learning different
+
+The primary reason deep learning took off so quickly is that it offered better performance on many problems.
+
+Deep learning also makes problem-solving much easier, because it completely automates what used to be the
+most crucial step in a machine-learning workflow: feature engineering
+
+there are fast-diminishing returns to successive applications of shallow-learning methods, because the optimal first representation layer in a threelayer model isn’t the optimal first layer in a one-layer or two-layer model. 
+
+What is transformative about deep learning is that it allows a model to learn all layers of representation
+jointly, at the same time, rather than in succession
+
+These are the two essential characteristics of how deep learning learns from data:
+the incremental, layer-by-layer way in which increasingly complex representations are developed,
+and the fact that these intermediate incremental representations are learned jointly
+
+#### 1.2.7 The modern machine-learning landscape
+
+A great way to get a sense of the current landscape of machine-learning algorithms
+and tools is to look at machine-learning competitions on Kaggle. 
+
+In 2016 and 2017, Kaggle was dominated by two approaches: gradient boosting
+machines and deep learning
+
+#### 1.3 Why deep learning? Why now?
+
+ In general, three technical forces are driving advances in machine learning:
+ Hardware
+ Datasets and benchmarks
+ Algorithmic advances
+
+#### 1.3.1 Hardware
+
+Between 1990 and 2010, off-the-shelf CPUs became faster by a factor of approximately
+5,000.
+
+Throughout the 2000s, companies like NVIDIA and AMD have been investing
+billions of dollars in developing fast, massively parallel chips (graphical processing
+units [GPUs]) to power the graphics of increasingly photorealistic video games—
+cheap, single-purpose supercomputers designed to render complex 3D scenes on your
+screen in real time. This investment came to benefit the scientific community when,
+in 2007, NVIDIA launched CUDA (https://developer.nvidia.com/about-cuda), a programming interface for its line of GPUs. 
+
+the deep-learning industry is starting to go beyond GPUs and is
+investing in increasingly specialized, efficient chips for deep learning.
+
+#### 1.3.2 Data
 
