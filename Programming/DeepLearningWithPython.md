@@ -1,4 +1,4 @@
-# Craftsmen Information Processing
+# Deep Learning with Python
 
 | Title            | Deep Learning with Python |
 |------------------|---------------------------|
@@ -19,7 +19,7 @@
 
 #### 1.1 Artificial intelligence, machine learning, and deep learning
 
-##### 1.1.1 Artificial Intelligence 
+#### 1.1.1 Artificial Intelligence 
 
 - The field of Artificial Intelligence can be described as the effort to automate intellectual tasks normally performed by humans
 
@@ -98,4 +98,54 @@ result.
 Although we may have unrealistic short-term expectations for AI, the long-term picture is looking bright. 
 
 #### 1.2 Before deep learning: a brief history of machine learning
+
+Deep learning is popular but not the only form of machine learning used.
+
+####  1.2.1 Probabilistic modeling
+
+Probabilistic modeling is the application of the principles of statistics to data analysis. It
+was one of the earliest forms of machine learning, and it’s still widely used to this day.
+One of the best-known algorithms in this category is the Naive Bayes algorithm.
+
+ Naive Bayes is a type of machine-learning classifier based on applying Bayes’ theorem while assuming that the features in the input data are all independent
+ 
+A closely related model is the logistic regression (logreg for short), which is sometimes considered to be the “hello world” of modern machine learning. Don’t be misled by its name—logreg is a classification algorithm rather than a regression
+algorithm.
+
+#### 1.2.2 Early neural networks
+
+. Although the core ideas of neural networks were investigated in toy forms as early
+as the 1950s, the approach took decades to get started. For a long time, the missing piece
+was an efficient way to train large neural networks. This changed in the mid-1980s,
+Licensed to <null>
+Before deep learning: a brief history of machine learning 15
+when multiple people independently rediscovered the Backpropagation algorithm—
+a way to train chains of parametric operations using gradient-descent optimization
+(later in the book, we’ll precisely define these concepts)—and started applying it to
+neural networks.
+
+#### 1.2.3 Kernel methods
+
+Kernel methods are a group of
+classification algorithms, the best known of which is the support vector machine (SVM).
+
+SVMs aim at solving classification problems by finding good
+decision boundaries (see figure 1.10) between two sets of points
+belonging to two different categories.
+
+A kernel function is a computationally tractable operation that maps any
+two points in your initial space to the distance between these points in your target
+representation space, completely bypassing the explicit computation of the new representation.
+
+#### 1.2.4 Decision trees, random forests, and gradient boosting machines
+
+Decision trees are flowchart-like structures that let you classify input data points or predict output values given inputs (see figure 1.11). They’re easy to visualize and interpret.
+
+the Random Forest algorithm introduced a robust, practical take on
+decision-tree learning that involves building a large number of specialized decision
+trees and then ensembling their outputs. 
+
+A gradient boosting machine, much like a random forest, is a machine-learning
+technique based on ensembling weak prediction models, generally decision trees. It
+uses gradient boosting, a way to improve any machine-learning model by iteratively training new models that specialize in addressing the weak points of the previous models.
 
