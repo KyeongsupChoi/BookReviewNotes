@@ -19,6 +19,7 @@ Notes and Reviews on Books I read
    |    |-- DeveloperPrinciple                         
    |    |-- DjangoForProfessionals       
    |    |-- MachineLearningBook  
+   |    |-- DeepLearningWithPython
    |
    |                          
    |-- ************************************************************************

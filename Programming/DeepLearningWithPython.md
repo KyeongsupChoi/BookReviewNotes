@@ -104,20 +104,13 @@
 
 - Naive Bayes is a type of machine-learning classifier based on applying Bayes’ theorem while assuming that the features in the input data are all independent
  
-A closely related model is the logistic regression (logreg for short), which is sometimes considered to be the “hello world” of modern machine learning. Don’t be misled by its name—logreg is a classification algorithm rather than a regression
-algorithm.
+- A closely related model is the logistic regression (logreg for short), which is sometimes considered to be the “hello world” of modern machine learning. Don’t be misled by its name—logreg is a classification algorithm rather than a regression algorithm.
 
 #### 1.2.2 Early neural networks
+ 
+- Although the core ideas of neural networks were investigated in toy forms as early as the 1950s, the approach took decades to get started. For a long time, the missing piece was an efficient way to train large neural networks.
 
-. Although the core ideas of neural networks were investigated in toy forms as early
-as the 1950s, the approach took decades to get started. For a long time, the missing piece
-was an efficient way to train large neural networks. This changed in the mid-1980s,
-Licensed to <null>
-Before deep learning: a brief history of machine learning 15
-when multiple people independently rediscovered the Backpropagation algorithm—
-a way to train chains of parametric operations using gradient-descent optimization
-(later in the book, we’ll precisely define these concepts)—and started applying it to
-neural networks.
+- Multiple people independently rediscovered the Backpropagation algorithm a way to train chains of parametric operations using gradient-descent optimization and started applying it to neural networks.
 
 #### 1.2.3 Kernel methods
 
@@ -193,10 +186,68 @@ billions of dollars in developing fast, massively parallel chips (graphical proc
 units [GPUs]) to power the graphics of increasingly photorealistic video games—
 cheap, single-purpose supercomputers designed to render complex 3D scenes on your
 screen in real time. This investment came to benefit the scientific community when,
-in 2007, NVIDIA launched CUDA (https://developer.nvidia.com/about-cuda), a programming interface for its line of GPUs. 
+in 2007, NVIDIA launched CUDA, a programming interface for its line of GPUs. 
 
 the deep-learning industry is starting to go beyond GPUs and is
 investing in increasingly specialized, efficient chips for deep learning.
 
 #### 1.3.2 Data
+
+, the game changer has been the rise of the internet, making it feasible to collect and distribute very large datasets for machine learning
+
+If there’s one dataset that has been a catalyst for the rise of deep learning, it’s the
+ImageNet dataset, consisting of 1.4 million images that have been hand annotated
+with 1,000 image categories
+
+#### 1.3.3 Algorithms
+
+The key issue was that
+of gradient propagation through deep stacks of layers. The feedback signal used to train
+neural networks would fade away as the number of layers increased.
+
+the advent of several simple but important
+algorithmic improvements that allowed for better gradient propagation:
+ Better activation functions for neural layers
+ Better weight-initialization schemes, starting with layer-wise pretraining, which was
+quickly abandoned
+ Better optimization schemes, such as RMSProp and Adam
+
+even more advanced ways to help gradient propagation were discovered, such as batch normalization, residual connections, and depthwise separable convolutions.
+
+#### 1.3.4 A new wave of investment
+
+What followed was
+a gradual wave of industry investment far beyond anything previously seen in the history of AI
+
+the total venture capital
+investment in AI was around $19 million, which went almost entirely to practical applications of shallow machine-learning approaches. By 2014, it had risen to a staggering
+$394 million
+
+Machine learning—in particular, deep learning—has become central to the product strategy of these tech giants.
+
+#### 1.3.5 The democratization of deep learning
+
+One of the key factors driving this inflow of new faces in deep learning has been the
+democratization of the toolsets used in the field. 
+
+This has been
+driven most notably by the development of Theano and then TensorFlow—two symbolic
+tensor-manipulation frameworks for Python that support autodifferentiation, greatly simplifying the implementation of new models—and by the rise of user-friendly libraries
+such as Keras, which makes deep learning as easy
+
+#### 1.3.6 Will it last?
+
+Simplicity—Deep learning removes the need for feature engineering, replacing
+complex, brittle, engineering-heavy pipelines with simple, end-to-end trainable
+models that are typically built using only five or six different tensor operations
+
+Scalability—Deep learning is highly amenable to parallelization on GPUs or
+TPUs, so it can take full advantage of Moore’s law. In addition, deep-learning
+models are trained by iterating over small batches of data, allowing them to be
+trained on datasets of arbitrary size.
+
+Versatility and reusability—Unlike many prior machine-learning approaches,
+deep-learning models can be trained on additional data without restarting from
+scratch, making them viable for continuous online learning—an important
+property for very large production models.
 
