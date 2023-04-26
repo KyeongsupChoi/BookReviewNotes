@@ -71,7 +71,7 @@
 
 #### 1.1.6 What deep learning has achieved so far
 
- In particular, deep learning has achieved the following breakthroughs, all in historically difficult areas of machine learning:
+- In particular, deep learning has achieved the following breakthroughs, all in historically difficult areas of machine learning:
 1. Near-human-level image classification
 2. Near-human-level speech recognition
 3. Near-human-level handwriting transcription
@@ -114,52 +114,37 @@
 
 #### 1.2.3 Kernel methods
 
-Kernel methods are a group of
-classification algorithms, the best known of which is the support vector machine (SVM).
+- Kernel methods are a group of classification algorithms, the best known of which is the support vector machine (SVM).
 
-SVMs aim at solving classification problems by finding good
-decision boundaries (see figure 1.10) between two sets of points
-belonging to two different categories.
+- SVMs aim at solving classification problems by finding good decision boundaries (see figure 1.10) between two sets of points belonging to two different categories.
 
-A kernel function is a computationally tractable operation that maps any
-two points in your initial space to the distance between these points in your target
-representation space, completely bypassing the explicit computation of the new representation.
+- A kernel function is a computationally tractable operation that maps any two points in your initial space to the distance between these points in your target representation space, completely bypassing the explicit computation of the new representation.
 
 #### 1.2.4 Decision trees, random forests, and gradient boosting machines
 
-Decision trees are flowchart-like structures that let you classify input data points or predict output values given inputs (see figure 1.11). They’re easy to visualize and interpret.
+- Decision trees are flowchart-like structures that let you classify input data points or predict output values given inputs (see figure 1.11). They’re easy to visualize and interpret.
 
-the Random Forest algorithm introduced a robust, practical take on
-decision-tree learning that involves building a large number of specialized decision
-trees and then ensembling their outputs. 
+- The Random Forest algorithm introduced a robust, practical take on decision-tree learning that involves building a large number of specialized decision trees and then ensembling their outputs. 
 
-A gradient boosting machine, much like a random forest, is a machine-learning
-technique based on ensembling weak prediction models, generally decision trees. It
-uses gradient boosting, a way to improve any machine-learning model by iteratively training new models that specialize in addressing the weak points of the previous models.
+- A gradient boosting machine, much like a random forest, is a machine-learning  technique based on ensembling weak prediction models, generally decision trees. It uses gradient boosting, a way to improve any machine-learning model by iteratively training new models that specialize in addressing the weak points of the previous models.
 
 #### 1.2.5 Back to neural networks
 
-- Since 2012, deep convolutional neural networks (convnets) have become the go-to
-algorithm for all computer vision tasks;
+- Since 2012, deep convolutional neural networks (convnets) have become the go-to algorithm for all computer vision tasks;
 
-- Deep learning has also found applications in many other types of problems, such as
-natural-language processing.
+- Deep learning has also found applications in many other types of problems, such as natural-language processing.
 
 #### 1.2.6 What makes deep learning different
 
-The primary reason deep learning took off so quickly is that it offered better performance on many problems.
+- The primary reason deep learning took off so quickly is that it offered better performance on many problems.
 
-Deep learning also makes problem-solving much easier, because it completely automates what used to be the
-most crucial step in a machine-learning workflow: feature engineering
+- Deep learning also makes problem-solving much easier, because it completely automates what used to be the most crucial step in a machine-learning workflow: feature engineering
 
-there are fast-diminishing returns to successive applications of shallow-learning methods, because the optimal first representation layer in a threelayer model isn’t the optimal first layer in a one-layer or two-layer model. 
+- There are fast-diminishing returns to successive applications of shallow-learning methods, because the optimal first representation layer in a threelayer model isn’t the optimal first layer in a one-layer or two-layer model. 
 
-What is transformative about deep learning is that it allows a model to learn all layers of representation
-jointly, at the same time, rather than in succession
+- What is transformative about deep learning is that it allows a model to learn all layers of representation jointly, at the same time, rather than in succession
 
-These are the two essential characteristics of how deep learning learns from data:
-the incremental, layer-by-layer way in which increasingly complex representations are developed,
-and the fact that these intermediate incremental representations are learned jointly
+- These are the two essential characteristics of how deep learning learns from data the incremental, layer-by-layer way in which increasingly complex representations are developed, and the fact that these intermediate incremental representations are learned jointly
 
 #### 1.2.7 The modern machine-learning landscape
 
@@ -250,4 +235,9 @@ Versatility and reusability—Unlike many prior machine-learning approaches,
 deep-learning models can be trained on additional data without restarting from
 scratch, making them viable for continuous online learning—an important
 property for very large production models.
+
+### Chapter 2: Before we begin: the mathematical building blocks of neural networks  
+
+Understanding deep learning requires familiarity with many simple mathematical
+concepts: tensors, tensor operations, differentiation, gradient descent, and so on
 
