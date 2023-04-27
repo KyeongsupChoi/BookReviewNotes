@@ -140,7 +140,7 @@
 
 - Deep learning also makes problem-solving much easier, because it completely automates what used to be the most crucial step in a machine-learning workflow: feature engineering
 
-- There are fast-diminishing returns to successive applications of shallow-learning methods, because the optimal first representation layer in a threelayer model isn’t the optimal first layer in a one-layer or two-layer model. 
+- There are fast-diminishing returns to successive applications of shallow-learning methods, because the optimal first representation layer in a three layer model isn’t the optimal first layer in a one-layer or two-layer model. 
 
 - What is transformative about deep learning is that it allows a model to learn all layers of representation jointly, at the same time, rather than in succession
 
@@ -148,41 +148,30 @@
 
 #### 1.2.7 The modern machine-learning landscape
 
-A great way to get a sense of the current landscape of machine-learning algorithms
-and tools is to look at machine-learning competitions on Kaggle. 
+- A great way to get a sense of the current landscape of machine-learning algorithms and tools is to look at machine-learning competitions on Kaggle. 
 
-In 2016 and 2017, Kaggle was dominated by two approaches: gradient boosting
-machines and deep learning
+-In 2016 and 2017, Kaggle was dominated by two approaches: gradient boosting machines and deep learning
 
 #### 1.3 Why deep learning? Why now?
 
- In general, three technical forces are driving advances in machine learning:
+- In general, three technical forces are driving advances in machine learning:
  Hardware
  Datasets and benchmarks
  Algorithmic advances
 
 #### 1.3.1 Hardware
 
-Between 1990 and 2010, off-the-shelf CPUs became faster by a factor of approximately
-5,000.
+- Between 1990 and 2010, off-the-shelf CPUs became faster by a factor of approximately 5,000.
 
-Throughout the 2000s, companies like NVIDIA and AMD have been investing
-billions of dollars in developing fast, massively parallel chips (graphical processing
-units [GPUs]) to power the graphics of increasingly photorealistic video games—
-cheap, single-purpose supercomputers designed to render complex 3D scenes on your
-screen in real time. This investment came to benefit the scientific community when,
-in 2007, NVIDIA launched CUDA, a programming interface for its line of GPUs. 
+- Throughout the 2000s, companies like NVIDIA and AMD have been investing billions of dollars in developing fast, massively parallel chips (graphical processing units, GPUs) to power the graphics of increasingly photorealistic video games— cheap, single-purpose supercomputers designed to render complex 3D scenes on yourscreen in real time. This investment came to benefit the scientific community when, in 2007, NVIDIA launched CUDA, a programming interface for its line of GPUs. 
 
-the deep-learning industry is starting to go beyond GPUs and is
-investing in increasingly specialized, efficient chips for deep learning.
+- The deep-learning industry is starting to go beyond GPUs and is investing in increasingly specialized, efficient chips for deep learning.
 
 #### 1.3.2 Data
 
-, the game changer has been the rise of the internet, making it feasible to collect and distribute very large datasets for machine learning
+- The game changer has been the rise of the internet, making it feasible to collect and distribute very large datasets for machine learning
 
-If there’s one dataset that has been a catalyst for the rise of deep learning, it’s the
-ImageNet dataset, consisting of 1.4 million images that have been hand annotated
-with 1,000 image categories
+- If there’s one dataset that has been a catalyst for the rise of deep learning, it’s the ImageNet dataset, consisting of 1.4 million images that have been hand annotated with 1,000 image categories
 
 #### 1.3.3 Algorithms
 
