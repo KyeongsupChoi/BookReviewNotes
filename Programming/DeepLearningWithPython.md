@@ -373,3 +373,32 @@ routines that are typically implemented in Fortran or C.
 
 #### 2.3.2 Broadcasting
 
+What happens with addition when the shapes of the two tensors
+being added differ?
+ When possible, and if there’s no ambiguity, the smaller tensor will be broadcasted to
+match the shape of the larger tensor
+
+1 Axes (called broadcast axes) are added to the smaller tensor to match the ndim of
+the larger tensor.
+2 The smaller tensor is repeated alongside these new axes to match the full shape
+of the larger tensor.
+
+#### 2.3.3 Tensor dot
+
+The dot operation, also called a tensor product (not to be confused with an elementwise product) is the most common, most useful tensor operation. Contrary to
+element-wise operations, it combines entries in the input tensors
+
+ An element-wise product is done with the * operator in Numpy, Keras, Theano,
+and TensorFlow. dot uses a different syntax in TensorFlow, but in both Numpy and
+Keras it’s done using the standard dot operator:
+
+#### 2.3.4 Tensor reshaping
+
+Reshaping a tensor means rearranging its rows and columns to match a target shape.
+Naturally, the reshaped tensor has the same total number of coefficients as the initial
+tensor.
+
+A special case of reshaping that’s commonly encountered is transposition. Transposing a
+matrix means exchanging its rows and its columns,
+
+#### 2.3.5 Geometric interpretation of tensor operations
