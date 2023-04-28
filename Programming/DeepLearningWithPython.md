@@ -402,3 +402,19 @@ A special case of reshaping that’s commonly encountered is transposition. Tran
 matrix means exchanging its rows and its columns,
 
 #### 2.3.5 Geometric interpretation of tensor operations
+
+Because the contents of the tensors manipulated by tensor operations can be interpreted as coordinates of points in some geometric space, all tensor operations have a
+geometric interpretation.
+
+In general, elementary geometric operations such as affine transformations, rotations,
+scaling, and so on can be expressed as tensor operations.
+
+#### 2.3.6 A geometric interpretation of deep learning
+
+you can interpret a neural network as a very complex geometric transformation in a high-dimensional space, implemented via a long series of simple steps.
+
+finding neat representations for complex, highly folded data manifolds. 
+
+it takes the approach of
+incrementally decomposing a complicated geometric transformation into a long
+chain of elementary ones,
