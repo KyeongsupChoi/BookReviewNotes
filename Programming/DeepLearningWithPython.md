@@ -175,9 +175,7 @@
 
 #### 1.3.3 Algorithms
 
-The key issue was that
-of gradient propagation through deep stacks of layers. The feedback signal used to train
-neural networks would fade away as the number of layers increased.
+- The key issue was that of gradient propagation through deep stacks of layers. The feedback signal used to train neural networks would fade away as the number of layers increased.
 
 the advent of several simple but important
 algorithmic improvements that allowed for better gradient propagation:
