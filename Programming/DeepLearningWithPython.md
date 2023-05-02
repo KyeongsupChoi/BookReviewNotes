@@ -418,3 +418,27 @@ finding neat representations for complex, highly folded data manifolds.
 it takes the approach of
 incrementally decomposing a complicated geometric transformation into a long
 chain of elementary ones,
+
+#### 2.4 The engine of neural networks:gradient-based optimization
+
+weights or trainable parameters of the layer (the kernel and bias attributes, respectively). These weights contain the information learned by the network from exposure
+to training data.
+
+gradually
+adjust these weights, based on a feedback signal. This gradual adjustment, also called
+training, is basically the learning that machine learning is all about.
+
+a training loop, which works as follows. Repeat
+these steps in a loop, as long as necessary:
+1 Draw a batch of training samples x and corresponding targets y.
+2 Run the network on x (a step called the forward pass) to obtain predictions y_pred.
+3 Compute the loss of the network on the batch, a measure of the mismatch
+between y_pred and y.
+4 Update all weights of the network in a way that slightly reduces the loss on this
+batch.
+
+r approach is to take advantage of the fact that all operations used in the network
+are differentiable, and compute the gradient of the loss with regard to the network’s
+coefficients. You can then move the coefficients in the opposite direction from the
+gradient, thus decreasing the loss.
+
