@@ -150,7 +150,7 @@
 
 - A great way to get a sense of the current landscape of machine-learning algorithms and tools is to look at machine-learning competitions on Kaggle. 
 
--In 2016 and 2017, Kaggle was dominated by two approaches: gradient boosting machines and deep learning
+- In 2016 and 2017, Kaggle was dominated by two approaches: gradient boosting machines and deep learning
 
 #### 1.3 Why deep learning? Why now?
 
@@ -177,30 +177,25 @@
 
 - The key issue was that of gradient propagation through deep stacks of layers. The feedback signal used to train neural networks would fade away as the number of layers increased.
 
-the advent of several simple but important
-algorithmic improvements that allowed for better gradient propagation:
+- The advent of several simple but important algorithmic improvements that allowed for better gradient propagation:
  Better activation functions for neural layers
  Better weight-initialization schemes, starting with layer-wise pretraining, which was
 quickly abandoned
  Better optimization schemes, such as RMSProp and Adam
 
-even more advanced ways to help gradient propagation were discovered, such as batch normalization, residual connections, and depthwise separable convolutions.
+- Even more advanced ways to help gradient propagation were discovered, such as batch normalization, residual connections, and depthwise separable convolutions.
 
 #### 1.3.4 A new wave of investment
 
-What followed was
-a gradual wave of industry investment far beyond anything previously seen in the history of AI
+- There was a gradual wave of industry investment far beyond anything previously seen in the history of AI
 
-the total venture capital
-investment in AI was around $19 million, which went almost entirely to practical applications of shallow machine-learning approaches. By 2014, it had risen to a staggering
-$394 million
+- The total venture capital investment in AI was around $19 million, which went almost entirely to practical applications of shallow machine-learning approaches. By 2014, it had risen to a staggering $394 million
 
-Machine learning—in particular, deep learning—has become central to the product strategy of these tech giants.
+- Machine learning—in particular, deep learning—has become central to the product strategy of these tech giants.
 
 #### 1.3.5 The democratization of deep learning
 
-One of the key factors driving this inflow of new faces in deep learning has been the
-democratization of the toolsets used in the field. 
+- One of the key factors driving this inflow of new faces in deep learning has been the democratization of the toolsets used in the field. 
 
 This has been
 driven most notably by the development of Theano and then TensorFlow—two symbolic
@@ -230,8 +225,7 @@ concepts: tensors, tensor operations, differentiation, gradient descent, and so 
 
 #### 2.1 A first look at a neural network
 
-The core building block of neural networks is the layer, a data-processing module that
-you can think of as a filter for data
+- The core building block of neural networks is the layer, a data-processing module that you can think of as a filter for data
 
 Specifically, layers extract representations out of the data fed into them—hopefully, representations that are more meaningful for the problem at hand
 
@@ -364,7 +358,7 @@ these operations are highly amenable to massively parallel implementations
 
 On the same principle, you can do element-wise multiplication, subtraction, and so on.
 
-In practice, when dealing with Numpy arrays, these operations are available as welloptimized built-in Numpy functions, which themselves delegate the heavy lifting to a
+In practice, when dealing with Numpy arrays, these operations are available as well-optimized built-in Numpy functions, which themselves delegate the heavy lifting to a
 Basic Linear Algebra Subprograms (BLAS) implementation if you have one installed
 (which you should). BLAS are low-level, highly parallel, efficient tensor-manipulation
 routines that are typically implemented in Fortran or C.
