@@ -313,72 +313,97 @@ A Neural Network requires 3 components for training
 
 #### 2.3.2 Broadcasting
 
-What happens with addition when the shapes of the two tensors
-being added differ?
- When possible, and if there’s no ambiguity, the smaller tensor will be broadcasted to
-match the shape of the larger tensor
+- When the shapes of the two tensors being added differ, when possible, and if there’s no ambiguity, the smaller tensor will be broadcasted to match the shape of the larger tensor
 
-1 Axes (called broadcast axes) are added to the smaller tensor to match the ndim of
-the larger tensor.
-2 The smaller tensor is repeated alongside these new axes to match the full shape
-of the larger tensor.
+- 1 Axes (called broadcast axes) are added to the smaller tensor to match the ndim of the larger tensor.
+
+- 2 The smaller tensor is repeated alongside these new axes to match the full shape of the larger tensor.
 
 #### 2.3.3 Tensor dot
 
-The dot operation, also called a tensor product (not to be confused with an elementwise product) is the most common, most useful tensor operation. Contrary to
-element-wise operations, it combines entries in the input tensors
+- The dot operation, also called a tensor product (not to be confused with an elementwise product) is the most common, most useful tensor operation. Contrary to element-wise operations, it combines entries in the input tensors
 
- An element-wise product is done with the * operator in Numpy, Keras, Theano,
-and TensorFlow. dot uses a different syntax in TensorFlow, but in both Numpy and
-Keras it’s done using the standard dot operator:
+- An element-wise product is done with the * operator in Numpy, Keras, Theano, and TensorFlow. dot uses a different syntax in TensorFlow, but in both Numpy and Keras it’s done using the standard dot operator:
 
 #### 2.3.4 Tensor reshaping
 
-Reshaping a tensor means rearranging its rows and columns to match a target shape.
-Naturally, the reshaped tensor has the same total number of coefficients as the initial
-tensor.
+- Reshaping a tensor means rearranging its rows and columns to match a target shape. Naturally, the reshaped tensor has the same total number of coefficients as the initial tensor.
 
-A special case of reshaping that’s commonly encountered is transposition. Transposing a
-matrix means exchanging its rows and its columns,
+- A special case of reshaping that’s commonly encountered is transposition. Transposing a matrix means exchanging its rows and its columns,
 
 #### 2.3.5 Geometric interpretation of tensor operations
 
-Because the contents of the tensors manipulated by tensor operations can be interpreted as coordinates of points in some geometric space, all tensor operations have a
-geometric interpretation.
+- Because the contents of the tensors manipulated by tensor operations can be interpreted as coordinates of points in some geometric space, all tensor operations have a geometric interpretation.
 
-In general, elementary geometric operations such as affine transformations, rotations,
-scaling, and so on can be expressed as tensor operations.
+- In general, elementary geometric operations such as affine transformations, rotations, scaling, and so on can be expressed as tensor operations.
 
 #### 2.3.6 A geometric interpretation of deep learning
 
-you can interpret a neural network as a very complex geometric transformation in a high-dimensional space, implemented via a long series of simple steps.
+- You can interpret a neural network as a very complex geometric transformation in a high-dimensional space, implemented via a long series of simple steps.
 
-finding neat representations for complex, highly folded data manifolds. 
+- Deep learning is finding neat representations for complex, highly folded data manifolds. 
 
-it takes the approach of
-incrementally decomposing a complicated geometric transformation into a long
-chain of elementary ones,
+- It takes the approach of incrementally decomposing a complicated geometric transformation into a long chain of elementary ones.
 
 #### 2.4 The engine of neural networks:gradient-based optimization
 
-weights or trainable parameters of the layer (the kernel and bias attributes, respectively). These weights contain the information learned by the network from exposure
-to training data.
+- Weights or trainable parameters of the layer (the kernel and bias attributes, respectively). These weights contain the information learned by the network from exposure to training data.
 
-gradually
-adjust these weights, based on a feedback signal. This gradual adjustment, also called
-training, is basically the learning that machine learning is all about.
+- These weights must be gradually adjusted, based on a feedback signal. This gradual adjustment, also called training, is basically the learning that machine learning is all about.
 
-a training loop, which works as follows. Repeat
-these steps in a loop, as long as necessary:
-1 Draw a batch of training samples x and corresponding targets y.
-2 Run the network on x (a step called the forward pass) to obtain predictions y_pred.
-3 Compute the loss of the network on the batch, a measure of the mismatch
-between y_pred and y.
-4 Update all weights of the network in a way that slightly reduces the loss on this
-batch.
+- A training loop, which works as follows. Repeat these steps in a loop, as long as necessary:
+1. Draw a batch of training samples x and corresponding targets y.
+2. Run the network on x (a step called the forward pass) to obtain predictions y_pred.
+3. Compute the loss of the network on the batch, a measure of the mismatch between y_pred and y.
+4. Update all weights of the network in a way that slightly reduces the loss on this batch.
 
-r approach is to take advantage of the fact that all operations used in the network
-are differentiable, and compute the gradient of the loss with regard to the network’s
-coefficients. You can then move the coefficients in the opposite direction from the
-gradient, thus decreasing the loss.
+- One approach is to take advantage of the fact that all operations used in the network are differentiable, and compute the gradient of the loss with regard to the network’s coefficients. 
+
+- You can then move the coefficients in the opposite direction from the gradient, thus decreasing the loss.
+
+#### 2.4.1 What’s a derivative?
+
+-  the function is continuous, a small change in x can only result
+in a small change in y—that’s the intuition behind continuity.
+
+- The slope a is called the derivative of f in p.
+
+#### 2.4.2 Derivative of a tensor operation: the gradient
+
+- A gradient is the derivative of a tensor operation. It’s the generalization of the concept of derivatives to functions of multidimensional inputs: that is, to functions that take tensors as inputs
+
+#### 2.4.3 Stochastic gradient descent
+
+Given a differentiable function, it’s theoretically possible to find its minimum analytically: 
+
+Applied to a neural network, that means finding analytically the combination of
+weight values that yields the smallest possible loss function. 
+
+This can be done by solving the equation gradient(f)(W) = 0 for W
+
+it’s important to pick a reasonable value for the step factor.
+If it’s too small, the descent down the curve will take many iterations, and it could get
+stuck in a local minimum. If step is too large, your updates may end up taking you to
+completely random locations on the curve
+
+mini-batch stochastic gradient descent
+
+there exist multiple variants of SGD that differ by taking into account
+previous weight updates when computing the next weight update, rather than just
+looking at the current value of the gradients
+
+Momentum is implemented by moving
+the ball at each step based not only on the current slope value (current acceleration)
+but also on the current velocity (resulting from past acceleration). In practice, this
+means updating the parameter w based not only on the current gradient value but also
+on the previous parameter update, such as in this naive implementation
+
+#### 2.4.4 Chaining derivatives: the Backpropagation algorithm
+
+Calculus tells us that such a chain of functions can be derived using the following identity, called the chain rule: f(g(x)) = f'(g(x)) * g'(x). Applying the chain rule to the
+computation of the gradient values of a neural network gives rise to an algorithm
+called Backpropagation
+
+Backpropagation starts with the final loss value and works backward from the top layers to the bottom layers, applying the chain rule to compute the contribution that each parameter
+had in the loss value.
 
