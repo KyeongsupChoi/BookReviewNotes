@@ -197,171 +197,119 @@ quickly abandoned
 
 - One of the key factors driving this inflow of new faces in deep learning has been the democratization of the toolsets used in the field. 
 
-This has been
-driven most notably by the development of Theano and then TensorFlow—two symbolic
-tensor-manipulation frameworks for Python that support autodifferentiation, greatly simplifying the implementation of new models—and by the rise of user-friendly libraries
-such as Keras, which makes deep learning as easy
+- This has been driven most notably by the development of Theano and then TensorFlow—two symbolic tensor-manipulation frameworks for Python that support autodifferentiation, greatly simplifying the implementation of new models—and by the rise of user-friendly libraries such as Keras, which makes deep learning as easy
 
 #### 1.3.6 Will it last?
 
-Simplicity—Deep learning removes the need for feature engineering, replacing
-complex, brittle, engineering-heavy pipelines with simple, end-to-end trainable
-models that are typically built using only five or six different tensor operations
+- (Simplicity)—Deep learning removes the need for feature engineering, replacing complex, brittle, engineering-heavy pipelines with simple, end-to-end trainable models that are typically built using only five or six different tensor operations
 
-Scalability—Deep learning is highly amenable to parallelization on GPUs or
-TPUs, so it can take full advantage of Moore’s law. In addition, deep-learning
-models are trained by iterating over small batches of data, allowing them to be
-trained on datasets of arbitrary size.
+- (Scalability)—Deep learning is highly amenable to parallelization on GPUs or TPUs, so it can take full advantage of Moore’s law. In addition, deep-learning models are trained by iterating over small batches of data, allowing them to be trained on datasets of arbitrary size.
 
-Versatility and reusability—Unlike many prior machine-learning approaches,
-deep-learning models can be trained on additional data without restarting from
-scratch, making them viable for continuous online learning—an important
-property for very large production models.
+- (Versatility and reusability)—Unlike many prior machine-learning approaches, deep-learning models can be trained on additional data without restarting from scratch, making them viable for continuous online learning—an important property for very large production models.
 
 ### Chapter 2: Before we begin: the mathematical building blocks of neural networks  
 
-Understanding deep learning requires familiarity with many simple mathematical
-concepts: tensors, tensor operations, differentiation, gradient descent, and so on
+- Understanding deep learning requires familiarity with many simple mathematical concepts: tensors, tensor operations, differentiation, gradient descent, and so on
 
 #### 2.1 A first look at a neural network
 
 - The core building block of neural networks is the layer, a data-processing module that you can think of as a filter for data
 
-Specifically, layers extract representations out of the data fed into them—hopefully, representations that are more meaningful for the problem at hand
+- Specifically, layers extract representations out of the data fed into them—hopefully, representations that are more meaningful for the problem at hand
 
-Most of
-deep learning consists of chaining together simple layers that will implement a form
-of progressive data distillation
+- Most of deep learning consists of chaining together simple layers that will implement a form of progressive data distillation
 
- Dense layers, which are densely
-connected (also called fully connected) neural layers. T
+- Dense layers are densely connected (also called fully connected) neural layers.
 
- softmax layer, which means it will return an array of 10 probability scores (summing to 1)
+- Softmax layer, which returns an array of 10 probability scores (summing to 1)
  
- A loss function—How the network will be able to measure its performance on
-the training data, and thus how it will be able to steer itself in the right direction.
- An optimizer—The mechanism through which the network will update itself
-based on the data it sees and its loss function.
- Metrics to monitor during training and testing—Here, we’ll only care about accuracy (the fraction of the images that were correctly classified)
+A Neural Network requires 3 components for training
+ A (loss function)—How the network will be able to measure its performance on the training data, and thus how it will be able to steer itself in the right direction.
+ An (optimizer)—The mechanism through which the network will update itself based on the data it sees and its loss function.
+ (Metrics) to monitor during training and testing—Here, we’ll only care about accuracy (the fraction of the images that were correctly classified)
 
 #### 2.2 Data representations for neural networks
 
- At its core, a tensor is a container for data—almost always numerical data. So, it’s a
-container for numbers. You may be already familiar with matrices, which are 2D tensors: tensors are a generalization of matrices to an arbitrary number of dimensions
+- At its core, a tensor is a container for data—almost always numerical data. So, it’s a container for numbers. You may be already familiar with matrices, which are 2D tensors: tensors are a generalization of matrices to an arbitrary number of dimensions
 
 #### 2.2.1 Scalars (0D tensors)
 
-A tensor that contains only one number is called a scalar (or scalar tensor, or 0-dimensional
-tensor, or 0D tensor). In Numpy, a float32 or float64 number is a scalar tensor (or scalar
-array).
+- A tensor that contains only one number is called a scalar (or scalar tensor, or 0-dimensional tensor, or 0D tensor). In Numpy, a float32 or float64 number is a scalar tensor (or scalar array).
 
 #### 2.2.2 Vectors (1D tensors)
 
-An array of numbers is called a vector, or 1D tensor. A 1D tensor is said to have exactly
-one axis.
+- An array of numbers is called a vector, or 1D tensor. A 1D tensor is said to have exactly one axis.
 
 #### 2.2.3 Matrices (2D tensors)
 
-An array of vectors is a matrix, or 2D tensor. A matrix has two axes 
+- An array of vectors is a matrix, or 2D tensor. A matrix has two axes 
 
 #### 2.2.4 3D tensors and higher-dimensional tensors
 
-By packing 3D tensors in an array, you can create a 4D tensor, and so on. In deep learning, you’ll generally manipulate tensors that are 0D to 4D, although you may go up to
-5D if you process video data.
+- By packing 3D tensors in an array, you can create a 4D tensor, and so on. In deep learning, you’ll generally manipulate tensors that are 0D to 4D, although you may go up to 5D if you process video data.
 
 #### 2.2.5 Key attributes
 
- Number of axes (rank)—For instance, a 3D tensor has three axes, and a matrix has
-two axes. This is also called the tensor’s ndim in Python libraries such as Numpy.
- Shape—This is a tuple of integers that describes how many dimensions the tensor has along each axis. For instance, the previous matrix example has shape
-(3, 5), and the 3D tensor example has shape (3, 3, 5). A vector has a shape
-with a single element, such as (5,), whereas a scalar has an empty shape, ().
- Data type (usually called dtype in Python libraries)—This is the type of the data
-contained in the tensor; for instance, a tensor’s type could be float32, uint8,
-float64, and so on. On rare occasions, you may see a char tensor. Note that
-string tensors don’t exist in Numpy (or in most other libraries), because tensors
-live in preallocated, contiguous memory segments: and strings, being variable
-length, would preclude the use of this implementation.
+ Number of axes (rank)—For instance, a 3D tensor has three axes, and a matrix has two axes. This is also called the tensor’s ndim in Python libraries such as Numpy.
+ Shape—This is a tuple of integers that describes how many dimensions the tensor has along each axis. For instance, the previous matrix example has shape(3, 5), and the 3D tensor example has shape (3, 3, 5). A vector has a shape with a single element, such as (5,), whereas a scalar has an empty shape, ().
+ Data type (usually called dtype in Python libraries)—This is the type of the data contained in the tensor; for instance, a tensor’s type could be float32, uint8, float64, and so on. On rare occasions, you may see a char tensor. Note that string tensors don’t exist in Numpy (or in most other libraries), because tensors live in preallocated, contiguous memory segments: and strings, being variable length, would preclude the use of this implementation.
 
 #### 2.2.6 Manipulating tensors in Numpy
 
- Selecting specific elements in a tensor is called tensor slicing
+- Selecting specific elements in a tensor is called tensor slicing
  
 #### 2.2.7 The notion of data batches
 
-In general, the first axis (axis 0, because indexing starts at 0) in all data tensors you’ll
-come across in deep learning will be the samples axis
+- In general, the first axis (axis 0, because indexing starts at 0) in all data tensors you’ll come across in deep learning will be the samples axis
 
- In addition, deep-learning models don’t process an entire dataset at once; rather,
-they break the data into small batches.
+- In addition, deep-learning models don’t process an entire dataset at once; rather, they break the data into small batches.
 
-When considering such a batch tensor, the first axis (axis 0) is called the batch axis or
-batch dimension. This is a term you’ll frequently encounter when using Keras and other
-deep-learning libraries
+- When considering such a batch tensor, the first axis (axis 0) is called the batch axis or batch dimension. This is a term you’ll frequently encounter when using Keras and other deep-learning libraries
 
 #### 2.2.8 Real-world examples of data tensors
 
  Vector data—2D tensors of shape (samples, features)
- Timeseries data or sequence data—3D tensors of shape (samples, timesteps,
-features)
- Images—4D tensors of shape (samples, height, width, channels) or (samples,
-channels, height, width)
- Video—5D tensors of shape (samples, frames, height, width, channels) or
-(samples, frames, channels, height, width)
+ Timeseries data or sequence data—3D tensors of shape (samples, timesteps, features)
+ Images—4D tensors of shape (samples, height, width, channels) or (samples, channels, height, width)
+ Video—5D tensors of shape (samples, frames, height, width, channels) or (samples, frames, channels, height, width)
 
 #### 2.2.9 Vector data
 
-This is the most common case. In such a dataset, each single data point can be encoded
-as a vector, and thus a batch of data will be encoded as a 2D tensor (that is, an array of
-vectors), where the first axis is the samples axis and the second axis is the features axis.
+- In the most common case, in the dataset, each single data point can be encoded as a vector, and thus a batch of data will be encoded as a 2D tensor (that is, an array of vectors), where the first axis is the samples axis and the second axis is the features axis.
 
 #### 2.2.10 Timeseries data or sequence data
 
-Whenever time matters in your data (or the notion of sequence order), it makes sense
-to store it in a 3D tensor with an explicit time axis. Each sample can be encoded as a
-sequence of vectors (a 2D tensor), and thus a batch of data will be encoded as a 3D
-tensor
+- Whenever time matters in your data (or the notion of sequence order), it makes sense to store it in a 3D tensor with an explicit time axis. Each sample can be encoded as a sequence of vectors (a 2D tensor), and thus a batch of data will be encoded as a 3D tensor
 
-The time axis is always the second axis (axis of index 1), by convention
+- The time axis is always the second axis (axis of index 1), by convention
 
 #### 2.2.11 Image data
 
-Images typically have three dimensions: height, width, and color depth. Although
-grayscale images (like our MNIST digits) have only a single color channel and could
-thus be stored in 2D tensors, by convention image tensors are always 3D, with a onedimensional color channel for grayscale images.
+- Images typically have three dimensions: height, width, and color depth. Although grayscale images (like our MNIST digits) have only a single color channel and could thus be stored in 2D tensors, by convention image tensors are always 3D, with a one dimensional color channel for grayscale images.
 
-There are two conventions for shapes of images tensors: the channels-last convention
-(used by TensorFlow) and the channels-first convention (used by Theano).
+- There are two conventions for shapes of images tensors: the channels-last convention(used by TensorFlow) and the channels-first convention (used by Theano).
 
 #### 2.2.12 Video data
 
-Video data is one of the few types of real-world data for which you’ll need 5D tensors.
+- Video data is one of the few types of real-world data for which you’ll need 5D tensors.
 
-A video can be understood as a sequence of frames, each frame being a color image.
-Because each frame can be stored in a 3D tensor (height, width, color_depth), a
-sequence of frames can be stored in a 4D tensor (frames, height, width, color_
-depth), and thus a batch of different videos can be stored in a 5D tensor of shape
+- A video can be understood as a sequence of frames, each frame being a color image. Because each frame can be stored in a 3D tensor (height, width, color_depth), a sequence of frames can be stored in a 4D tensor (frames, height, width, color_depth), and thus a batch of different videos can be stored in a 5D tensor of shape
 
 ### 2.3 The gears of neural networks: tensor operations
 
- all transformations learned
-by deep neural networks can be reduced to a handful of tensor operations applied to
-tensors of numeric data.
+- All transformations learned by deep neural networks can be reduced to a handful of tensor operations applied to tensors of numeric data.
 
 #### 2.3.1 Element-wise operations
 
-element-wise operations: operations that are
-applied independently to each entry in the tensors being considered. 
+- Element-wise operations: operations that are applied independently to each entry in the tensors being considered. 
 
-This means
-these operations are highly amenable to massively parallel implementations 
+- This means these operations are highly amenable to massively parallel implementations 
 
-On the same principle, you can do element-wise multiplication, subtraction, and so on.
+- On the same principle, you can do element-wise multiplication, subtraction, and so on.
 
-In practice, when dealing with Numpy arrays, these operations are available as well-optimized built-in Numpy functions, which themselves delegate the heavy lifting to a
-Basic Linear Algebra Subprograms (BLAS) implementation if you have one installed
-(which you should). BLAS are low-level, highly parallel, efficient tensor-manipulation
-routines that are typically implemented in Fortran or C.
+- In practice, when dealing with Numpy arrays, these operations are available as well-optimized built-in Numpy functions, which themselves delegate the heavy lifting to a Basic Linear Algebra Subprograms (BLAS) implementation if you have one installed(which you should). 
+
+- BLAS are low-level, highly parallel, efficient tensor-manipulation routines that are typically implemented in Fortran or C.
 
 #### 2.3.2 Broadcasting
 
