@@ -407,3 +407,22 @@ called Backpropagation
 Backpropagation starts with the final loss value and works backward from the top layers to the bottom layers, applying the chain rule to compute the contribution that each parameter
 had in the loss value.
 
+#### 2.5 Looking back at our first example
+
+ this network consists of a chain of two Dense layers, that
+each layer applies a few simple tensor operations to the input data, and that these
+operations involve weight tensors.
+
+## 3 Getting started with neural networks
+
+This chapter is designed to get you started with using neural networks to solve real
+problems
+
+we’ll take a closer look at the core components of neural networks
+that we introduced in chapter 2: layers, networks, objective functions, and optimizers.
+
+We’ll give you a quick introduction to Keras, the Python deep-learning library
+that we’ll use throughout the book
+
+You’ll set up a deep-learning workstation, with TensorFlow, Keras, and GPU support
+
