@@ -426,3 +426,31 @@ that we’ll use throughout the book
 
 You’ll set up a deep-learning workstation, with TensorFlow, Keras, and GPU support
 
+#### 3.1 Anatomy of a neural network
+
+training a neural network revolves around the following objects:
+ Layers, which are combined into a network (or model)
+ The input data and corresponding targets
+ The loss function, which defines the feedback signal used for learning
+ The optimizer, which determines how learning proceeds
+
+#### 3.1.1 Layers: the building blocks of deep learning
+
+The fundamental data structure in neural networks is the layer
+
+A layer is a data-processing module that takes as input one or
+more tensors and that outputs one or more tensors.
+
+simple vector data, stored in 2D tensors of shape (samples,
+features), is often processed by densely connected layers, also called fully connected or dense
+layers 
+
+). Sequence data, stored in 3D tensors of shape (samples,
+timesteps, features), is typically processed by recurrent layers such as an LSTM layer.
+
+Image data, stored in 4D tensors, is usually processed by 2D convolution layers (Conv2D).
+
+When using Keras, you don’t have to worry about
+compatibility, because the layers you add to your models are dynamically built to
+match the shape of the incoming layer
+
