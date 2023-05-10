@@ -454,3 +454,24 @@ When using Keras, you don’t have to worry about
 compatibility, because the layers you add to your models are dynamically built to
 match the shape of the incoming layer
 
+#### 3.1.2 Models: networks of layers
+
+A deep-learning model is a directed, acyclic graph of layers. The most common
+instance is a linear stack of layers, mapping a single input to a single output.
+
+But as you move forward, you’ll be exposed to a much broader variety of network
+topologies
+
+ Some common ones include the following:
+ Two-branch networks
+ Multihead networks
+ Inception blocks
+
+By choosing a network topology, you constrain your space of possibilities
+(hypothesis space) to a specific series of tensor operations, mapping input data to output data. 
+What you’ll then be searching for is a good set of values for the weight tensors involved in these tensor operations.
+
+Picking the right network architecture is more an art than a science; and although
+there are some best practices and principles you can rely on, only practice can help
+you become a proper neural-network architect.
+
