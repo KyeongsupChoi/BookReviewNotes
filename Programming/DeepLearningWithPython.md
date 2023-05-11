@@ -475,3 +475,20 @@ Picking the right network architecture is more an art than a science; and althou
 there are some best practices and principles you can rely on, only practice can help
 you become a proper neural-network architect.
 
+#### 3.1.3 Loss functions and optimizers: keys to configuring the learning process
+
+Loss function (objective function)—The quantity that will be minimized during
+training. It represents a measure of success for the task at hand.
+
+Optimizer—Determines how the network will be updated based on the loss function. It implements a specific variant of stochastic gradient descent (SGD).
+
+A neural network that has multiple outputs may have multiple loss functions (one per
+output). But the gradient-descent process must be based on a single scalar loss value;
+so, for multiloss networks, all losses are combined (via averaging) into a single scalar
+quantity.
+
+ Choosing the right objective function for the right problem is extremely important: your network will take any shortcut it can, to minimize the loss; so if the objective
+doesn’t fully correlate with success for the task at hand, your network will end up
+doing things you may not have wanted.
+
+#### 3.2 Introduction to Keras
