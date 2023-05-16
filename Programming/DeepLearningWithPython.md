@@ -531,3 +531,19 @@ library for tensor operations called Eigen (http://eigen.tuxfamily.org). On GPU,
 TensorFlow wraps a library of well-optimized deep-learning operations called the
 NVIDIA CUDA Deep Neural Network library
 
+#### 3.2.2 Developing with Keras: a quick overview
+
+The typical
+Keras workflow looks just like that example:
+1. Define your training data: input tensors and target tensors.
+2. Define a network of layers (or model ) that maps your inputs to your targets.
+3. Configure the learning process by choosing a loss function, an optimizer, and
+some metrics to monitor.
+4. Iterate on your training data by calling the fit() method of your model.
+
+With the functional API, you’re manipulating the data tensors that the model processes and applying layers to this tensor as if they were functions.
+
+Finally, the learning process consists of passing Numpy arrays of input data (and the
+corresponding target data) to the model via the fit() method, similar to what you
+would do in Scikit-Learn and several other machine-learning libraries:
+
