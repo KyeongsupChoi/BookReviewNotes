@@ -547,3 +547,12 @@ Finally, the learning process consists of passing Numpy arrays of input data (an
 corresponding target data) to the model via the fit() method, similar to what you
 would do in Scikit-Learn and several other machine-learning libraries:
 
+### 3.3 Setting up a deep-learning workstation
+
+It’s highly recommended, although not strictly necessary, that you
+run deep-learning code on a modern NVIDIA GPU. Some applications—in particular,
+image processing with convolutional networks and sequence processing with recurrent neural networks—will be excruciatingly slow on CPU, even a fast multicore CPU.
+
+Whether you’re running locally or in the cloud, it’s better to be using a Unix workstation. Although it’s technically possible to use Keras on Windows (all three Keras
+backends support Windows), We don’t recommend it. 
+
