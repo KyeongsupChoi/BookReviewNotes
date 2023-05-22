@@ -614,3 +614,18 @@ you to work with vector data of manageable size.
 
 Because you’re restricting yourself to the top 10,000 most frequent words, no word
 index will exceed 10,000
+
+#### 3.4.2 Preparing the data
+
+You can’t feed lists of integers into a neural network. You have to turn your lists into
+tensors. There are two ways to do that:
+
+ Pad your lists so that they all have the same length, turn them into an integer
+tensor of shape (samples, word_indices), and then use as the first layer in
+your network a layer capable of handling such integer tensors
+
+ One-hot encode your lists to turn them into vectors of 0s and 1s. This would
+mean, for instance, turning the sequence [3, 5] into a 10,000-dimensional vector that would be all 0s except for indices 3 and 5, which would be 1s. Then you
+could use as the first layer in your network a Dense layer, capable of handling
+floating-point vector data.
+
