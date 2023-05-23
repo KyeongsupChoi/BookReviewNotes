@@ -629,3 +629,35 @@ mean, for instance, turning the sequence [3, 5] into a 10,000-dimensional vector
 could use as the first layer in your network a Dense layer, capable of handling
 floating-point vector data.
 
+#### 3.4.3 Building your network
+
+The input data is vectors, and the labels are scalars (1s and 0s): this is the easiest setup
+you’ll ever encounter. A type of network that performs well on such a problem is
+a simple stack of fully connected (Dense) layers with relu activations: Dense(16,
+activation='relu').
+
+ The argument being passed to each Dense layer (16) is the number of hidden
+units of the layer. A hidden unit is a dimension in the representation space of the layer.
+
+Having 16 hidden units means the weight matrix W will have shape (input_dimension,
+16): the dot product with W will project the input data onto a 16-dimensional representation space (and then you’ll add the bias vector b and apply the relu operation). 
+
+Having more hidden units (a higher-dimensional representation space)
+allows your network to learn more-complex representations, but it makes the network
+more computationally expensive and may lead to learning unwanted patterns
+
+There are two key architecture decisions to be made about such a stack of Dense layers:
+ How many layers to use
+ How many hidden units to choose for each layer
+
+Because you’re facing a
+binary classification problem and the output of your network is a probability (you end
+your network with a single-unit layer with a sigmoid activation), it’s best to use the
+binary_crossentropy loss. It isn’t the only viable choice: you could use, for instance,
+mean_squared_error. But crossentropy is usually the best choice when you’re dealing
+with models that output probabilities.
+
+ Crossentropy is a quantity from the field of Information Theory that measures the distance between probability distributions or, in this
+case, between the ground-truth distribution and your predictions.
+
+
