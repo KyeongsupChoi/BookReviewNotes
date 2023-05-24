@@ -660,4 +660,20 @@ with models that output probabilities.
  Crossentropy is a quantity from the field of Information Theory that measures the distance between probability distributions or, in this
 case, between the ground-truth distribution and your predictions.
 
+#### 3.4.4 Validating your approach
 
+In order to monitor during training the accuracy of the model on data it has never
+seen before, you’ll create a validation set by setting apart 10,000 samples from the
+original training data.
+
+ the training loss decreases with every epoch, and the training accuracy
+increases with every epoch. That’s what you would expect when running gradientdescent optimization—the quantity you’re trying to minimize should be less with
+every iteration. 
+
+But that isn’t the case for the validation loss and accuracy: they seem to
+peak at the fourth epoch. This is an example of what we warned against earlier: a
+model that performs better on the training data isn’t necessarily a model that will do
+better on data it has never seen before. In precise terms, what you’re seeing is overfitting: 
+
+This fairly naive approach achieves an accuracy of 88%. With state-of-the-art
+approaches, you should be able to get close to 95%.
