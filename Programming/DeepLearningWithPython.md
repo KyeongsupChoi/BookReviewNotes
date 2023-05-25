@@ -677,3 +677,38 @@ better on data it has never seen before. In precise terms, what you’re seeing 
 
 This fairly naive approach achieves an accuracy of 88%. With state-of-the-art
 approaches, you should be able to get close to 95%.
+
+#### 3.4.5 Using a trained network to generate predictions on new data
+
+You can generate the likelihood of reviews being positive by using the predict method:
+
+#### 3.4.6 Further experiments
+
+The following experiments will help convince you that the architecture choices you’ve
+made are all fairly reasonable, although there’s still room for improvement:
+ You used two hidden layers. Try using one or three hidden layers, and see how
+doing so affects validation and test accuracy.
+ Try using layers with more hidden units or fewer hidden units: 32 units, 64 units,
+and so on.
+ Try using the mse loss function instead of binary_crossentropy.
+ Try using the tanh activation (an activation that was popular in the early days of
+neural networks) instead of relu.
+
+#### 3.4.7 Wrapping up
+
+Here’s what you should take away from this example:
+ You usually need to do quite a bit of preprocessing on your raw data in order to
+be able to feed it—as tensors—into a neural network. Sequences of words can
+be encoded as binary vectors, but there are other encoding options, too.
+ Stacks of Dense layers with relu activations can solve a wide range of problems
+(including sentiment classification), and you’ll likely use them frequently.
+ In a binary classification problem (two output classes), your network should
+end with a Dense layer with one unit and a sigmoid activation: the output of
+your network should be a scalar between 0 and 1, encoding a probability.
+ With such a scalar sigmoid output on a binary classification problem, the loss
+function you should use is binary_crossentropy.
+ The rmsprop optimizer is generally a good enough choice, whatever your problem. That’s one less thing for you to worry about.
+ As they get better on their training data, neural networks eventually start overfitting and end up obtaining increasingly worse results on data they’ve never
+seen before. Be sure to always monitor performance on data that is outside of
+the training set. 
+
