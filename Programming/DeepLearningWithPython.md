@@ -712,3 +712,21 @@ function you should use is binary_crossentropy.
 seen before. Be sure to always monitor performance on data that is outside of
 the training set. 
 
+#### 3.5 Classifying newswires: a multiclass classification example
+
+you’ll build a network to classify Reuters newswires into 46 mutually
+exclusive topics. Because you have many classes, this problem is an instance of multiclass classification; and because each data point should be classified into only one category, the problem is more specifically an instance of single-label, multiclass classification.
+
+If each data point could belong to multiple categories (in this case, topics), you’d be
+facing a multilabel, multiclass classification problem
+
+#### 3.5.1 The Reuters dataset
+
+You’ll work with the Reuters dataset, a set of short newswires and their topics, published
+by Reuters in 1986. It’s a simple, widely used toy dataset for text classification. There
+are 46 different topics; some topics are more represented than others, but each topic
+has at least 10 examples in the training set.
+
+As with the IMDB dataset, the argument num_words=10000 restricts the data to the
+10,000 most frequently occurring words found in the data.
+
