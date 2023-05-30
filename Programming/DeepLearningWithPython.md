@@ -730,3 +730,9 @@ has at least 10 examples in the training set.
 As with the IMDB dataset, the argument num_words=10000 restricts the data to the
 10,000 most frequently occurring words found in the data.
 
+#### 3.5.2 Preparing the data
+
+To vectorize the labels, there are two possibilities: you can cast the label list as an integer tensor, or you can use one-hot encoding.
+
+One-hot encoding is a widely used format for categorical data, also called categorical encoding
+
