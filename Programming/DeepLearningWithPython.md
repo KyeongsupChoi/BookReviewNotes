@@ -736,3 +736,12 @@ To vectorize the labels, there are two possibilities: you can cast the label lis
 
 One-hot encoding is a widely used format for categorical data, also called categorical encoding
 
+#### 3.5.3 Building your network
+
+In a stack of Dense layers like that you’ve been using, each layer can only access information present in the output of the previous layer. If one layer drops some information
+relevant to the classification problem, this information can never be recovered by later
+layers: each layer can potentially become an information bottleneck.
+
+The best loss function to use in this case is categorical_crossentropy. It measures
+the distance between two probability distributions: here, between the probability distribution output by the network and the true distribution of the labels. By minimizing
+the distance between these two distributions, you train the network to output something as close as possible to the true labels.
