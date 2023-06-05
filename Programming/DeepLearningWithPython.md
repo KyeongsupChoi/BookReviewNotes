@@ -745,3 +745,14 @@ layers: each layer can potentially become an information bottleneck.
 The best loss function to use in this case is categorical_crossentropy. It measures
 the distance between two probability distributions: here, between the probability distribution output by the network and the true distribution of the labels. By minimizing
 the distance between these two distributions, you train the network to output something as close as possible to the true labels.
+
+#### 3.5.4 Validating your approach
+
+ let’s train the network for 20 epochs.
+ 
+The network begins to overfit after nine epochs
+
+This approach reaches an accuracy of ~80%. With a balanced binary classification
+problem, the accuracy reached by a purely random classifier would be 50%. But in
+this case it’s closer to 19%, so the results seem pretty good, at least when compared to
+a random baseline:
