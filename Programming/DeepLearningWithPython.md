@@ -756,3 +756,8 @@ This approach reaches an accuracy of ~80%. With a balanced binary classification
 problem, the accuracy reached by a purely random classifier would be 50%. But in
 this case it’s closer to 19%, so the results seem pretty good, at least when compared to
 a random baseline:
+
+#### 3.5.5 Generating predictions on new data
+
+You can verify that the predict method of the model instance returns a probability
+distribution over all 46 topics. Let’s generate topic predictions for all of the test data
