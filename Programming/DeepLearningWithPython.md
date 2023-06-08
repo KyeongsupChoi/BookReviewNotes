@@ -761,3 +761,13 @@ a random baseline:
 
 You can verify that the predict method of the model instance returns a probability
 distribution over all 46 topics. Let’s generate topic predictions for all of the test data
+
+#### 3.5.6 A different way to handle the labels and the loss
+
+The loss
+function used in listing 3.21, categorical_crossentropy, expects the labels to follow
+a categorical encoding. With integer labels, you should use sparse_categorical_
+
+This new loss function is still mathematically the same as categorical_crossentropy;
+it just has a different interface.
+
