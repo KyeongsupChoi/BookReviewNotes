@@ -771,3 +771,15 @@ a categorical encoding. With integer labels, you should use sparse_categorical_
 This new loss function is still mathematically the same as categorical_crossentropy;
 it just has a different interface.
 
+#### 3.5.7 The importance of having sufficiently large intermediate layers
+
+We mentioned earlier that because the final outputs are 46-dimensional, you should
+avoid intermediate layers with many fewer than 46 hidden units. Now let’s see what
+happens when you introduce an information bottleneck by having intermediate layers
+that are significantly less than 46-dimensional
+
+The network now peaks at ~71% validation accuracy, an 8% absolute drop. This drop
+is mostly due to the fact that you’re trying to compress a lot of information (enough
+information to recover the separation hyperplanes of 46 classes) into an intermediate
+space that is too low-dimensional. The network is able to cram most of the necessary
+information into these eight-dimensional representations, but not all of it
