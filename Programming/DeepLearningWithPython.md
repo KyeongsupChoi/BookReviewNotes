@@ -808,3 +808,10 @@ loss function
 creating information bottlenecks in your network due to intermediate layers
 that are too small.
 
+### 3.6 Predicting house prices: a regression example
+
+The two previous examples were considered classification problems, where the goal
+was to predict a single discrete label of an input data point. Another common type of
+machine-learning problem is regression, which consists of predicting a continuous
+value instead of a discrete label:
+
