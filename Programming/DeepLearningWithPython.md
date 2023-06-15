@@ -815,3 +815,12 @@ was to predict a single discrete label of an input data point. Another common ty
 machine-learning problem is regression, which consists of predicting a continuous
 value instead of a discrete label:
 
+#### 3.6.1 The Boston Housing Price dataset
+
+You’ll attempt to predict the median price of homes in a given Boston suburb in the
+mid-1970s, given data points about the suburb at the time, such as the crime rate, the
+local property tax rate, and so on. The dataset you’ll use has an interesting difference
+from the two previous examples. It has relatively few data points: only 506, split
+between 404 training samples and 102 test samples. And each feature in the input data
+(for example, the crime rate) has a different scale
+
