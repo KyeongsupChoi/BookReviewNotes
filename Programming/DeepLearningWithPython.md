@@ -824,3 +824,15 @@ from the two previous examples. It has relatively few data points: only 506, spl
 between 404 training samples and 102 test samples. And each feature in the input data
 (for example, the crime rate) has a different scale
 
+#### 3.6.2 Preparing the data
+
+It would be problematic to feed into a neural network values that all take wildly different ranges. The network might be able to automatically adapt to such heterogeneous
+data, but it would definitely make learning more difficult. A widespread best practice
+to deal with such data is to do feature-wise normalization: for each feature in the input
+data (a column in the input data matrix), you subtract the mean of the feature and
+divide by the standard deviation, so that the feature is centered around 0 and has a
+unit standard deviation. This is easily done in Numpy.
+
+Note that the quantities used for normalizing the test data are computed using the
+training data. You should never use in your workflow any quantity computed on the
+test data, even for something as simple as data normalization.
