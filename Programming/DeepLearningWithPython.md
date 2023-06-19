@@ -836,3 +836,22 @@ unit standard deviation. This is easily done in Numpy.
 Note that the quantities used for normalizing the test data are computed using the
 training data. You should never use in your workflow any quantity computed on the
 test data, even for something as simple as data normalization.
+
+#### 3.6.3 Building your network
+
+In general, the less training data you have, the worse overfitting will be, and using a small network is one way to mitigate overfitting
+
+The network ends with a single unit and no activation (it will be a linear layer). This is
+a typical setup for scalar regression (a regression where you’re trying to predict a single
+continuous value). Applying an activation function would constrain the range the output can take; for instance, if you applied a sigmoid activation function to the last layer,
+the network could only learn to predict values between 0 and 1. Here, because the last
+layer is purely linear, the network is free to learn to predict values in any range.
+
+Note that you compile the network with the mse loss function—mean squared error,
+the square of the difference between the predictions and the targets. This is a widely
+used loss function for regression problems.
+
+You’re also monitoring a new metric during training: mean absolute error (MAE). It’s
+the absolute value of the difference between the predictions and the targets. For
+instance, an MAE of 0.5 on this problem would mean your predictions are off by $500
+on average.
