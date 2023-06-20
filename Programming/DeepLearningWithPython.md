@@ -855,3 +855,35 @@ You’re also monitoring a new metric during training: mean absolute error (MAE)
 the absolute value of the difference between the predictions and the targets. For
 instance, an MAE of 0.5 on this problem would mean your predictions are off by $500
 on average.
+
+#### 3.6.4 Validating your approach using K-fold validation
+
+To evaluate your network while you keep adjusting its parameters (such as the number
+of epochs used for training), you could split the data into a training set and a validation set, as you did in the previous examples. But because you have so few data points,
+the validation set would end up being very small (for instance, about 100 examples).
+As a consequence, the validation scores might change a lot depending on which data
+points you chose to use for validation and which you chose for training: the validation
+scores might have a high variance with regard to the validation split. This would prevent you from reliably evaluating your model.
+
+The best practice in such situations is to use K-fold cross-validation (see figure 3.11).
+It consists of splitting the available data into K partitions (typically K = 4 or 5), instantiating K identical models, and training each one on K – 1 partitions while evaluating on
+the remaining partition. The validation score for the model used is then the average of
+the K validation scores obtained.
+
+The different runs do indeed show rather different validation scores, from 2.6 to 3.2.
+The average (3.0) is a much more reliable metric than any single score—that’s the
+entire point of K-fold cross-validation.
+
+It may be a little difficult to see the plot, due to scaling issues and relatively high variance. Let’s do the following:
+ Omit the first 10 data points, which are on a different scale than the rest of the curve.
+ Replace each point with an exponential moving average of the previous points,
+to obtain a smooth curve.
+
+According to this plot, validation MAE stops improving significantly after 80 epochs.
+Past that point, you start overfitting.
+
+Once you’re finished tuning other parameters of the model (in addition to the
+number of epochs, you could also adjust the size of the hidden layers), you can train a
+final production model on all of the training data, with the best parameters, and then
+look at its performance on the test data.
+
