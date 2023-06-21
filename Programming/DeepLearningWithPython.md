@@ -887,3 +887,15 @@ number of epochs, you could also adjust the size of the hidden layers), you can 
 final production model on all of the training data, with the best parameters, and then
 look at its performance on the test data.
 
+#### 3.6.5 Wrapping up
+
+ Regression is done using different loss functions than what we used for classification. Mean squared error (MSE) is a loss function commonly used for regression.
+ Similarly, evaluation metrics to be used for regression differ from those used for
+classification; naturally, the concept of accuracy doesn’t apply for regression. A
+common regression metric is mean absolute error (MAE).
+ When features in the input data have values in different ranges, each feature
+should be scaled independently as a preprocessing step.
+ When there is little data available, using K-fold validation is a great way to reliably evaluate a model.
+ When little training data is available, it’s preferable to use a small network with
+few hidden layers (typically only one or two), in order to avoid severe overfitting. 
+
