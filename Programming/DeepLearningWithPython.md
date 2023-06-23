@@ -899,3 +899,53 @@ should be scaled independently as a preprocessing step.
  When little training data is available, it’s preferable to use a small network with
 few hidden layers (typically only one or two), in order to avoid severe overfitting. 
 
+## 4 Fundamentals of machine learning
+
+This chapter will formalize some of your new intuition into a solid conceptual
+framework for attacking and solving deep-learning problems. We’ll consolidate all
+of these concepts—model evaluation, data preprocessing and feature engineering,
+and tackling overfitting—into a detailed seven-step workflow for tackling any
+machine-learning task.
+
+### 4.1 Four branches of machine learning
+
+binary classification, multiclass classification, and scalar
+regression. All three are instances of supervised learning, where the goal is to learn the
+relationship between training inputs and training targets.
+
+Supervised learning is just the tip of the iceberg—machine learning is a vast field
+with a complex subfield taxonomy. Machine-learning algorithms generally fall into
+four broad categories, described in the following sections
+
+#### 4.1.1 Supervised learning
+
+ It consists of learning to map input data to
+known targets (also called annotations), given a set of examples (often annotated by
+humans).
+
+Generally, almost all applications of deep learning
+that are in the spotlight these days belong in this category, such as optical character
+recognition, speech recognition, image classification, and language translation.
+
+ Sequence generation—Given a picture, predict a caption describing it. Sequence
+generation can sometimes be reformulated as a series of classification problems
+(such as repeatedly predicting a word or token in a sequence).
+ Syntax tree prediction—Given a sentence, predict its decomposition into a syntax
+tree.
+ Object detection—Given a picture, draw a bounding box around certain objects
+inside the picture. This can also be expressed as a classification problem (given
+many candidate bounding boxes, classify the contents of each one) or as a joint
+classification and regression problem, where the bounding-box coordinates are
+predicted via vector regression.
+ Image segmentation—Given a picture, draw a pixel-level mask on a specific object. 
+
+#### 4.1.2 Unsupervised learning
+
+This branch of machine learning consists of finding interesting transformations of the
+input data without the help of any targets, for the purposes of data visualization, data
+compression, or data denoising, or to better understand the correlations present in
+the data at hand. Unsupervised learning is the bread and butter of data analytics, and
+it’s often a necessary step in better understanding a dataset before attempting to solve
+a supervised-learning problem. Dimensionality reduction and clustering are well-known
+categories of unsupervised learning. 
+
