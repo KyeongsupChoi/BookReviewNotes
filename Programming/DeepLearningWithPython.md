@@ -949,3 +949,18 @@ it’s often a necessary step in better understanding a dataset before attemptin
 a supervised-learning problem. Dimensionality reduction and clustering are well-known
 categories of unsupervised learning. 
 
+#### 4.1.3 Self-supervised learning
+
+This is a specific instance of supervised learning, but it’s different enough that it
+deserves its own category. Self-supervised learning is supervised learning without human-annotated labels—you can think of it as supervised learning without any
+humans in the loop. There are still labels involved (because the learning has to be
+supervised by something), but they’re generated from the input data, typically using a
+heuristic algorithm.
+
+ For instance, autoencoders are a well-known instance of self-supervised learning,
+where the generated targets are the input, unmodified. In the same way, trying to predict the next frame in a video, given past frames, or the next word in a text, given previous words, are instances of self-supervised learning (temporally supervised learning, in this
+case: supervision comes from future input data). Note that the distinction between
+supervised, self-supervised, and unsupervised learning can be blurry sometimes—these
+categories are more of a continuum without solid borders. Self-supervised learning can
+be reinterpreted as either supervised or unsupervised learning, depending on whether
+you pay attention to the learning mechanism or to the context of its application.
