@@ -964,3 +964,14 @@ supervised, self-supervised, and unsupervised learning can be blurry sometimes�
 categories are more of a continuum without solid borders. Self-supervised learning can
 be reinterpreted as either supervised or unsupervised learning, depending on whether
 you pay attention to the learning mechanism or to the context of its application.
+
+#### 4.1.4 Reinforcement learning
+
+In reinforcement learning,
+an agent receives information about its environment and learns to choose actions that
+will maximize some reward. For instance, a neural network that “looks” at a videogame screen and outputs game actions in order to maximize its score can be trained
+via reinforcement learning.
+
+ In time, however, we expect to see reinforcement learning take over an increasingly large range of real-world applications:
+self-driving cars, robotics, resource management, education, and so on. 
+
