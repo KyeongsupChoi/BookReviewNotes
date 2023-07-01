@@ -90,13 +90,13 @@ __기술 촉발__: technology spark
 
 __과임 기대 정성__: Excessive Expectation Sincerity
 
-__한멸기__: 
+__한멸기__: Period of Disillusionment
 
 __겨몽기__: winter season
 
-__수용__: 
+__수용__: Acceptance
 
-__감당한__: 
+__감당한__: Handled, endured
 
 대규모, 규모는 scale이라는 뜻이다. 
 
