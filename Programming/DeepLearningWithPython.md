@@ -989,3 +989,31 @@ well on never-before-seen data—and overfitting is the central obstacle. You ca
 control that which you can observe, so it’s crucial to be able to reliably measure the
 generalization power of your model. The following sections look at strategies for mitigating overfitting and maximizing generalization. In this section, we’ll focus on how
 to measure generalization: how to evaluate machine-learning models.
+
+#### 4.2.1 Training, validation, and test sets
+
+Evaluating a model always boils down to splitting the available data into three sets:
+training, validation, and test. You train on the training data and evaluate your model
+on the validation data. Once your model is ready for prime time, you test it one final
+time on the test data
+
+The reason is that developing a model always involves tuning its configuration: for
+example, choosing the number of layers or the size of the layers (called the hyperparameters of the model, to distinguish them from the parameters, which are the network’s weights). You do this tuning by using as a feedback signal the performance of
+the model on the validation data. In essence, this tuning is a form of learning: a search
+for a good configuration in some parameter space. As a result, tuning the configuration of the model based on its performance on the validation set can quickly result in
+overfitting to the validation set, even though your model is never directly trained on it.
+
+ Central to this phenomenon is the notion of information leaks. Every time you tune
+a hyperparameter of your model based on the model’s performance on the validation
+set, some information about the validation data leaks into the model. If you do this
+only once, for one parameter, then very few bits of information will leak, and your validation set will remain reliable to evaluate the model. But if you repeat this many
+times—running one experiment, evaluating on the validation set, and modifying your
+model as a result—then you’ll leak an increasingly significant amount of information
+about the validation set into the model.
+
+At the end of the day, you’ll end up with a model that performs artificially well on
+the validation data, because that’s what you optimized it for. You care about performance on completely new data, not the validation data, so you need to use a completely different, never-before-seen dataset to evaluate the model: the test dataset. Your
+model shouldn’t have had access to any information about the test set, even indirectly
+
+If anything about the model has been tuned based on test set performance, then your
+measure of generalization will be flawed.
