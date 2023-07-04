@@ -24,8 +24,3 @@ Notes and Reviews on Books I read
    |                          
    |-- ************************************************************************
 ```
-## Active Books
-
--AtlasoftheHeart
-
--
