@@ -1018,3 +1018,26 @@ model shouldn’t have had access to any information about the test set, even in
 If anything about the model has been tuned based on test set performance, then your
 measure of generalization will be flawed.
 
+#### 4.2.2 Things to keep in mind
+
+Keep an eye out for the following when you’re choosing an evaluation protocol:
+
+Data representativeness—You want both your training set and test set to be representative of the data at hand. For instance, if you’re trying to classify images of
+digits, and you’re starting from an array of samples where the samples are
+ordered by their class, taking the first 80% of the array as your training set and
+the remaining 20% as your test set will result in your training set containing
+only classes 0–7, whereas your test set contains only classes 8–9. This seems like
+a ridiculous mistake, but it’s surprisingly common. For this reason, you usually
+should randomly shuffle your data before splitting it into training and test sets.
+
+The arrow of time—If you’re trying to predict the future given the past (for example, tomorrow’s weather, stock movements, and so on), you should not randomly shuffle your data before splitting it, because doing so will create a
+temporal leak: your model will effectively be trained on data from the future. In
+such situations, you should always make sure all data in your test set is posterior
+to the data in the training set.
+
+Redundancy in your data—If some data points in your data appear twice (fairly
+common with real-world data), then shuffling the data and splitting it into a
+training set and a validation set will result in redundancy between the training
+and validation sets. In effect, you’ll be testing on part of your training data,
+which is the worst thing you can do! Make sure your training set and validation
+set are disjoint. 
