@@ -1041,3 +1041,10 @@ training set and a validation set will result in redundancy between the training
 and validation sets. In effect, you’ll be testing on part of your training data,
 which is the worst thing you can do! Make sure your training set and validation
 set are disjoint. 
+
+### 4.3 Data preprocessing, feature engineering, and feature learning
+
+In addition to model evaluation, an important question we must tackle before we dive
+deeper into model development is the following: how do you prepare the input data
+and targets before feeding them into a neural network? Many data-preprocessing and
+feature-engineering techniques are domain specific
