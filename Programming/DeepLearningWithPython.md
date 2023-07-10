@@ -1048,3 +1048,32 @@ In addition to model evaluation, an important question we must tackle before we 
 deeper into model development is the following: how do you prepare the input data
 and targets before feeding them into a neural network? Many data-preprocessing and
 feature-engineering techniques are domain specific
+
+#### 4.4 Overfitting and underfitting
+
+Overfitting happens in every
+machine-learning problem. Learning how to deal with overfitting is essential to mastering machine learning
+
+The fundamental issue in machine learning is the tension between optimization
+and generalization. Optimization refers to the process of adjusting a model to get the
+best performance possible on the training data (the learning in machine learning),
+whereas generalization refers to how well the trained model performs on data it has
+never seen before.
+
+At the beginning of training, optimization and generalization are correlated: the
+lower the loss on training data, the lower the loss on test data. While this is happening,
+your model is said to be underfit: there is still progress to be made; the network hasn’t
+yet modeled all relevant patterns in the training data. But after a certain number of
+iterations on the training data, generalization stops improving, and validation metrics
+stall and then begin to degrade: the model is starting to overfit. That is, it’s beginning
+to learn patterns that are specific to the training data but that are misleading or irrelevant when it comes to new data.
+
+To prevent a model from learning misleading or irrelevant patterns found in the
+training data, the best solution is to get more training data. A model trained on more data
+will naturally generalize better. When that isn’t possible, the next-best solution is to
+modulate the quantity of information that your model is allowed to store or to add
+constraints on what information it’s allowed to store. If a network can only afford to
+memorize a small number of patterns, the optimization process will force it to focus
+on the most prominent patterns, which have a better chance of generalizing well.
+
+The processing of fighting overfitting this way is called regularization.
