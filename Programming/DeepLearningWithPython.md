@@ -1077,3 +1077,30 @@ memorize a small number of patterns, the optimization process will force it to f
 on the most prominent patterns, which have a better chance of generalizing well.
 
 The processing of fighting overfitting this way is called regularization.
+
+#### 4.4.1 Reducing the network’s size
+
+The simplest way to prevent overfitting is to reduce the size of the model: the number
+of learnable parameters in the model
+
+In deep learning, the number of learnable parameters in a model is often referred to as the model’s capacity
+
+ Intuitively, a model with
+more parameters has more memorization capacity and therefore can easily learn a perfect dictionary-like mapping between training samples and their targets—a mapping
+without any generalization power.
+
+Always keep this in mind: deeplearning models tend to be good at fitting to the training data, but the real challenge
+is generalization, not fitting.
+
+On the other hand, if the network has limited memorization resources, it won’t be
+able to learn this mapping as easily; thus, in order to minimize its loss, it will have to
+resort to learning compressed representations that have predictive power regarding
+the targets—precisely the type of representations we’re interested in. At the same
+time, keep in mind that you should use models that have enough parameters that they
+don’t underfit: your model shouldn’t be starved for memorization resources. There is
+a compromise to be found between too much capacity and not enough capacity.
+
+You must evaluate an array of different architectures (on your validation set, not on your test set, of course) in order to find the
+correct model size for your data. The general workflow to find an appropriate model
+size is to start with relatively few layers and parameters, and increase the size of the layers or add new layers until you see diminishing returns with regard to validation loss.
+
