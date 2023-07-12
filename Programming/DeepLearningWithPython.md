@@ -1104,3 +1104,23 @@ You must evaluate an array of different architectures (on your validation set, n
 correct model size for your data. The general workflow to find an appropriate model
 size is to start with relatively few layers and parameters, and increase the size of the layers or add new layers until you see diminishing returns with regard to validation loss.
 
+#### 4.4.2 Adding weight regularization
+
+given some training data and a network architecture, multiple sets of weight
+values (multiple models) could explain the data. Simpler models are less likely to overfit than complex ones.
+
+A simple model in this context is a model where the distribution of parameter values
+has less entropy (or a model with fewer parameters, as you saw in the previous section). Thus a common way to mitigate overfitting is to put constraints on the complexity of a network by forcing its weights to take only small values, which makes the
+distribution of weight values more regular. This is called weight regularization, and it’s
+done by adding to the loss function of the network a cost associated with having large
+weights.
+
+ L1 regularization—The cost added is proportional to the absolute value of the
+weight coefficients (the L1 norm of the weights).
+ L2 regularization—The cost added is proportional to the square of the value of the
+weight coefficients (the L2 norm of the weights). L2 regularization is also called
+weight decay in the context of neural networks. Don’t let the different name confuse you: weight decay is mathematically the same as L2 regularization.
+
+In Keras, weight regularization is added by passing weight regularizer instances to layers
+as keyword arguments. Let’s add L2 weight regularization to the movie-review classification network.
+
