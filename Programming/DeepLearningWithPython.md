@@ -1124,3 +1124,28 @@ weight decay in the context of neural networks. Don’t let the different name c
 In Keras, weight regularization is added by passing weight regularizer instances to layers
 as keyword arguments. Let’s add L2 weight regularization to the movie-review classification network.
 
+#### 4.4.3 Adding dropout
+
+Dropout is one of the most effective and most commonly used regularization techniques for neural networks,
+
+Dropout, applied to a layer, consists of randomly dropping out
+(setting to zero) a number of output features of the layer during training. Let’s say a
+given layer would normally return a vector [0.2, 0.5, 1.3, 0.8, 1.1] for a given input
+sample during training. After applying dropout, this vector will have a few zero entries
+distributed at random: for example, [0, 0.5, 1.3, 0, 1.1].
+
+ The dropout rate is the fraction
+of the features that are zeroed out; it’s usually set between 0.2 and 0.5. At test time, no
+units are dropped out; instead, the layer’s output values are scaled down by a factor
+equal to the dropout rate, to balance for the fact that more units are active than at
+training time.
+
+randomly removing a different
+subset of neurons on each example would prevent conspiracies and thus reduce overfitting
+
+The core idea is that introducing noise in the output values of a layer can
+break up happenstance patterns that aren’t significant (what Hinton refers to as conspiracies), which the network will start memorizing if no noise is present.
+
+ In Keras, you can introduce dropout in a network via the Dropout layer, which is
+applied to the output of the layer right before it:
+
