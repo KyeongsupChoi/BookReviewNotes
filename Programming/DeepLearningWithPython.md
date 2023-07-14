@@ -1149,3 +1149,9 @@ break up happenstance patterns that aren’t significant (what Hinton refers to 
  In Keras, you can introduce dropout in a network via the Dropout layer, which is
 applied to the output of the layer right before it:
 
+### 4.5 The universal workflow of machine learning
+
+In this section, we’ll present a universal blueprint that you can use to attack and solve
+any machine-learning problem. The blueprint ties together the concepts you’ve
+learned about in this chapter: problem definition, evaluation, feature engineering,
+and fighting overfitting.
