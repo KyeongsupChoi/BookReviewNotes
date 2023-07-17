@@ -1155,3 +1155,38 @@ In this section, we’ll present a universal blueprint that you can use to attac
 any machine-learning problem. The blueprint ties together the concepts you’ve
 learned about in this chapter: problem definition, evaluation, feature engineering,
 and fighting overfitting.
+
+#### 4.5.1 Defining the problem and assembling a dataset
+
+First, you must define the problem at hand:
+ What will your input data be? What are you trying to predict? You can only learn
+to predict something if you have available training data: for example, you can
+only learn to classify the sentiment of movie reviews if you have both movie
+reviews and sentiment annotations available. As such, data availability is usually
+the limiting factor at this stage (unless you have the means to pay people to collect data for you).
+ What type of problem are you facing? Is it binary classification? Multiclass classification? Scalar regression? Vector regression? Multiclass, multilabel classification? Something else, like clustering, generation, or reinforcement learning?
+Identifying the problem type will guide your choice of model architecture, loss
+function, and so on
+
+You can’t move to the next stage until you know what your inputs and outputs are, and
+what data you’ll use. Be aware of the hypotheses you make at this stage:
+ You hypothesize that your outputs can be predicted given your inputs.
+ You hypothesize that your available data is sufficiently informative to learn the
+relationship between inputs and outputs.
+
+One class of unsolvable problems you should be aware of is nonstationary problems
+
+One big issue is that the kinds of clothes people buy change from season
+to season: clothes buying is a nonstationary phenomenon over the scale of a few
+months. What you’re trying to model changes over time. 
+
+In this case, the right move is
+to constantly retrain your model on data from the recent past, or gather data at a
+timescale where the problem is stationary. For a cyclical problem like clothes buying, a
+few years’ worth of data will suffice to capture seasonal variation—but remember to
+make the time of the year an input of your model!
+
+Keep in mind that machine learning can only be used to memorize patterns that
+are present in your training data. You can only recognize what you’ve seen before.
+Using machine learning trained on past data to predict the future is making the
+assumption that the future will behave like the past. That often isn’t the case. 
