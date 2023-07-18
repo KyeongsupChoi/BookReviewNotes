@@ -1190,3 +1190,21 @@ Keep in mind that machine learning can only be used to memorize patterns that
 are present in your training data. You can only recognize what you’ve seen before.
 Using machine learning trained on past data to predict the future is making the
 assumption that the future will behave like the past. That often isn’t the case. 
+
+#### 4.5.2 Choosing a measure of success
+
+To control something, you need to be able to observe it. To achieve success, you must
+define what you mean by success—accuracy? Precision and recall? Customer-retention
+rate? Your metric for success will guide the choice of a loss function: what your model
+will optimize. It should directly align with your higher-level goals, such as the success
+of your business
+
+For balanced-classification problems, where every class is equally likely, accuracy and
+area under the receiver operating characteristic curve (ROC AUC) are common metrics. For
+class-imbalanced problems, you can use precision and recall. For ranking problems or
+multilabel classification, you can use mean average precision. And it isn’t uncommon
+to have to define your own custom metric by which to measure success. To get a sense
+of the diversity of machine-learning success metrics and how they relate to different
+problem domains, it’s helpful to browse the data science competitions on Kaggle
+(https://kaggle.com); they showcase a wide range of problems and evaluation metrics.
+
