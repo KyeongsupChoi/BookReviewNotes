@@ -1208,3 +1208,13 @@ of the diversity of machine-learning success metrics and how they relate to diff
 problem domains, it’s helpful to browse the data science competitions on Kaggle
 (https://kaggle.com); they showcase a wide range of problems and evaluation metrics.
 
+#### 4.5.3 Deciding on an evaluation protocol
+
+Once you know what you’re aiming for, you must establish how you’ll measure your
+current progress. We’ve previously reviewed three common evaluation protocols:
+ Maintaining a hold-out validation set—The way to go when you have plenty of
+data
+ Doing K-fold cross-validation—The right choice when you have too few samples
+for hold-out validation to be reliable
+ Doing iterated K-fold validation—For performing highly accurate model evaluation when little data is available
+Just pick one of these. In most cases, the first will work well enough. 
