@@ -1218,3 +1218,13 @@ data
 for hold-out validation to be reliable
  Doing iterated K-fold validation—For performing highly accurate model evaluation when little data is available
 Just pick one of these. In most cases, the first will work well enough. 
+
+#### 4.5.4 Preparing your data
+
+Once you know what you’re training on, what you’re optimizing for, and how to evaluate your approach, you’re almost ready to begin training models. But first, you should
+format your data in a way that can be fed into a machine-learning model—here, we’ll
+assume a deep neural network:
+ As you saw previously, your data should be formatted as tensors.
+ The values taken by these tensors should usually be scaled to small values: for
+example, in the [-1, 1] range or [0, 1] range.
+
