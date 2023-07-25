@@ -1227,4 +1227,47 @@ assume a deep neural network:
  As you saw previously, your data should be formatted as tensors.
  The values taken by these tensors should usually be scaled to small values: for
 example, in the [-1, 1] range or [0, 1] range.
+ If different features take values in different ranges (heterogeneous data), then
+the data should be normalized.
+ You may want to do some feature engineering, especially for small-data problems.
+Once your tensors of input data and target data are ready, you can begin to train models. 
 
+#### 4.5.5 Developing a model that does better than a baseline
+
+Your goal at this stage is to achieve statistical power: that is, to develop a small model
+that is capable of beating a dumb baseline. In the MNIST digit-classification example,
+anything that achieves an accuracy greater than 0.1 can be said to have statistical
+power; in the IMDB example, it’s anything with an accuracy greater than 0.5.
+
+Note that it’s not always possible to achieve statistical power. If you can’t beat a random baseline after trying multiple reasonable architectures, it may be that the answer
+to the question you’re asking isn’t present in the input data. Remember that you make
+two hypotheses:
+
+ You hypothesize that your outputs can be predicted given your inputs.
+ You hypothesize that the available data is sufficiently informative to learn the
+relationship between inputs and outputs.
+
+Assuming that things go well, you need to make three key choices to build your
+first working model:
+ Last-layer activation—This establishes useful constraints on the network’s output. For instance, the IMDB classification example used sigmoid in the last
+layer; the regression example didn’t use any last-layer activation; and so on.
+ Loss function—This should match the type of problem you’re trying to solve. For
+instance, the IMDB example used binary_crossentropy, the regression example used mse, and so on.
+ Optimization configuration—What optimizer will you use? What will its learning
+rate be? In most cases, it’s safe to go with rmsprop and its default learning rate.
+
+Regarding the choice of a loss function, note that it isn’t always possible to directly
+optimize for the metric that measures success on a problem. Sometimes there is no
+easy way to turn a metric into a loss function; loss functions, after all, need to be computable given only a mini-batch of data (ideally, a loss function should be computable
+for as little as a single data point) and must be differentiable (otherwise, you can’t use
+backpropagation to train your network).
+
+In general, you
+can hope that the lower the crossentropy gets, the higher the ROC AUC will be.
+
+Problem type: Last-layer activation: Loss function
+Binary classification: sigmoid: binary_crossentropy
+Multiclass, single-label classification: softmax: categorical_crossentropy
+Multiclass, multilabel classification: sigmoid: binary_crossentropy
+Regression to arbitrary values: None: mse
+Regression to values between 0 and 1: sigmoid: mse or binary_crossentropy
