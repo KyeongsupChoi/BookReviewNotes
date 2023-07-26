@@ -1271,3 +1271,23 @@ Multiclass, single-label classification: softmax: categorical_crossentropy
 Multiclass, multilabel classification: sigmoid: binary_crossentropy
 Regression to arbitrary values: None: mse
 Regression to values between 0 and 1: sigmoid: mse or binary_crossentropy
+
+#### 4.5.6 Scaling up: developing a model that overfits
+
+Once you’ve obtained a model that has statistical power, the question becomes, is your
+model sufficiently powerful? Does it have enough layers and parameters to properly
+model the problem at hand? For instance, a network with a single hidden layer with
+two units would have statistical power on MNIST but wouldn’t be sufficient to solve the
+problem well. Remember that the universal tension in machine learning is between
+optimization and generalization; the ideal model is one that stands right at the border
+between underfitting and overfitting; between undercapacity and overcapacity. To figure out where this border lies, first you must cross it
+
+To figure out how big a model you’ll need, you must develop a model that overfits.
+This is fairly easy:
+1 Add layers.
+2 Make the layers bigger.
+3 Train for more epochs.
+
+Always monitor the training loss and validation loss, as well as the training and validation values for any metrics you care about. When you see that the model’s performance on the validation data begins to degrade, you’ve achieved overfitting.
+ The next stage is to start regularizing and tuning the model, to get as close as possible to the ideal model that neither underfits nor overfits. 
+
