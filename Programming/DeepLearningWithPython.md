@@ -1291,3 +1291,29 @@ This is fairly easy:
 Always monitor the training loss and validation loss, as well as the training and validation values for any metrics you care about. When you see that the model’s performance on the validation data begins to degrade, you’ve achieved overfitting.
  The next stage is to start regularizing and tuning the model, to get as close as possible to the ideal model that neither underfits nor overfits. 
 
+#### 4.5.7 Regularizing your model and tuning your hyperparameters
+
+This step will take the most time: you’ll repeatedly modify your model, train it, evaluate on your validation data (not the test data, at this point), modify it again, and
+repeat, until the model is as good as it can get.
+
+These are some things you should try:
+ Add dropout.
+ Try different architectures: add or remove layers.
+ Add L1 and/or L2 regularization.
+ Try different hyperparameters (such as the number of units per layer or the
+learning rate of the optimizer) to find the optimal configuration.
+ Optionally, iterate on feature engineering: add new features, or remove features that don’t seem to be informative.
+
+Be mindful of the following: every time you use feedback from your validation process
+to tune your model, you leak information about the validation process into the model.
+Repeated just a few times, this is innocuous; but done systematically over many iterations, it will eventually cause your model to overfit to the validation process (even
+though no model is directly trained on any of the validation data). This makes the
+evaluation process less reliable.
+
+ Once you’ve developed a satisfactory model configuration, you can train your final
+production model on all the available data (training and validation) and evaluate it
+one last time on the test set. If it turns out that performance on the test set is significantly worse than the performance measured on the validation data, this may mean
+either that your validation procedure wasn’t reliable after all, or that you began overfitting to the validation data while tuning the parameters of the model. In this case,
+you may want to switch to a more reliable evaluation protocol (such as iterated K-fold
+validation). 
+
