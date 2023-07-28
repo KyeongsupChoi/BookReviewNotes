@@ -1317,3 +1317,7 @@ either that your validation procedure wasn’t reliable after all, or that you b
 you may want to switch to a more reliable evaluation protocol (such as iterated K-fold
 validation). 
 
+### Part 2 Deep Learning in Practice
+
+Chapters 5–9 will help you gain practical intuition about how to solve realworld problems using deep learning, and will familiarize you with essential deeplearning best practices. Most of the code examples in the book are concentrated
+in this second half.
