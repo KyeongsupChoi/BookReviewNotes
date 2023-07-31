@@ -1321,3 +1321,10 @@ validation).
 
 Chapters 5–9 will help you gain practical intuition about how to solve realworld problems using deep learning, and will familiarize you with essential deeplearning best practices. Most of the code examples in the book are concentrated
 in this second half.
+
+### Chapter 5 Deep learning for computer vision
+
+This chapter introduces convolutional neural networks, also known as convnets, a
+type of deep-learning model almost universally used in computer vision applications. You’ll learn to apply convnets to image-classification problems—in particular
+those involving small training datasets, which are the most common use case if you
+aren’t a large tech company.
