@@ -1328,3 +1328,30 @@ This chapter introduces convolutional neural networks, also known as convnets, a
 type of deep-learning model almost universally used in computer vision applications. You’ll learn to apply convnets to image-classification problems—in particular
 those involving small training datasets, which are the most common use case if you
 aren’t a large tech company.
+
+#### 5.1 Introduction to convnets
+
+Even though
+the convnet will be basic, its accuracy will blow out of the water that of the densely
+connected model from chapter 2.
+
+The following lines of code show you what a basic convnet looks like. It’s a stack of
+Conv2D and MaxPooling2D layers
+
+Importantly, a convnet takes as input tensors of shape (image_height, image_width,
+image_channels) (not including the batch dimension). In this case, we’ll configure
+the convnet to process inputs of size (28, 28, 1), which is the format of MNIST
+images. We’ll do this by passing the argument input_shape=(28, 28, 1) to the first
+layer.
+
+You can see that the output of every Conv2D and MaxPooling2D layer is a 3D tensor of
+shape (height, width, channels).
+
+ The width and height dimensions tend to shrink as you go deeper in the network. The number of channels is controlled by the first
+argument passed to the Conv2D layers (32 or 64).
+
+Whereas the densely connected network from chapter 2 had a test accuracy of 97.8%,
+the basic convnet has a test accuracy of 99.3%: we decreased the error rate by 68%
+(relative). Not bad!
+ But why does this simple convnet work so well, compared to a densely connected
+model? To answer this, let’s dive into what the Conv2D and MaxPooling2D layers do.
