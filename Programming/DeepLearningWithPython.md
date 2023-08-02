@@ -1355,3 +1355,25 @@ the basic convnet has a test accuracy of 99.3%: we decreased the error rate by 6
 (relative). Not bad!
  But why does this simple convnet work so well, compared to a densely connected
 model? To answer this, let’s dive into what the Conv2D and MaxPooling2D layers do.
+
+#### 5.1.1 The convolution operation
+
+The fundamental difference between a densely connected layer and a convolution
+layer is this: Dense layers learn global patterns in their input feature space (for example, for a MNIST digit, patterns involving all pixels), whereas convolution layers learn
+local patterns (see figure 5.1): in the case of images, patterns found in small 2D windows of the inputs.
+
+This key characteristic gives convnets two interesting properties:
+
+ The patterns they learn are translation invariant. After learning a certain pattern in
+the lower-right corner of a picture, a convnet can recognize it anywhere: for
+example, in the upper-left corner. A densely connected network would have to
+learn the pattern anew if it appeared at a new location. This makes convnets
+data efficient when processing images (because the visual world is fundamentally
+translation invariant): they need fewer training samples to learn representations
+that have generalization power.
+
+ They can learn spatial hierarchies of patterns (see figure 5.2). A first convolution layer
+will learn small local patterns such as edges, a second convolution layer will
+learn larger patterns made of the features of the first layers, and so on. This
+allows convnets to efficiently learn increasingly complex and abstract visual concepts 
+
