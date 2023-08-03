@@ -1377,3 +1377,20 @@ will learn small local patterns such as edges, a second convolution layer will
 learn larger patterns made of the features of the first layers, and so on. This
 allows convnets to efficiently learn increasingly complex and abstract visual concepts 
 
+Convolutions operate over 3D tensors, called feature maps, with two spatial axes (height
+and width) as well as a depth axis (also called the channels axis). For an RGB image, the
+dimension of the depth axis is 3, because the image has three color channels: red,
+green, and blue. For a black-and-white picture, like the MNIST digits, the depth is 1
+(levels of gray). The convolution operation extracts patches from its input feature
+map and applies the same transformation to all of these patches, producing an output
+feature map
+
+This output feature map is still a 3D tensor: it has a width and a height. Its
+depth can be arbitrary, because the output depth is a parameter of the layer, and the
+different channels in that depth axis no longer stand for specific colors as in RGB
+input; rather, they stand for filters. Filters encode specific aspects of the input data: at a
+high level, a single filter could encode the concept “presence of a face in the input,”
+for instance.
+
+In Keras Conv2D layers, these parameters are the first arguments passed to the layer:
+Conv2D(output_depth, (window_height, window_width)).
