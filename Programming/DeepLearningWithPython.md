@@ -1394,3 +1394,37 @@ for instance.
 
 In Keras Conv2D layers, these parameters are the first arguments passed to the layer:
 Conv2D(output_depth, (window_height, window_width)).
+
+#### 5.1.2 The max-pooling operation
+
+you may have noticed that the size of the feature maps is
+halved after every MaxPooling2D layer. For instance, before the first MaxPooling2D layers, the feature map is 26 × 26, but the max-pooling operation halves it to 13 × 13.
+That’s the role of max pooling: to aggressively downsample feature maps, much like
+strided convolutions.
+
+Max pooling consists of extracting windows from the input feature maps and outputting the max value of each channel. It’s conceptually similar to convolution, except
+that instead of transforming local patches via a learned linear transformation (the convolution kernel), they’re transformed via a hardcoded max tensor operation.
+
+What’s wrong with this setup? Two things:
+ It isn’t conducive to learning a spatial hierarchy of features. The 3 × 3 windows
+in the third layer will only contain information coming from 7 × 7 windows in
+the initial input. The high-level patterns learned by the convnet will still be very
+small with regard to the initial input, which may not be enough to learn to classify digits (try recognizing a digit by only looking at it through windows that are
+7 × 7 pixels!). We need the features from the last convolution layer to contain
+information about the totality of the input.
+ The final feature map has 22 × 22 × 64 = 30,976 total coefficients per sample.
+This is huge. If you were to flatten it to stick a Dense layer of size 512 on top,
+that layer would have 15.8 million parameters. This is far too large for such a
+small model and would result in intense overfitting.
+
+In short, the reason to use downsampling is to reduce the number of feature-map
+coefficients to process, as well as to induce spatial-filter hierarchies by making successive convolution layers look at increasingly large windows 
+
+the reason is that features tend to encode the spatial presence of some pattern
+or concept over the different tiles of the feature map (hence, the term feature map),
+and it’s more informative to look at the maximal presence of different features than at
+their average presence. So the most reasonable subsampling strategy is to first produce
+dense maps of features (via unstrided convolutions) and then look at the maximal
+activation of the features over small patches, rather than looking at sparser windows of
+the inputs (via strided convolutions) or averaging input patches, which could cause
+you to miss or dilute feature-presence information.
