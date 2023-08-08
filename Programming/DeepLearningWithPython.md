@@ -1451,3 +1451,25 @@ final accuracy of 97%)
  Together, these three strategies—training a small model from
 scratch, doing feature extraction using a pretrained model, and fine-tuning a pretrained model—will constitute your future toolbox for tackling the problem of performing image classification with small datasets.
 
+#### 5.2.1 The relevance of deep learning for small-data problems
+
+You’ll sometimes hear that deep learning only works when lots of data is available.
+This is valid in part: one fundamental characteristic of deep learning is that it can find
+interesting features in the training data on its own, without any need for manual feature engineering, and this can only be achieved when lots of training examples are
+available. This is especially true for problems where the input samples are very highdimensional, like images.
+
+But what constitutes lots of samples is relative—relative to the size and depth of the
+network you’re trying to train, for starters. It isn’t possible to train a convnet to solve a
+complex problem with just a few tens of samples, but a few hundred can potentially
+suffice if the model is small and well regularized and the task is simple. Because convnets learn local, translation-invariant features, they’re highly data efficient on perceptual problems.
+
+Training a convnet from scratch on a very small image dataset will still
+yield reasonable results despite a relative lack of data, without the need for any custom
+feature engineering. 
+
+What’s more, deep-learning models are by nature highly repurposable: you can
+take, say, an image-classification or speech-to-text model trained on a large-scale dataset
+and reuse it on a significantly different problem with only minor changes
+
+in the case of computer vision, many pretrained models (usually trained on the ImageNet dataset) are now publicly available for download and can be used to bootstrap powerful vision models out of very little data
+
