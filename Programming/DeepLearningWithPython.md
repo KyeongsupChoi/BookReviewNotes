@@ -1473,3 +1473,16 @@ and reuse it on a significantly different problem with only minor changes
 
 in the case of computer vision, many pretrained models (usually trained on the ImageNet dataset) are now publicly available for download and can be used to bootstrap powerful vision models out of very little data
 
+#### 5.2.2  Downloading the data
+
+ The pictures are medium-resolution color JPEGs.
+ 
+Unsurprisingly, the dogs-versus-cats Kaggle competition in 2013 was won by entrants
+who used convnets.
+
+This dataset contains 25,000 images of dogs and cats (12,500 from each class) and
+is 543 MB (compressed).
+
+So you do indeed have 2,000 training images, 1,000 validation images, and 1,000 test
+images. Each split contains the same number of samples from each class: this is a balanced binary-classification problem, which means classification accuracy will be an
+appropriate measure of success. 
