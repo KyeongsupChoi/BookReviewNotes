@@ -1486,3 +1486,22 @@ is 543 MB (compressed).
 So you do indeed have 2,000 training images, 1,000 validation images, and 1,000 test
 images. Each split contains the same number of samples from each class: this is a balanced binary-classification problem, which means classification accuracy will be an
 appropriate measure of success. 
+
+#### 5.2.3 Building your network
+
+You built a small convnet for MNIST in the previous example, so you should be familiar with such convnets. You’ll reuse the same general structure: the convnet will be a
+stack of alternated Conv2D (with relu activation) and MaxPooling2D layers.
+
+But because you’re dealing with bigger images and a more complex problem, you’ll
+make your network larger, accordingly: it will have one more Conv2D + MaxPooling2D
+stage. This serves both to augment the capacity of the network and to further reduce
+the size of the feature maps so they aren’t overly large when you reach the Flatten
+layer.
+
+Because you’re attacking a binary-classification problem, you’ll end the network with a
+single unit (a Dense layer of size 1) and a sigmoid activation. This unit will encode the
+probability that the network is looking at one class or the other.
+
+For the compilation step, you’ll go with the RMSprop optimizer, as usual. Because you
+ended the network with a single sigmoid unit, you’ll use binary crossentropy as the
+loss
