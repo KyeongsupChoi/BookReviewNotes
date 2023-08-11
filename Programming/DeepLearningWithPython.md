@@ -1505,3 +1505,52 @@ probability that the network is looking at one class or the other.
 For the compilation step, you’ll go with the RMSprop optimizer, as usual. Because you
 ended the network with a single sigmoid unit, you’ll use binary crossentropy as the
 loss
+
+#### 5.2.4 Data preprocessing
+
+As you know by now, data should be formatted into appropriately preprocessed floatingpoint tensors before being fed into the network. Currently, the data sits on a drive as
+JPEG files, so the steps for getting it into the network are roughly as follows:
+
+1 Read the picture files.
+2 Decode the JPEG content to RGB grids of pixels.
+3 Convert these into floating-point tensors.
+4 Rescale the pixel values (between 0 and 255) to the [0, 1] interval (as you know,
+neural networks prefer to deal with small input values).
+
+It may seem a bit daunting, but fortunately Keras has utilities to take care of these
+steps automatically. Keras has a module with image-processing helper tools, located at
+keras.preprocessing.image. In particular, it contains the class ImageDataGenerator,
+which lets you quickly set up Python generators that can automatically turn image files
+on disk into batches of preprocessed tensors.
+
+Let’s look at the output of one of these generators: it yields batches of 150 × 150 RGB
+images (shape (20, 150, 150, 3)) and binary labels (shape (20,)). There are 20 samples in each batch (the batch size).
+
+Note that the generator yields these batches indefinitely: it loops endlessly over the images in the target folder. For this reason, you need
+to break the iteration loop at some point:
+
+Let’s fit the model to the data using the generator. You do so using the fit_generator
+method, the equivalent of fit for data generators like this one. It expects as its first
+argument a Python generator that will yield batches of inputs and targets indefinitely
+
+Because the data is being generated endlessly, the Keras model
+needs to know how many samples to draw from the generator before declaring an
+epoch over. This is the role of the steps_per_epoch argument: after having drawn
+steps_per_epoch batches from the generator
+
+When using fit_generator, you can pass a validation_data argument, much as
+with the fit method. It’s important to note that this argument is allowed to be a data
+generator, but it could also be a tuple of Numpy arrays. If you pass a generator as
+validation_data, then this generator is expected to yield batches of validation data
+endlessly
+
+These plots are characteristic of overfitting. The training accuracy increases linearly
+over time, until it reaches nearly 100%, whereas the validation accuracy stalls at 70–72%.
+The validation loss reaches its minimum after only five epochs and then stalls, whereas
+the training loss keeps decreasing linearly until it reaches nearly 0.
+
+Because you have relatively few training samples (2,000), overfitting will be your
+number-one concern. You already know about a number of techniques that can help
+mitigate overfitting, such as dropout and weight decay (L2 regularization). We’re now
+going to work with a new one, specific to computer vision and used almost universally
+when processing images with deep-learning models: data augmentation. 
