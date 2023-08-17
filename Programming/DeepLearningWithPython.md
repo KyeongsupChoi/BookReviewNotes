@@ -1554,3 +1554,49 @@ number-one concern. You already know about a number of techniques that can help
 mitigate overfitting, such as dropout and weight decay (L2 regularization). We’re now
 going to work with a new one, specific to computer vision and used almost universally
 when processing images with deep-learning models: data augmentation. 
+
+#### 5.2.5 Using data augmentation
+
+Overfitting is caused by having too few samples to learn from, rendering you unable
+to train a model that can generalize to new data.
+
+Given infinite data, your model would be exposed to every possible aspect of the data distribution at hand: you would
+never overfit. Data augmentation takes the approach of generating more training data
+from existing training samples, by augmenting the samples via a number of random
+transformations that yield believable-looking images. The goal is that at training time,
+your model will never see the exact same picture twice. This helps expose the model
+to more aspects of the data and generalize better.
+
+In Keras, this can be done by configuring a number of random transformations to
+be performed on the images read by the ImageDataGenerator instance.
+
+These are just a few of the options available (for more, see the Keras documentation).
+Let’s quickly go over this code:
+ rotation_range is a value in degrees (0–180), a range within which to randomly rotate pictures.
+ width_shift and height_shift are ranges (as a fraction of total width or
+height) within which to randomly translate pictures vertically or horizontally.
+ shear_range is for randomly applying shearing transformations.
+ zoom_range is for randomly zooming inside pictures.
+ horizontal_flip is for randomly flipping half the images horizontally—relevant when there are no assumptions of horizontal asymmetry (for example,
+real-world pictures).
+ fill_mode is the strategy used for filling in newly created pixels, which can
+appear after a rotation or a width/height shift.
+
+If you train a new network using this data-augmentation configuration, the network
+will never see the same input twice. But the inputs it sees are still heavily intercorrelated, because they come from a small number of original images—you can’t produce new information, you can only remix existing information. As such, this may not
+be enough to completely get rid of overfitting.
+
+. To further fight overfitting, you’ll also
+add a Dropout layer to your model, right before the densely connected classifier.
+
+ Thanks to data augmentation and dropout, you’re no longer overfitting: the training curves are closely tracking
+the validation curves. You now reach an accuracy of 82%, a 15% relative improvement
+over the non-regularized model.
+
+By using regularization techniques even further, and by tuning the network’s parameters (such as the number of filters per convolution layer, or the number of layers in
+the network), you may be able to get an even better accuracy, likely up to 86% or 87%.
+But it would prove difficult to go any higher just by training your own convnet from
+scratch, because you have so little data to work with. As a next step to improve your
+accuracy on this problem, you’ll have to use a pretrained model, which is the focus of
+the next two sections. 
+
