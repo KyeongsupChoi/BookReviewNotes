@@ -1600,3 +1600,18 @@ scratch, because you have so little data to work with. As a next step to improve
 accuracy on this problem, you’ll have to use a pretrained model, which is the focus of
 the next two sections. 
 
+#### 5.3 Using a pretrained convnet
+
+A common and highly effective approach to deep learning on small image datasets is
+to use a pretrained network. A pretrained network is a saved network that was previously
+trained on a large dataset, typically on a large-scale image-classification task.
+
+If this
+original dataset is large enough and general enough, then the spatial hierarchy of features learned by the pretrained network can effectively act as a generic model of the
+visual world, and hence its features can prove useful for many different computervision problems, even though these new problems may involve completely different
+classes than those of the original task.
+
+ Such portability of learned features across different problems is a key advantage of deep learning compared to many older, shallow-learning approaches, and it
+makes deep learning very effective for small-data problems.
+
+There are two ways to use a pretrained network: feature extraction and fine-tuning.
