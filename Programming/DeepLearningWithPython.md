@@ -1615,3 +1615,6 @@ classes than those of the original task.
 makes deep learning very effective for small-data problems.
 
 There are two ways to use a pretrained network: feature extraction and fine-tuning.
+
+#### 5.3.1 Feature Extraction
+
