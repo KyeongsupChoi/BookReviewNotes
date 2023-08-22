@@ -1618,3 +1618,38 @@ There are two ways to use a pretrained network: feature extraction and fine-tuni
 
 #### 5.3.1 Feature Extraction
 
+Feature extraction consists of using the representations learned by a previous network
+to extract interesting features from new samples. These features are then run through
+a new classifier, which is trained from scratch.
+
+, convnets used for image classification comprise two parts:
+they start with a series of pooling and convolution layers, and they end with a densely
+connected classifier. The first part is called the convolutional base of the model.
+
+In the
+case of convnets, feature extraction consists of taking the convolutional base of a
+previously trained network, running the new data through it, and training a new classifier on top of the output
+
+ Could you reuse the densely connected classifier as well? In general, doing so should be avoided. The reason is that the representations learned by the convolutional base are likely to be more generic and therefore
+more reusable:
+
+the feature maps of a convnet are presence maps of generic concepts
+over a picture, which is likely to be useful regardless of the computer-vision problem at
+hand. But the representations learned by the classifier will necessarily be specific to the
+set of classes on which the model was trained—they will only contain information about
+the presence probability of this or that class in the entire picture.
+
+Additionally, representations found in densely connected layers no longer contain any information about
+where objects are located in the input image: these layers get rid of the notion of space,
+whereas the object location is still described by convolutional feature maps. For problems where object location matters, densely connected features are largely useless.
+
+Note that the level of generality (and therefore reusability) of the representations
+extracted by specific convolution layers depends on the depth of the layer in the
+model. Layers that come earlier in the model extract local, highly generic feature
+maps (such as visual edges, colors, and textures), whereas layers that are higher up
+extract more-abstract concepts (such as “cat ear” or “dog eye”).
+
+So if your new dataset
+differs a lot from the dataset on which the original model was trained, you may be better off using only the first few layers of the model to do feature extraction, rather than
+using the entire convolutional base.
+
