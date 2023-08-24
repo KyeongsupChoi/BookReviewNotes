@@ -1674,3 +1674,15 @@ steps for fine-tuning a network are as follow:
 4 Unfreeze some layers in the base network.
 5 Jointly train both these layers and the part you added.
 
+#### 5.3.3 Wrapping up
+
+ Convnets are the best type of machine-learning models for computer-vision
+tasks. It’s possible to train one from scratch even on a very small dataset, with
+decent results.
+ On a small dataset, overfitting will be the main issue. Data augmentation is a
+powerful way to fight overfitting when you’re working with image data.
+ It’s easy to reuse an existing convnet on a new dataset via feature extraction.
+This is a valuable technique for working with small image datasets.
+ As a complement to feature extraction, you can use fine-tuning, which adapts to
+a new problem some of the representations previously learned by an existing
+model. This pushes performance a bit further.
