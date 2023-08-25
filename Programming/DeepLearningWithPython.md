@@ -1686,3 +1686,14 @@ This is a valuable technique for working with small image datasets.
  As a complement to feature extraction, you can use fine-tuning, which adapts to
 a new problem some of the representations previously learned by an existing
 model. This pushes performance a bit further.
+
+### 5.4 Visualizing what convnets learn
+
+The representations learned by convnets are highly amenable to visualization, in large part because they’re representations of visual concepts
+
+ Visualizing intermediate convnet outputs (intermediate activations)—Useful for
+understanding how successive convnet layers transform their input, and for getting a first idea of the meaning of individual convnet filters.
+ Visualizing convnets filters—Useful for understanding precisely what visual pattern or concept each filter in a convnet is receptive to.
+ Visualizing heatmaps of class activation in an image—Useful for understanding
+which parts of an image were identified as belonging to a given class, thus allowing you to localize objects in images.
+
