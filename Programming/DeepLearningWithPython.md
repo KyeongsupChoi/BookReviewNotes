@@ -1697,3 +1697,43 @@ understanding how successive convnet layers transform their input, and for getti
  Visualizing heatmaps of class activation in an image—Useful for understanding
 which parts of an image were identified as belonging to a given class, thus allowing you to localize objects in images.
 
+#### 5.4.1 Visualizing intermediate activations
+
+Visualizing intermediate activations consists of displaying the feature maps that are
+output by various convolution and pooling layers in a network, given a certain input
+
+This gives a view into how an input is decomposed into the different filters
+learned by the network. You want to visualize feature maps with three dimensions:
+width, height, and depth (channels). 
+
+Each channel encodes relatively independent
+features, so the proper way to visualize these feature maps is by independently plotting the contents of every channel as a 2D image
+
+In order to extract the feature maps you want to look at, you’ll create a Keras model
+that takes batches of images as input, and outputs the activations of all convolution and
+pooling layers
+
+When fed an image input, this model returns the values of the layer activations in the
+original model
+
+There are a few things to note here:
+ The first layer acts as a collection of various edge detectors. At that stage, the
+activations retain almost all of the information present in the initial picture.
+ As you go higher, the activations become increasingly abstract and less visually
+interpretable. They begin to encode higher-level concepts such as “cat ear” and
+“cat eye.” Higher presentations carry increasingly less information about the
+visual contents of the image, and increasingly more information related to the
+class of the image.
+ The sparsity of the activations increases with the depth of the layer: in the first
+layer, all filters are activated by the input image; but in the following layers,
+more and more filters are blank. This means the pattern encoded by the filter
+isn’t found in the input image.
+
+We have just evidenced an important universal characteristic of the representations
+learned by deep neural networks: the features extracted by a layer become increasingly abstract with the depth of the layer. The activations of higher layers carry less
+and less information about the specific input being seen, and more and more information about the target
+
+ This is analogous to the way humans and animals perceive the world: after observing a scene for a few seconds, a human can remember which abstract objects were
+present in it (bicycle, tree) but can’t remember the specific appearance of these
+objects
+
