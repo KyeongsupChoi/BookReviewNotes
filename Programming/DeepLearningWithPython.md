@@ -1737,3 +1737,37 @@ and less information about the specific input being seen, and more and more info
 present in it (bicycle, tree) but can’t remember the specific appearance of these
 objects
 
+#### 5.4.2 Visualizing convnet filters
+
+Another easy way to inspect the filters learned by convnets is to display the visual pattern that each filter is meant to respond to. This can be done with gradient ascent in
+input space: applying gradient descent to the value of the input image of a convnet so as
+to maximize the response of a specific filter, starting from a blank input image. The
+resulting input image will be one that the chosen filter is maximally responsive to.
+
+The process is simple: you’ll build a loss function that maximizes the value of a
+given filter in a given convolution layer, and then you’ll use stochastic gradient
+descent to adjust the values of the input image so as to maximize this activation value.
+
+To implement gradient descent, you’ll need the gradient of this loss with respect to
+the model’s input. To do this, you’ll use the gradients function packaged with the
+backend module of Keras
+
+A non-obvious trick to use to help the gradient-descent process go smoothly is to normalize the gradient tensor by dividing it by its L2 norm (the square root of the average
+of the square of the values in the tensor). This ensures that the magnitude of the
+updates done to the input image is always within the same range.
+
+ Let’s put them together into a Python function that takes
+as input a layer name and a filter index, and returns a valid image tensor representing
+the pattern that maximizes the activation of the specified filter.
+
+These filter visualizations tell you a lot about how convnet layers see the world: each
+layer in a convnet learns a collection of filters such that their inputs can be expressed
+as a combination of the filters.
+
+The filters in these convnet filter banks
+get increasingly complex and refined as you go higher in the model:
+ The filters from the first layer in the model (block1_conv1) encode simple
+directional edges and colors (or colored edges, in some cases).
+ The filters from block2_conv1 encode simple textures made from combinations of edges and colors.
+ The filters in higher layers begin to resemble textures found in natural images:
+feathers, eyes, leaves, and so on. 
