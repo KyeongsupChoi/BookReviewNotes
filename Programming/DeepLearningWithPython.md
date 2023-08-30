@@ -1771,3 +1771,6 @@ directional edges and colors (or colored edges, in some cases).
  The filters from block2_conv1 encode simple textures made from combinations of edges and colors.
  The filters in higher layers begin to resemble textures found in natural images:
 feathers, eyes, leaves, and so on. 
+
+#### 5.4.3 Visualizing heatmaps of class activation
+
