@@ -1774,4 +1774,28 @@ feathers, eyes, leaves, and so on.
 
 #### 5.4.3 Visualizing heatmaps of class activation
 
-feathers, eyes, leaves, and so on. 
+ It also allows you to locate specific objects in an image
+ 
+This general category of techniques is called class activation map (CAM) visualization,
+and it consists of producing heatmaps of class activation over input images. 
+
+A class activation heatmap is a 2D grid of scores associated with a specific output class, computed
+for every location in any input image, indicating how important each location is with respect to the class under consideration
+
+Intuitively, one way to understand this trick is that you’re
+weighting a spatial map of “how intensely the input image activates different channels” by “how important each channel is with regard to the class,” resulting in a spatial
+map of “how intensely the input image activates the class.”
+
+Chapter summary
+ Convnets are the best tool for attacking visual-classification problems.
+ Convnets work by learning a hierarchy of modular patterns and concepts
+to represent the visual world.
+ The representations they learn are easy to inspect—convnets are the
+opposite of black boxes!
+ You’re now capable of training your own convnet from scratch to solve an
+image-classification problem.
+ You understand how to use visual data augmentation to fight overfitting.
+ You know how to use a pretrained convnet to do feature extraction and
+fine-tuning.
+ You can generate visualizations of the filters learned by your convnets, as
+well as heatmaps of class activity
