@@ -1799,3 +1799,34 @@ image-classification problem.
 fine-tuning.
  You can generate visualizations of the filters learned by your convnets, as
 well as heatmaps of class activity
+
+### 6.1 Working with Text Data 
+
+The deep-learning sequence-processing models introduced in
+the following sections can use text to produce a basic form of natural-language understanding, sufficient for applications including document classification, sentiment
+analysis, author identification, and even question-answering (QA) (in a constrained
+context).
+
+none of these deeplearning models truly understand text in a human sense; rather, these models can
+map the statistical structure of written language, which is sufficient to solve many simple textual tasks.
+
+Deep learning for natural-language processing is pattern recognition
+applied to words, sentences, and paragraphs, in much the same way that computer
+vision is pattern recognition applied to pixels
+
+ Like all other neural networks, deep-learning models don’t take as input raw text:
+they only work with numeric tensors. Vectorizing text is the process of transforming text
+into numeric tensors. This can be done in multiple ways:
+ Segment text into words, and transform each word into a vector.
+ Segment text into characters, and transform each character into a vector.
+ Extract n-grams of words or characters, and transform each n-gram into a vector.
+N-grams are overlapping groups of multiple consecutive words or characters.
+
+Collectively, the different units into which you can break down text (words, characters, or n-grams) are called tokens, and breaking text into such tokens is called tokenization. All text-vectorization processes consist of applying some tokenization scheme and
+then associating numeric vectors with the generated tokens. 
+
+These vectors, packed
+into sequence tensors, are fed into deep neural networks. There are multiple ways to
+associate a vector with a token. In this section, I’ll present two major ones: one-hot
+encoding of tokens, and token embedding (typically used exclusively for words, and called
+word embedding). 
