@@ -1830,3 +1830,33 @@ into sequence tensors, are fed into deep neural networks. There are multiple way
 associate a vector with a token. In this section, I’ll present two major ones: one-hot
 encoding of tokens, and token embedding (typically used exclusively for words, and called
 word embedding). 
+
+#### 6.1.1 One-hot encoding of words and characters
+
+One-hot encoding is the most common, most basic way to turn a token into a vector.
+
+. It consists of associating a unique integer index with every word
+and then turning this integer index i into a binary vector of size N (the size of the
+vocabulary); the vector is all zeros except for the ith entry, which is 1.
+
+ Of course, one-hot encoding can be done at the character level, as well
+ 
+A variant of one-hot encoding is the so-called one-hot hashing trick, which you can use
+when the number of unique tokens in your vocabulary is too large to handle explicitly.
+Instead of explicitly assigning an index to each word and keeping a reference of these
+indices in a dictionary, you can hash words into vectors of fixed size.
+
+This is typically
+done with a very lightweight hashing function. The main advantage of this method is
+that it does away with maintaining an explicit word index, which saves memory and
+allows online encoding of the data
+
+The one drawback of this approach is that it’s
+susceptible to hash collisions: two different words may end up with the same hash, and
+subsequently any machine-learning model looking at these hashes won’t be able to tell
+the difference between these words.
+
+The likelihood of hash collisions decreases when
+the dimensionality of the hashing space is much larger than the total number of
+unique tokens being hashed.
+
