@@ -1860,3 +1860,25 @@ The likelihood of hash collisions decreases when
 the dimensionality of the hashing space is much larger than the total number of
 unique tokens being hashed.
 
+#### 6.1.2 Using word embeddings
+
+Another popular and powerful way to associate a vector with a word is the use of dense
+word vectors, also called word embeddings
+
+Whereas the vectors obtained through one-hot
+encoding are binary, sparse (mostly made of zeros), and very high-dimensional (same
+dimensionality as the number of words in the vocabulary), word embeddings are lowdimensional floating-point vectors
+
+Unlike the word vectors obtained via one-hot encoding, word
+embeddings are learned from data. It’s common to see word embeddings that are
+256-dimensional, 512-dimensional, or 1,024-dimensional when dealing with very large
+vocabularies. On the other hand, one-hot encoding words generally leads to vectors
+that are 20,000-dimensional or greater
+
+So, word embeddings pack more information into far fewer dimensions.
+
+There are two ways to obtain word embeddings:
+ Learn word embeddings jointly with the main task you care about (such as document classification or sentiment prediction). In this setup, you start with random word vectors and then learn word vectors in the same way you learn the
+weights of a neural network.
+ Load into your model word embeddings that were precomputed using a different machine-learning task than the one you’re trying to solve. These are called
+pretrained word embeddings.
