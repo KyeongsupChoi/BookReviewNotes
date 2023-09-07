@@ -1882,3 +1882,22 @@ There are two ways to obtain word embeddings:
 weights of a neural network.
  Load into your model word embeddings that were precomputed using a different machine-learning task than the one you’re trying to solve. These are called
 pretrained word embeddings.
+
+The simplest way to associate a dense vector with a word is to choose the vector at
+random. The problem with this approach is that the resulting embedding space has
+no structure: for instance, the words accurate and exact may end up with completely
+different embeddings, even though they’re interchangeable in most sentences. It’s
+difficult for a deep neural network to make sense of such a noisy, unstructured
+embedding space.
+
+To get a bit more abstract, the geometric relationships between word vectors
+should reflect the semantic relationships between these words. Word embeddings are
+meant to map human language into a geometric space. For instance, in a reasonable
+embedding space, you would expect synonyms to be embedded into similar word vectors; and in general, you would expect the geometric distance (such as L2 distance)
+between any two word vectors to relate to the semantic distance between the associated words
+
+. In addition to distance, you may want
+specific directions in the embedding space to be meaningful.
+
+the perfect word-embedding space for an English-language movie-review sentimentanalysis model may look different from the perfect embedding space for an Englishlanguage legal-document-classification model, because the importance of certain
+semantic relationships varies from task to task.
