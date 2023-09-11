@@ -1901,3 +1901,17 @@ specific directions in the embedding space to be meaningful.
 
 the perfect word-embedding space for an English-language movie-review sentimentanalysis model may look different from the perfect embedding space for an Englishlanguage legal-document-classification model, because the importance of certain
 semantic relationships varies from task to task.
+
+Sometimes, you have so little training data available that you can’t use your data
+alone to learn an appropriate task-specific embedding of your vocabulary. What do
+you do then?
+ Instead of learning word embeddings jointly with the problem you want to solve,
+you can load embedding vectors from a precomputed embedding space that you
+know is highly structured and exhibits useful properties—that captures generic
+aspects of language structure. The rationale behind using pretrained word embeddings in natural-language processing is much the same as for using pretrained convnets in image classification: you don’t have enough data available to learn truly
+powerful features on your own, but you expect the features that you need to be fairly
+generic—that is, common visual features or semantic features. In this case, it makes
+sense to reuse features learned on a different problem
+
+#### 6.1.3 Putting it all together: from raw text to word embeddings
+
