@@ -1915,3 +1915,8 @@ sense to reuse features learned on a different problem
 
 #### 6.1.3 Putting it all together: from raw text to word embeddings
 
+You’ll use a model similar to the one we just went over: embedding sentences in
+sequences of vectors, flattening them, and training a Dense layer on top. But you’ll do
+so using pretrained word embeddings; and instead of using the pretokenized IMDB
+data packaged in Keras, you’ll start from scratch by downloading the original text data.
+
