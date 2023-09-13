@@ -1920,3 +1920,9 @@ sequences of vectors, flattening them, and training a Dense layer on top. But yo
 so using pretrained word embeddings; and instead of using the pretokenized IMDB
 data packaged in Keras, you’ll start from scratch by downloading the original text data.
 
+#### 6.1.4 Wrapping up
+
+Now you’re able to do the following:
+ Turn raw text into something a neural network can process
+ Use the Embedding layer in a Keras model to learn task-specific token embeddings
+ Use pretrained word embeddings to get an extra boost on small naturallanguage-processing problems 
