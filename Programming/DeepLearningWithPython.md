@@ -1926,3 +1926,24 @@ Now you’re able to do the following:
  Turn raw text into something a neural network can process
  Use the Embedding layer in a Keras model to learn task-specific token embeddings
  Use pretrained word embeddings to get an extra boost on small naturallanguage-processing problems 
+
+### 6.2 Understanding recurrent neural networks
+
+A major characteristic of all neural networks you’ve seen so far, such as densely connected networks and convnets, is that they have no memory. Each input shown to
+them is processed independently, with no state kept in between inputs. With such networks, in order to process a sequence or a temporal series of data points, you have to
+show the entire sequence to the network at once: turn it into a single data point. 
+feedforward networks.
+
+A recurrent neural network (RNN) adopts the same principle, albeit in an extremely
+simplified version: it processes sequences by iterating through the sequence elements
+and maintaining a state containing information relative
+to what it has seen so far. 
+
+ In effect, an RNN is a type of
+neural network that has an internal loop (see figure 6.9).
+The state of the RNN is reset between processing two different, independent sequences (such as two different
+IMDB reviews), so you still consider one sequence a single data point: a single input to the network. What
+changes is that this data point is no longer processed in a
+single step; rather, the network internally loops over
+sequence elements.
+
