@@ -1947,3 +1947,16 @@ changes is that this data point is no longer processed in a
 single step; rather, the network internally loops over
 sequence elements.
 
+#### 6.2.1 A recurrent layer in Keras
+
+The process you just naively implemented in Numpy corresponds to an actual Keras
+layer—the SimpleRNN layer:
+from keras.layers import SimpleRNN
+There is one minor difference: SimpleRNN processes batches of sequences, like all other
+Keras layers, not a single sequence as in the Numpy example. This means it takes inputs
+of shape
+
+ Like all recurrent layers in Keras, SimpleRNN can be run in two different modes: it
+can return either the full sequences of successive outputs for each timestep (a 3D tensor of shape (batch_size, timesteps, output_features)) or only the last output for
+each input sequence (a 2D tensor of shape (batch_size, output_features)). These
+two modes are controlled by the return_sequences constructor argument. 
