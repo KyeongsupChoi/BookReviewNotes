@@ -1960,3 +1960,23 @@ of shape
 can return either the full sequences of successive outputs for each timestep (a 3D tensor of shape (batch_size, timesteps, output_features)) or only the last output for
 each input sequence (a 2D tensor of shape (batch_size, output_features)). These
 two modes are controlled by the return_sequences constructor argument. 
+
+#### 6.2.2 Understanding the LSTM and GRU layers
+
+SimpleRNN isn’t the only recurrent layer available in Keras. There are two others: LSTM
+and GRU. . In practice, you’ll always use one of these, because SimpleRNN is generally too
+simplistic to be of real use.
+
+. SimpleRNN has a major issue: although it should theoretically
+be able to retain at time t information about inputs seen many timesteps before, in
+practice, such long-term dependencies are impossible to learn. This is due to the vanishing gradient problem, an effect that is similar to what is observed with non-recurrent
+networks (feedforward networks) that are many layers deep: as you keep adding layers
+to a network, the network eventually becomes untrainable.
+
+LSTM layer is a variant of the SimpleRNN layer you already know about; it adds a way
+to carry information across many timesteps. Imagine a conveyor belt running parallel
+to the sequence you’re processing. Information from the sequence can jump onto the
+conveyor belt at any point, be transported to a later timestep, and jump off, intact,
+when you need it. This is essentially what LSTM does: it saves information for later,
+thus preventing older signals from gradually vanishing during processing.
+
