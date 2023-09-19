@@ -1980,3 +1980,15 @@ conveyor belt at any point, be transported to a later timestep, and jump off, in
 when you need it. This is essentially what LSTM does: it saves information for later,
 thus preventing older signals from gradually vanishing during processing.
 
+#### 6.2.3 A concrete LSTM example in Keras
+
+ you’ll set up a model using an LSTM layer
+and train it on the IMDB data
+
+Why isn’t LSTM performing better? One reason is that you made no effort
+to tune hyperparameters such as the embeddings dimensionality or the LSTM output
+dimensionality. Another may be lack of regularization. But honestly, the primary reason is that analyzing the global, long-term structure of the reviews (what LSTM is good
+at) isn’t helpful for a sentiment-analysis problem. Such a basic problem is well solved
+by looking at what words occur in each review, and at what frequency. That’s what the
+first fully connected approach looked at. But there are far more difficult naturallanguage-processing problems out there, where the strength of LSTM will become
+apparent: in particular, question-answering and machine translation.
