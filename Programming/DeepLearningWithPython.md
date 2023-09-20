@@ -1992,3 +1992,10 @@ at) isn’t helpful for a sentiment-analysis problem. Such a basic problem is we
 by looking at what words occur in each review, and at what frequency. That’s what the
 first fully connected approach looked at. But there are far more difficult naturallanguage-processing problems out there, where the strength of LSTM will become
 apparent: in particular, question-answering and machine translation.
+
+#### 6.2.4 Wrapping up
+
+Now you understand the following:
+ What RNNs are and how they work
+ What LSTM is, and why it works better on long sequences than a naive RNN
+ How to use Keras RNN layers to process sequence data
