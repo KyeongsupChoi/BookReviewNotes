@@ -1999,3 +1999,15 @@ Now you understand the following:
  What RNNs are and how they work
  What LSTM is, and why it works better on long sequences than a naive RNN
  How to use Keras RNN layers to process sequence data
+
+### 6.3 Advanced use of recurrent neural networks
+
+In this section, we’ll review three advanced techniques for improving the performance and generalization power of recurrent neural networks. By the end of the section, you’ll know most of what there is to know about using recurrent networks with
+Keras. We’ll demonstrate all three concepts on a temperature-forecasting problem,
+where you have access to a timeseries of data points coming from sensors installed on
+the roof of a building, such as temperature, air pressure, and humidity, which you use
+to predict what the temperature will be 24 hours after the last data point.
+
+ Recurrent dropout—This is a specific, built-in way to use dropout to fight overfitting in recurrent layers.
+ Stacking recurrent layers—This increases the representational power of the network (at the cost of higher computational loads).
+ Bidirectional recurrent layers—These present the same information to a recurrent
