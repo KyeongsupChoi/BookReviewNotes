@@ -2011,3 +2011,16 @@ to predict what the temperature will be 24 hours after the last data point.
  Recurrent dropout—This is a specific, built-in way to use dropout to fight overfitting in recurrent layers.
  Stacking recurrent layers—This increases the representational power of the network (at the cost of higher computational loads).
  Bidirectional recurrent layers—These present the same information to a recurrent
+
+#### 6.3.1 A temperature-forecasting problem
+
+ In this dataset, 14 different quantities (such air temperature, atmospheric pressure, humidity, wind direction, and so on) were recorded every 10 minutes, over several years. The original data goes back to 2003, but this example is limited to data
+from 2009–2016. This dataset is perfect for learning to work with numerical
+timeseries. You’ll use it to build a model that takes as input some data from the recent
+past (a few days’ worth of data points) and predicts the air temperature 24 hours in
+the future.
+
+ If you were trying to predict average temperature for the next month given a few
+months of past data, the problem would be easy, due to the reliable year-scale periodicity of the data. But looking at the data over a scale of days, the temperature looks a
+lot more chaotic. Is this timeseries predictable at a daily scale? Let’s find out.
+
