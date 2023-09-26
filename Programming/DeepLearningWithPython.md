@@ -2024,3 +2024,41 @@ the future.
 months of past data, the problem would be easy, due to the reliable year-scale periodicity of the data. But looking at the data over a scale of days, the temperature looks a
 lot more chaotic. Is this timeseries predictable at a daily scale? Let’s find out.
 
+#### 6.3.2 Preparing the data
+
+ given data going as far back
+as lookback timesteps (a timestep is 10 minutes) and sampled every steps timesteps,
+can you predict the temperature in delay timesteps? You’ll use the following parameter values:
+ lookback = 720—Observations will go back 5 days.
+ steps = 6—Observations will be sampled at one data point per hour.
+ delay = 144—Targets will be 24 hours in the fu
+
+To get started, you need to do two things:
+ Preprocess the data to a format a neural network can ingest. This is easy: the
+data is already numerical, so you don’t need to do any vectorization. But each
+timeseries in the data is on a different scale (for example, temperature is typically between -20 and +30, but atmospheric pressure, measured in mbar, is
+around 1,000). You’ll normalize each timeseries independently so that they all
+take small values on a similar scale.
+ Write a Python generator that takes the current array of float data and yields
+batches of data from the recent past, along with a target temperature in the
+future. Because the samples in the dataset are highly redundant (sample N and
+sample N + 1 will have most of their timesteps in common), it would be wasteful
+to explicitly allocate every samp
+
+You’ll preprocess the data by subtracting the mean of each timeseries and dividing by
+the standard deviation. You’re going to use the first 200,000 timesteps as training data,
+so compute the mean and standard deviation only on this fraction of the data.
+
+Listing 6.33 shows the data generator you’ll use. It yields a tuple (samples, targets),
+where samples is one batch of input data and targets is the corresponding array of
+target temperatures. It takes the following arguments
+
+ data—The original array of floating-point data, which you normalized in listing 6.32.
+ lookback—How many timesteps back the input data should go.
+ delay—How many timesteps in the future the target should be.
+ min_index and max_index—Indices in the data array that delimit which timesteps to draw from. This is useful for keeping a segment of the data for validation and another for testing.
+ shuffle—Whether to shuffle the samples or draw them in chronological order.
+ batch_size—The number of samples per batch.
+ step—The period, in timesteps, at which you sample data. You’ll set it to 6 in
+order to draw one data point every hour.
+
