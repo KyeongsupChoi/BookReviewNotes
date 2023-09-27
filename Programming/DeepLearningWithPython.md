@@ -2062,3 +2062,23 @@ target temperatures. It takes the following arguments
  step—The period, in timesteps, at which you sample data. You’ll set it to 6 in
 order to draw one data point every hour.
 
+#### 6.3.3 A common-sense, non-machine-learning baseline
+
+Before you start using black-box deep-learning models to solve the temperatureprediction problem, let’s try a simple, common-sense approach. It will serve as a sanity
+check, and it will establish a baseline that you’ll have to beat in order to demonstrate
+the usefulness of more-advanced machine-learning models. Such common-sense baselines can be useful when you’re approaching a new problem for which there is no
+known solution (yet).
+
+A classic example is that of unbalanced classification tasks,
+where some classes are much more common than others. If your dataset contains 90%
+instances of class A and 10% instances of class B, then a common-sense approach to
+the classification task is to always predict “A” when presented with a new sample. Such
+a classifier is 90% accurate overall, and any learning-based approach should therefore
+beat this 90% score in order to demonstrate usefulness. Sometimes, such elementary
+baselines can prove surprisingly hard to beat.
+
+ In this case, the temperature timeseries can safely be assumed to be continuous
+(the temperatures tomorrow are likely to be close to the temperatures today) as well
+as periodical with a daily period. Thus a common-sense approach is to always predict
+that the temperature 24 hours from now will be equal to the temperature right now
+
