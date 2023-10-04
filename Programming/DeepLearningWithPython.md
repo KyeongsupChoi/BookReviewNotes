@@ -2082,3 +2082,31 @@ baselines can prove surprisingly hard to beat.
 as periodical with a daily period. Thus a common-sense approach is to always predict
 that the temperature 24 hours from now will be equal to the temperature right now
 
+#### 6.3.4 A basic machine-learning approach
+
+In the same way that it’s useful to establish a common-sense baseline before trying
+machine-learning approaches, it’s useful to try simple, cheap machine-learning models (such as small, densely connected networks) before looking into complicated and
+computationally expensive models such as RNNs. This is the best way to make sure any
+further complexity you throw at the problem is legitimate and delivers real benefits.
+
+The following listing shows a fully connected model that starts by flattening the
+data and then runs it through two Dense layers. Note the lack of activation function on
+the last Dense layer, which is typical for a regression problem. You use MAE as the loss.
+Because you evaluate on the exact same data and with the exact same metric you did
+with the common-sense approach, the results will be directly comparable.
+
+Some of the validation losses are close to the no-learning baseline, but not reliably.
+This goes to show the merit of having this baseline in the first place: it turns out to be
+not easy to outperform. Your common sense contains a lot of valuable information
+that a machine-learning model doesn’t have access to.
+
+You may wonder, if a simple, well-performing model exists to go from the data to
+the targets (the common-sense baseline), why doesn’t the model you’re training find it
+and improve on it? Because this simple solution isn’t what your training setup is looking for. The space of models in which you’re searching for a solution—that is, your
+hypothesis space—is the space of all possible two-layer networks with the configuration
+you defined
+
+These networks are already fairly complicated. When you’re looking for a solution with a space of complicated models, the simple, well-performing baseline may
+be unlearnable, even if it’s technically part of the hypothesis space. That is a pretty significant limitation of machine learning in general: unless the learning algorithm is
+hardcoded to look for a specific kind of simple model, parameter learning can sometimes fail to find a simple solution to a simple problem. 
+
