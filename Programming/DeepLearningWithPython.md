@@ -2110,3 +2110,25 @@ These networks are already fairly complicated. When you’re looking for a solut
 be unlearnable, even if it’s technically part of the hypothesis space. That is a pretty significant limitation of machine learning in general: unless the learning algorithm is
 hardcoded to look for a specific kind of simple model, parameter learning can sometimes fail to find a simple solution to a simple problem. 
 
+#### 6.3.5 A first recurrent baseline
+
+The first fully connected approach didn’t do well, but that doesn’t mean machine
+learning isn’t applicable to this problem. The previous approach first flattened the
+timeseries, which removed the notion of time from the input data. Let’s instead look
+at the data as what it is: a sequence, where causality and order matter. You’ll try a
+recurrent-sequence processing model—it should be the perfect fit for such sequence
+data, precisely because it exploits the temporal ordering of data points, unlike the first
+approach.
+
+ Instead of the LSTM layer introduced in the previous section, you’ll use the GRU
+layer, developed by Chung et al. in 2014.5
+ Gated recurrent unit (GRU) layers work
+using the same principle as LSTM, but they’re somewhat streamlined and thus
+cheaper to run (although they may not have as much representational power as
+LSTM). This trade-off between computational expensiveness and representational
+power is seen everywhere in machine learning.
+
+The new validation MAE of ~0.265 (before you start significantly overfitting) translates
+to a mean absolute error of 2.35˚C after denormalization. That’s a solid gain on the
+initial error of 2.57˚C, but you probably still have a bit of a margin for improvement. 
+
