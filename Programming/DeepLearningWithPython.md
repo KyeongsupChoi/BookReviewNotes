@@ -2132,3 +2132,27 @@ The new validation MAE of ~0.265 (before you start significantly overfitting) tr
 to a mean absolute error of 2.35˚C after denormalization. That’s a solid gain on the
 initial error of 2.57˚C, but you probably still have a bit of a margin for improvement. 
 
+#### 6.3.6 Using recurrent dropout to fight overfitting
+
+It’s evident from the training and validation curves that the model is overfitting: the
+training and validation losses start to diverge considerably after a few epochs.
+
+It has long been known that
+applying dropout before a recurrent layer hinders learning rather than helping with
+regularization. In 2015, Yarin Gal, as part of his PhD thesis on Bayesian deep learning,6
+ determined the proper way to use dropout with a recurrent network: the same
+dropout mask (the same pattern of dropped units) should be applied at every timestep, instead of a dropout mask that varies randomly from timestep to timestep.
+
+What’s more, in order to regularize the representations formed by the recurrent gates
+of layers such as GRU and LSTM, a temporally constant dropout mask should be applied
+to the inner recurrent activations of the layer (a recurrent dropout mask). Using the
+same dropout mask at every timestep allows the network to properly propagate its
+learning error through time; a temporally random dropout mask would disrupt this
+error signal and be harmful to the learning process.
+
+ Yarin Gal did his research using Keras and helped build this mechanism directly
+into Keras recurrent layers. Every recurrent layer in Keras has two dropout-related
+arguments: dropout, a float specifying the dropout rate for input units of the layer,
+and recurrent_dropout, specifying the dropout rate of the recurrent units
+
+Because networks being regularized with dropout always take longer to fully converge, you’ll train the network for twice as many epochs.
