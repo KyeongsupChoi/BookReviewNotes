@@ -374,44 +374,29 @@ in a small change in y—that’s the intuition behind continuity.
 
 #### 2.4.3 Stochastic gradient descent
 
-Given a differentiable function, it’s theoretically possible to find its minimum analytically: 
+- Given a differentiable function, it’s theoretically possible to find its minimum analytically: 
 
-Applied to a neural network, that means finding analytically the combination of
-weight values that yields the smallest possible loss function. 
+- Applied to a neural network, that means finding analytically the combination of weight values that yields the smallest possible loss function. 
 
-This can be done by solving the equation gradient(f)(W) = 0 for W
+- This can be done by solving the equation gradient(f)(W) = 0 for W
 
-it’s important to pick a reasonable value for the step factor.
-If it’s too small, the descent down the curve will take many iterations, and it could get
-stuck in a local minimum. If step is too large, your updates may end up taking you to
-completely random locations on the curve
+- It’s important to pick a reasonable value for the step factor. If it’s too small, the descent down the curve will take many iterations, and it could get stuck in a local minimum. If step is too large, your updates may end up taking you to completely random locations on the curve
 
-mini-batch stochastic gradient descent
+- Mini-batch stochastic gradient descent
 
-there exist multiple variants of SGD that differ by taking into account
-previous weight updates when computing the next weight update, rather than just
-looking at the current value of the gradients
+- There exist multiple variants of SGD that differ by taking into account previous weight updates when computing the next weight update, rather than just looking at the current value of the gradients
 
-Momentum is implemented by moving
-the ball at each step based not only on the current slope value (current acceleration)
-but also on the current velocity (resulting from past acceleration). In practice, this
-means updating the parameter w based not only on the current gradient value but also
-on the previous parameter update, such as in this naive implementation
+- Momentum is implemented by moving the ball at each step based not only on the current slope value (current acceleration)but also on the current velocity (resulting from past acceleration). In practice, this means updating the parameter w based not only on the current gradient value but also on the previous parameter update, such as in this naive implementation
 
 #### 2.4.4 Chaining derivatives: the Backpropagation algorithm
 
-Calculus tells us that such a chain of functions can be derived using the following identity, called the chain rule: f(g(x)) = f'(g(x)) * g'(x). Applying the chain rule to the
-computation of the gradient values of a neural network gives rise to an algorithm
-called Backpropagation
+- Calculus tells us that such a chain of functions can be derived using the following identity, called the chain rule: f(g(x)) = f'(g(x)) * g'(x). Applying the chain rule to the computation of the gradient values of a neural network gives rise to an algorithm called Backpropagation
 
-Backpropagation starts with the final loss value and works backward from the top layers to the bottom layers, applying the chain rule to compute the contribution that each parameter
-had in the loss value.
+- Backpropagation starts with the final loss value and works backward from the top layers to the bottom layers, applying the chain rule to compute the contribution that each parameter had in the loss value.
 
 #### 2.5 Looking back at our first example
 
- this network consists of a chain of two Dense layers, that
-each layer applies a few simple tensor operations to the input data, and that these
-operations involve weight tensors.
+- This network consists of a chain of two Dense layers, that each layer applies a few simple tensor operations to the input data, and that these operations involve weight tensors.
 
 ## 3 Getting started with neural networks
 
