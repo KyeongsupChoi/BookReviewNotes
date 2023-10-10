@@ -2156,3 +2156,27 @@ arguments: dropout, a float specifying the dropout rate for input units of the l
 and recurrent_dropout, specifying the dropout rate of the recurrent units
 
 Because networks being regularized with dropout always take longer to fully converge, you’ll train the network for twice as many epochs.
+
+#### 6.3.7 Stacking recurrent layers
+
+Because you’re no longer overfitting but seem to have hit a performance bottleneck,
+you should consider increasing the capacity of the network.
+
+ it’s generally a good idea to increase the
+capacity of your network until overfitting becomes the primary obstacle (assuming you’re already taking basic steps to mitigate overfitting, such as using dropout). As
+long as you aren’t overfitting too badly, you’re likely under capacity.
+
+Increasing network capacity is typically done by increasing the number of units in
+the layers or adding more layers. Recurrent layer stacking is a classic way to build
+more-powerful recurrent networks:
+
+To stack recurrent layers on top of each other in Keras, all intermediate layers
+should return their full sequence of outputs (a 3D tensor) rather than their output at
+the last timestep. This is done by specifying return_sequences=True.
+
+You can see that the added layer does improve the
+results a bit, though not significantly. You can draw two conclusions:
+ Because you’re still not overfitting too badly, you could safely increase the size of
+your layers in a quest for validation-loss improvement. This has a non-negligible
+computational cost, though.
+ Adding a layer didn’t help by a significant factor, so you may be seeing diminishing returns from increasing network capacity at this point.
