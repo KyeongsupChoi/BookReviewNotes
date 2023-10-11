@@ -2165,3 +2165,36 @@ results a bit, though not significantly. You can draw two conclusions:
 your layers in a quest for validation-loss improvement. This has a non-negligible
 computational cost, though.
  Adding a layer didn’t help by a significant factor, so you may be seeing diminishing returns from increasing network capacity at this point.
+
+#### 6.3.8 Using bidirectional RNNs
+
+The last technique introduced in this section is called bidirectional RNNs. A bidirectional RNN is a common RNN variant that can offer greater performance than a regular RNN on certain tasks. It’s frequently used in natural-language processing—you
+could call it the Swiss Army knife of deep learning for natural-language processing
+
+RNNs are notably order dependent, or time dependent: they process the timesteps
+of their input sequences in order, and shuffling or reversing the timesteps can completely change the representations the RNN extracts from the sequence. This is precisely the reason they perform well on problems where order is meaningful, such as
+the temperature-forecasting problem
+
+A bidirectional RNN exploits the order sensitivity of RNNs: it consists of using two regular RNNs, such as the GRU and LSTM layers
+you’re already familiar with, each of which processes the input sequence in one direction (chronologically and antichronologically), and then merging their representations. By processing a sequence both ways, a bidirectional RNN can catch patterns that
+may be overlooked by a unidirectional RNN.
+
+Remarkably, the fact that the RNN layers in this section have processed sequences in
+chronological order (older timesteps first) may have been an arbitrary decision.
+
+The reversed-order GRU strongly underperforms even the common-sense baseline,
+indicating that in this case, chronological processing is important to the success of your
+approach
+
+This makes perfect sense: the underlying GRU layer will typically be better at
+remembering the recent past than the distant past, and naturally the more recent
+weather data points are more predictive than older data points for the problem (that’s
+what makes the common-sense baseline fairly strong). Thus the chronological version
+of the layer is bound to outperform the reversed-order version. 
+
+Importantly, this isn’t
+true for many other problems, including natural language: intuitively, the importance
+of a word in understanding a sentence isn’t usually dependent on its position in the sentence
+
+A bidirectional RNN exploits this idea to improve on the performance of chronologicalorder RNNs. It looks at its input sequence both ways (see figure 6.25), obtaining potentially richer representations and capturing patterns that may have been missed by the
+chronological-order version alone.
