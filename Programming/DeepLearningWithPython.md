@@ -2196,5 +2196,22 @@ Importantly, this isn’t
 true for many other problems, including natural language: intuitively, the importance
 of a word in understanding a sentence isn’t usually dependent on its position in the sentence
 
-A bidirectional RNN exploits this idea to improve on the performance of chronologicalorder RNNs. It looks at its input sequence both ways (see figure 6.25), obtaining potentially richer representations and capturing patterns that may have been missed by the
+A bidirectional RNN exploits this idea to improve on the performance of chronological order RNNs. It looks at its input sequence both ways (see figure 6.25), obtaining potentially richer representations and capturing patterns that may have been missed by the
 chronological-order version alone.
+
+#### 6.3.9 Going even further
+
+There are many other things you could try, in order to improve performance on the
+temperature-forecasting problem:
+ Adjust the number of units in each recurrent layer in the stacked setup. The
+current choices are largely arbitrary and thus probably suboptimal.
+ Adjust the learning rate used by the RMSprop optimizer.
+ Try using LSTM layers instead of GRU layers.
+ Try using a bigger densely connected regressor on top of the recurrent layers:
+that is, a bigger Dense layer or even a stack of Dense layers.
+ Don’t forget to eventually run the best-performing models (in terms of validation MAE) on the test set! Otherwise, you’ll develop architectures that are overfitting to the validation set.
+
+As always, deep learning is more an art than a science. We can provide guidelines that
+suggest what is likely to work or not work on a given problem, but, ultimately, every
+problem is unique; you’ll have to evaluate different strategies empirically. There is
+currently no theory that will tell you in advance precisely what you should do to optimally solve a problem. You must iterate
