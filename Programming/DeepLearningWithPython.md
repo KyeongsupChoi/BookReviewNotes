@@ -2215,3 +2215,24 @@ As always, deep learning is more an art than a science. We can provide guideline
 suggest what is likely to work or not work on a given problem, but, ultimately, every
 problem is unique; you’ll have to evaluate different strategies empirically. There is
 currently no theory that will tell you in advance precisely what you should do to optimally solve a problem. You must iterate
+
+#### 6.3.10 Wrapping up
+
+Here’s what you should take away from this section:
+ As you first learned in chapter 4, when approaching a new problem, it’s good to
+first establish common-sense baselines for your metric of choice. If you don’t
+have a baseline to beat, you can’t tell whether you’re making real progress.
+ Try simple models before expensive ones, to justify the additional expense.
+Sometimes a simple model will turn out to be your best option.
+ When you have data where temporal ordering matters, recurrent networks are
+a great fit and easily outperform models that first flatten the temporal data.
+ To use dropout with recurrent networks, you should use a time-constant dropout mask and recurrent dropout mask. These are built into Keras recurrent layers, so all you have to do is use the dropout and recurrent_dropout arguments
+of recurrent layers.
+ Stacked RNNs provide more representational power than a single RNN layer.
+They’re also much more expensive and thus not always worth it. Although they
+offer clear gains on complex problems (such as machine translation), they may
+not always be relevant to smaller, simpler problems.
+ Bidirectional RNNs, which look at a sequence both ways, are useful on naturallanguage processing problems. But they aren’t strong performers on sequence
+data where the recent past is much more informative than the beginning of the
+sequence.
+
