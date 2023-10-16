@@ -2236,3 +2236,16 @@ not always be relevant to smaller, simpler problems.
 data where the recent past is much more informative than the beginning of the
 sequence.
 
+### 6.4 Sequence processing with convnets
+
+In chapter 5, you learned about convolutional neural networks (convnets) and how
+they perform particularly well on computer vision problems, due to their ability to
+operate convolutionally, extracting features from local input patches and allowing for
+representation modularity and data efficiency. The same properties that make convnets excel at computer vision also make them highly relevant to sequence processing.
+Time can be treated as a spatial dimension, like the height or width of a 2D image.
+
+Such 1D convnets can be competitive with RNNs on certain sequence-processing
+problems, usually at a considerably cheaper computational cost. Recently, 1D convnets, typically used with dilated kernels, have been used with great success for audio
+generation and machine translation. In addition to these specific successes, it has long
+been known that small 1D convnets can offer a fast alternative to RNNs for simple tasks
+such as text classification and timeseries forecasting
