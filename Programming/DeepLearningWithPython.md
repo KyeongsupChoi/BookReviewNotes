@@ -2232,7 +2232,7 @@ of recurrent layers.
 They’re also much more expensive and thus not always worth it. Although they
 offer clear gains on complex problems (such as machine translation), they may
 not always be relevant to smaller, simpler problems.
- Bidirectional RNNs, which look at a sequence both ways, are useful on naturallanguage processing problems. But they aren’t strong performers on sequence
+ Bidirectional RNNs, which look at a sequence both ways, are useful on natural language processing problems. But they aren’t strong performers on sequence
 data where the recent past is much more informative than the beginning of the
 sequence.
 
@@ -2249,3 +2249,17 @@ problems, usually at a considerably cheaper computational cost. Recently, 1D con
 generation and machine translation. In addition to these specific successes, it has long
 been known that small 1D convnets can offer a fast alternative to RNNs for simple tasks
 such as text classification and timeseries forecasting
+
+#### 6.4.1 Understanding 1D convolution for sequence data
+
+you can use 1D convolutions, extracting local 1D patches (subsequences) from sequences
+
+Such 1D convolution layers can recognize local patterns in a sequence. Because the
+same input transformation is performed on every patch, a pattern learned at a certain
+position in a sentence can later be recognized at a different position, making 1D convnets translation invariant
+
+. For instance, a 1D convnet processing sequences of characters using convolution windows of size 5 should be able to
+learn words or word fragments of length 5 or less, and it should be able to recognize these words in any context in an input sequence
+
+A character-level 1D convnet is thus
+able to learn about word morphology.
