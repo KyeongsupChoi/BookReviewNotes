@@ -2263,3 +2263,11 @@ learn words or word fragments of length 5 or less, and it should be able to reco
 
 A character-level 1D convnet is thus
 able to learn about word morphology.
+
+#### 6.4.2 1D pooling for sequence data
+
+You’re already familiar with 2D pooling operations, such as 2D average pooling and
+max pooling, used in convnets to spatially downsample image tensors. The 2D pooling
+operation has a 1D equivalent: extracting 1D patches (subsequences) from an input
+and outputting the maximum value (max pooling) or average value (average pooling).
+Just as with 2D convnets, this is used for reducing the length of 1D inputs (subsampling). 
