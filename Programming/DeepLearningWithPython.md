@@ -2271,3 +2271,21 @@ max pooling, used in convnets to spatially downsample image tensors. The 2D pool
 operation has a 1D equivalent: extracting 1D patches (subsequences) from an input
 and outputting the maximum value (max pooling) or average value (average pooling).
 Just as with 2D convnets, this is used for reducing the length of 1D inputs (subsampling). 
+
+#### 6.4.3 Implementing a 1D convnet
+
+In Keras, you use a 1D convnet via the Conv1D layer, which has an interface similar to
+Conv2D. It takes as input 3D tensors with shape (samples, time, features) and
+returns similarly shaped 3D tensors. The convolution window is a 1D window on the
+temporal axis: axis 1 in the input tensor.
+
+1D convnets are structured in the same way as their 2D counterparts, which you used
+in chapter 5: they consist of a stack of Conv1D and MaxPooling1D layers, ending in
+either a global pooling layer or a Flatten layer, that turn the 3D outputs into 2D outputs, allowing you to add one or more Dense layers to the model for classification or
+regression.
+
+One difference, though, is the fact that you can afford to use larger convolution
+windows with 1D convnets. With a 2D convolution layer, a 3 × 3 convolution window
+contains 3 × 3 = 9 feature vectors; but with a 1D convolution layer, a convolution window of size 3 contains only 3 feature vectors. You can thus easily afford 1D convolution
+windows of size 7 or 9.
+
