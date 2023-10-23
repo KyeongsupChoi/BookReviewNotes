@@ -2289,3 +2289,35 @@ windows with 1D convnets. With a 2D convolution layer, a 3 × 3 convolution wind
 contains 3 × 3 = 9 feature vectors; but with a 1D convolution layer, a convolution window of size 3 contains only 3 feature vectors. You can thus easily afford 1D convolution
 windows of size 7 or 9.
 
+#### 6.4.4 Combining CNNs and RNNs to process long sequences
+
+Because 1D convnets process input patches independently, they aren’t sensitive to the
+order of the timesteps (beyond a local scale, the size of the convolution windows),
+unlike RNNs. Of course, to recognize longer-term patterns, you can stack many convolution layers and pooling layers, resulting in upper layers that will see long chunks of
+the original inputs—but that’s still a fairly weak way to induce order sensitivity. 
+
+One
+way to evidence this weakness is to try 1D convnets on the temperature-forecasting
+problem, where order-sensitivity is key to producing good predictions.
+
+ the convnet looks for patterns anywhere in the input timeseries and has no knowledge of the temporal position of a pattern it sees 
+ 
+. Because more recent
+data points should be interpreted differently from older data points in the case of this
+specific forecasting problem, the convnet fails at producing meaningful results.
+
+One strategy to combine the speed and lightness of convnets with the order-sensitivity
+of RNNs is to use a 1D convnet as a preprocessing step before an RNN (see figure 6.30).
+This is especially beneficial when you’re dealing with sequences that are so long they can’t
+realistically be processed with RNNs, such as
+sequences with thousands of steps.
+
+The convnet will turn the long input sequence into
+much shorter (downsampled) sequences of
+higher-level features. This sequence of
+extracted features then becomes the input to
+the RNN part of the network.
+
+This technique isn’t seen often in
+research papers and practical applications,
+possibly because it isn’t well known. It’s effective and ought to be more common.
