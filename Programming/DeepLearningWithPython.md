@@ -2321,3 +2321,13 @@ the RNN part of the network.
 This technique isn’t seen often in
 research papers and practical applications,
 possibly because it isn’t well known. It’s effective and ought to be more common.
+
+#### 6.4.5 Wrapping up
+
+ In the same way that 2D convnets perform well for processing visual patterns in
+2D space, 1D convnets perform well for processing temporal patterns. They
+offer a faster alternative to RNNs on some problems, in particular naturallanguage processing tasks.
+ Typically, 1D convnets are structured much like their 2D equivalents from the
+world of computer vision: they consist of stacks of Conv1D layers and MaxPooling1D layers, ending in a global pooling operation or flattening operation.
+ Because RNNs are extremely expensive for processing very long sequences, but
+1D convnets are cheap, it can be a good idea to use a 1D convnet as a preprocessing step before an RNN, shortening the sequence and extracting useful representations for the RNN to process. 
