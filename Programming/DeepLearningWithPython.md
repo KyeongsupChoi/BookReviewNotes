@@ -2331,3 +2331,15 @@ offer a faster alternative to RNNs on some problems, in particular naturallangua
 world of computer vision: they consist of stacks of Conv1D layers and MaxPooling1D layers, ending in a global pooling operation or flattening operation.
  Because RNNs are extremely expensive for processing very long sequences, but
 1D convnets are cheap, it can be a good idea to use a 1D convnet as a preprocessing step before an RNN, shortening the sequence and extracting useful representations for the RNN to process. 
+
+### 7 Advanced Deep-Learning Best Practices
+
+This chapter explores a number of powerful tools that will bring you closer to
+being able to develop state-of-the-art models on difficult problems. Using the Keras
+functional API, you can build graph-like models, share a layer across different
+inputs, and use Keras models just like Python functions.
+
+Keras callbacks and the
+TensorBoard browser-based visualization tool let you monitor models during training. We’ll also discuss several other best practices including batch normalization,
+residual connections, hyperparameter optimization, and model ensembling.
+
