@@ -2343,3 +2343,44 @@ Keras callbacks and the
 TensorBoard browser-based visualization tool let you monitor models during training. We’ll also discuss several other best practices including batch normalization,
 residual connections, hyperparameter optimization, and model ensembling.
 
+#### 7.1 Going beyond the Sequential model: the Keras functional API
+
+The Sequential model makes the assumption that the
+network has exactly one input and exactly one output, and
+that it consists of a linear stack of layers
+
+ But this set of
+assumptions is too inflexible in a number of cases. Some
+networks require several independent inputs, others
+require multiple outputs, and some networks have internal branching between layers that makes them look like
+graphs of layers rather than linear stacks of layers
+
+ome tasks, for instance, require multimodal inputs: they merge data coming from
+different input sources, processing each type of data using different kinds of neural
+layers. Imagine a deep-learning model trying to predict the most likely market price of
+a second-hand piece of clothing, using the following inputs: user-provided metadata
+(such as the item’s brand, age, and so on), a user-provided text description, and a picture of the item. 
+
+A
+naive approach would be to train three separate models and then do a weighted average of their predictions. But this may be suboptimal, because the information
+extracted by the models may be redundant. A better way is to jointly learn a more accurate model of the data by using a model that can see all available input modalities
+simultaneously: a model with three input branches 
+
+Similarly, some tasks need to predict multiple target attributes of input data. Given the
+text of a novel or short story, you might want to automatically classify it by genre (such
+as romance or thriller) but also predict the approximate date it was written. Of course,
+you could train two separate models: one for the genre and one for the date. But
+because these attributes aren’t statistically independent, you could build a better
+model by learning to jointly predict both genre and date at the same time.
+
+Such a
+joint model would then have two outputs, or heads (see figure 7.3). Due to correlations between genre and date, knowing the date of a novel would help the model
+learn rich, accurate representations of the space of novel genres, and vice versa.
+
+There’s also the
+recent trend of adding residual connections to a model, which started with the ResNet
+family of networks 
+
+These three important use cases—multi-input models, multi-output models, and
+graph-like models—aren’t possible when using only the Sequential model class in
+Keras. But there’s another far more general and flexible way to use Keras: the functional API. This section explains in detail what it is, what it can do, and how to use it.
