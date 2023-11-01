@@ -400,16 +400,13 @@ in a small change in y—that’s the intuition behind continuity.
 
 ## 3 Getting started with neural networks
 
-This chapter is designed to get you started with using neural networks to solve real
-problems
+- This chapter is designed to get you started with using neural networks to solve real problems
 
-we’ll take a closer look at the core components of neural networks
-that we introduced in chapter 2: layers, networks, objective functions, and optimizers.
+- We’ll take a closer look at the core components of neural networks that we introduced in chapter 2: layers, networks, objective functions, and optimizers.
 
-We’ll give you a quick introduction to Keras, the Python deep-learning library
-that we’ll use throughout the book
+- We’ll give you a quick introduction to Keras, the Python deep-learning library that we’ll use throughout the book.
 
-You’ll set up a deep-learning workstation, with TensorFlow, Keras, and GPU support
+- You’ll set up a deep-learning workstation, with TensorFlow, Keras, and GPU support
 
 #### 3.1 Anatomy of a neural network
 
