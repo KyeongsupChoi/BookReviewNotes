@@ -410,7 +410,7 @@ in a small change in y—that’s the intuition behind continuity.
 
 #### 3.1 Anatomy of a neural network
 
-training a neural network revolves around the following objects:
+- Training a neural network revolves around the following objects:
  Layers, which are combined into a network (or model)
  The input data and corresponding targets
  The loss function, which defines the feedback signal used for learning
