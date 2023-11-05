@@ -418,23 +418,17 @@ in a small change in y—that’s the intuition behind continuity.
 
 #### 3.1.1 Layers: the building blocks of deep learning
 
-The fundamental data structure in neural networks is the layer
+- The fundamental data structure in neural networks is the layer
 
-A layer is a data-processing module that takes as input one or
-more tensors and that outputs one or more tensors.
+- A layer is a data-processing module that takes as input one or more tensors and that outputs one or more tensors.
 
-simple vector data, stored in 2D tensors of shape (samples,
-features), is often processed by densely connected layers, also called fully connected or dense
-layers 
+- Simple vector data, stored in 2D tensors of shape (samples, features), is often processed by densely connected layers, also called fully connected or dense layers 
 
-). Sequence data, stored in 3D tensors of shape (samples,
-timesteps, features), is typically processed by recurrent layers such as an LSTM layer.
+- Sequence data, stored in 3D tensors of shape (samples, timesteps, features), is typically processed by recurrent layers such as an LSTM layer.
 
-Image data, stored in 4D tensors, is usually processed by 2D convolution layers (Conv2D).
+- Image data, stored in 4D tensors, is usually processed by 2D convolution layers (Conv2D).
 
-When using Keras, you don’t have to worry about
-compatibility, because the layers you add to your models are dynamically built to
-match the shape of the incoming layer
+- When using Keras, you don’t have to worry about compatibility, because the layers you add to your models are dynamically built to match the shape of the incoming layer
 
 #### 3.1.2 Models: networks of layers
 
