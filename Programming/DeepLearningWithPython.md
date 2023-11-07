@@ -652,7 +652,7 @@ approaches, you should be able to get close to 95%.
 
 #### 3.4.5 Using a trained network to generate predictions on new data
 
-You can generate the likelihood of reviews being positive by using the predict method:
+- You can generate the likelihood of reviews being positive by using the predict method.
 
 #### 3.4.6 Further experiments
 
