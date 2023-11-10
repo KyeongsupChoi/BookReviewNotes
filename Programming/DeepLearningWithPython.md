@@ -459,18 +459,13 @@ in a small change in y—that’s the intuition behind continuity.
 
 #### 3.2 Introduction to Keras
 
-Keras is a
-deep-learning framework for Python that provides a convenient way to define and
-train almost any kind of deep-learning model.
+- Keras is a deep-learning framework for Python that provides a convenient way to define and train almost any kind of deep-learning model.
 
- Keras has the following key features:
+- Keras has the following key features:
  It allows the same code to run seamlessly on CPU or GPU.
- It has a user-friendly API that makes it easy to quickly prototype deep-learning
-models.
+ It has a user-friendly API that makes it easy to quickly prototype deep-learning models.
  It has built-in support for convolutional networks (for computer vision), recurrent networks (for sequence processing), and any combination of both.
- It supports arbitrary network architectures: multi-input or multi-output models,
-layer sharing, model sharing, and so on. This means Keras is appropriate for
-building essentially any deep-learning model, from a generative adversarial network to a neural Turing machine.
+ It supports arbitrary network architectures: multi-input or multi-output models, layer sharing, model sharing, and so on. This means Keras is appropriate for building essentially any deep-learning model, from a generative adversarial network to a neural Turing machine.
 
 #### 3.2.1 Keras, TensorFlow, Theano, and CNTK
 
