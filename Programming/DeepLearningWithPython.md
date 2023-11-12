@@ -132,7 +132,7 @@
 
 - Since 2012, deep convolutional neural networks (convnets) have become the go-to algorithm for all computer vision tasks;
 
-- Deep learning has also found applications in many other types of problems, such as natural-language processing.!
+- Deep learning has also found applications in many other types of problems, such as natural-language processing.
 
 #### 1.2.6 What makes deep learning different
 
