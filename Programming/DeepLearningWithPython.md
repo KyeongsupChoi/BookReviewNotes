@@ -469,28 +469,17 @@ in a small change in y—that’s the intuition behind continuity.
 
 #### 3.2.1 Keras, TensorFlow, Theano, and CNTK
 
-Keras is a model-level library, providing high-level building blocks for developing
-deep-learning models. It doesn’t handle low-level operations such as tensor manipulation and differentiation. Instead, it relies on a specialized, well-optimized tensor
-library to do so, serving as the backend engine of Keras. 
+- Keras is a model-level library, providing high-level building blocks for developing deep-learning models. It doesn’t handle low-level operations such as tensor manipulation and differentiation. Instead, it relies on a specialized, well-optimized tensor library to do so, serving as the backend engine of Keras. 
 
-s. Rather than choosing a single
-tensor library and tying the implementation of Keras to that library, Keras handles the
-problem in a modular way (see figure 3.3); thus several different backend engines can
-be plugged seamlessly into Keras.
+- Rather than choosing a single tensor library and tying the implementation of Keras to that library, Keras handles the problem in a modular way; thus several different backend engines can be plugged seamlessly into Keras.
 
-. Currently, the three existing backend implementations are the TensorFlow backend, the Theano backend, and the Microsoft Cognitive
-Toolkit (CNTK) backend. In the future, it’s likely that Keras will be extended to work
-with even more deep-learning execution engines.
+- Currently, the three existing backend implementations are the TensorFlow backend, the Theano backend, and the Microsoft Cognitive Toolkit (CNTK) backend. In the future, it’s likely that Keras will be extended to work with even more deep-learning execution engines.
 
-We recommend using the TensorFlow backend as
-the default for most of your deep-learning needs, because it’s the most widely adopted,
-scalable, and production ready.
+- We recommend using the TensorFlow backend as the default for most of your deep-learning needs, because it’s the most widely adopted, scalable, and production ready.
 
-Via TensorFlow (or Theano, or CNTK), Keras is able to run seamlessly on both
-CPUs and GPUs. When running on CPU, TensorFlow is itself wrapping a low-level
-library for tensor operations called Eigen (http://eigen.tuxfamily.org). On GPU,
-TensorFlow wraps a library of well-optimized deep-learning operations called the
-NVIDIA CUDA Deep Neural Network library
+- Via TensorFlow (or Theano, or CNTK), Keras is able to run seamlessly on both CPUs and GPUs. When running on CPU, TensorFlow is itself wrapping a low-level library for tensor operations called Eigen.
+
+- On GPU, TensorFlow wraps a library of well-optimized deep-learning operations called the NVIDIA CUDA Deep Neural Network library
 
 #### 3.2.2 Developing with Keras: a quick overview
 
