@@ -483,19 +483,15 @@ in a small change in y—that’s the intuition behind continuity.
 
 #### 3.2.2 Developing with Keras: a quick overview
 
-The typical
-Keras workflow looks just like that example:
+- The typical Keras workflow looks just like that example:
 1. Define your training data: input tensors and target tensors.
 2. Define a network of layers (or model ) that maps your inputs to your targets.
-3. Configure the learning process by choosing a loss function, an optimizer, and
-some metrics to monitor.
+3. Configure the learning process by choosing a loss function, an optimizer, and some metrics to monitor.
 4. Iterate on your training data by calling the fit() method of your model.
 
-With the functional API, you’re manipulating the data tensors that the model processes and applying layers to this tensor as if they were functions.
+- With the functional API, you’re manipulating the data tensors that the model processes and applying layers to this tensor as if they were functions.
 
-Finally, the learning process consists of passing Numpy arrays of input data (and the
-corresponding target data) to the model via the fit() method, similar to what you
-would do in Scikit-Learn and several other machine-learning libraries:
+- Finally, the learning process consists of passing Numpy arrays of input data (and the corresponding target data) to the model via the fit() method, similar to what you would do in Scikit-Learn and several other machine-learning libraries:
 
 ### 3.3 Setting up a deep-learning workstation
 
