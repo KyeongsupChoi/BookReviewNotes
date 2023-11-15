@@ -495,12 +495,11 @@ in a small change in y—that’s the intuition behind continuity.
 
 ### 3.3 Setting up a deep-learning workstation
 
-It’s highly recommended, although not strictly necessary, that you
-run deep-learning code on a modern NVIDIA GPU. Some applications—in particular,
-image processing with convolutional networks and sequence processing with recurrent neural networks—will be excruciatingly slow on CPU, even a fast multicore CPU.
+- It’s highly recommended, although not strictly necessary, that you run deep-learning code on a modern NVIDIA GPU. 
 
-Whether you’re running locally or in the cloud, it’s better to be using a Unix workstation. Although it’s technically possible to use Keras on Windows (all three Keras
-backends support Windows), We don’t recommend it. 
+- Some applications—in particular, image processing with convolutional networks and sequence processing with recurrent neural networks—will be excruciatingly slow on CPU, even a fast multicore CPU.
+
+- Whether you’re running locally or in the cloud, it’s better to be using a Unix workstation. Although it’s technically possible to use Keras on Windows (all three Keras backends support Windows), We don’t recommend it. 
 
 #### 3.3.1 Jupyter notebooks: the preferred way to run deep-learning experiments
 
