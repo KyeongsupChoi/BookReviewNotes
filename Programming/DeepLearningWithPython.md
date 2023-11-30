@@ -2344,3 +2344,115 @@ family of networks
 These three important use cases—multi-input models, multi-output models, and
 graph-like models—aren’t possible when using only the Sequential model class in
 Keras. But there’s another far more general and flexible way to use Keras: the functional API. This section explains in detail what it is, what it can do, and how to use it.
+
+### 7.1.1 Introduction to the functional API
+
+In the functional API, you directly manipulate tensors, and you use layers as functions
+that take tensors and return tensors
+
+The only part that may seem a bit magical at this point is instantiating a Model object
+using only an input tensor and an output tensor. Behind the scenes, Keras retrieves
+every layer involved in going from input_tensor to output_tensor, bringing them
+together into a graph-like data structure—a Model. Of course, the reason it works is
+that output_tensor was obtained by repeatedly transforming input_tensor. If you
+tried to build a model from inputs and outputs that weren’t related, you’d get a RuntimeError:
+
+This error tells you, in essence, that Keras couldn’t reach input_1 from the provided
+output tensor.
+
+When it comes to compiling, training, or evaluating such an instance of Model, the
+API is the same as that of Sequential:
+
+### 7.1.2 Multi-input models
+
+The functional API can be used to build models that have multiple inputs. Typically,
+such models at some point merge their different input branches using a layer that can
+combine several tensors: by adding them, concatenating them, and so on. This is usually done via a Keras merge operation such as keras.layers.add, keras.layers
+.concatenate, and so on
+
+A typical question-answering model has two inputs: a natural-language question
+and a text snippet (such as a news article) providing information to be used for
+answering the question. The model must then produce an answer: in the simplest possible setup, this is a one-word answer obtained via a softmax over some predefined
+vocabulary
+
+### 7.1.3 Multi-output models
+
+In the same way, you can use the functional API to build models with multiple outputs
+(or multiple heads). A simple example is a network that attempts to simultaneously
+predict different properties of the data, such as a network that takes as input a series
+of social media posts from a single anonymous person and tries to predict attributes of
+that person, such as age, gender, and income level
+
+Importantly, training such a model requires the ability to specify different loss functions for different heads of the network: for instance, age prediction is a scalar regression task, but gender prediction is a binary classification task, requiring a different
+training procedure. But because gradient descent requires you to minimize a scalar,
+you must combine these losses into a single value in order to train the model. The
+simplest way to combine different losses is to sum them all.
+
+Note that very imbalanced loss contributions will cause the model representations to
+be optimized preferentially for the task with the largest individual loss, at the expense
+of the other tasks. To remedy this, you can assign different levels of importance to the
+loss values in their contribution to the final loss. This is useful in particular if the
+losses’ values use different scales. 
+
+Much as in the case of multi-input models, you can pass Numpy data to the model for
+training either via a list of arrays or via a dictionary of arrays.
+
+### 7.1.4 Directed acyclic graphs of layers
+
+With the functional API, not only can you build models with multiple inputs and multiple outputs, but you can also implement networks with a complex internal topology.
+Neural networks in Keras are allowed to be arbitrary directed acyclic graphs of layers. 
+
+The
+qualifier acyclic is important: these graphs can’t have cycles. It’s impossible for a tensor
+x to become the input of one of the layers that generated x. The only processing loops
+that are allowed (that is, recurrent connections) are those internal to recurrent layers.
+
+Inception3
+ is a popular type of network architecture for convolutional neural networks;
+it was developed by Christian Szegedy and his colleagues at Google in 2013–2014,
+inspired by the earlier network-in-network architecture.4
+ It consists of a stack of modules
+that themselves look like small independent networks, split into several parallel
+branches
+
+Another closely related model available as part of the Keras applications module is
+Xception.
+5
+ Xception, which stands for extreme inception, is a convnet architecture loosely
+inspired by Inception. It takes the idea of separating the learning of channel-wise and
+space-wise features to its logical extreme, and replaces Inception modules with depthwise separable convolutions consisting of a depthwise convolution (a spatial convolution where every input channel is handled separately) followed by a pointwise
+convolution (a 1 × 1 convolution)—effectively, an extreme form of an Inception module, where spatial features and channel-wise features are fully separated. 
+
+Residual connections are a common graph-like network component found in many post2015 network architectures, including Xception. They were introduced by He et al.
+from Microsoft in their winning entry in the ILSVRC ImageNet challenge in late 2015.6
+They tackle two common problems that plague any large-scale deep-learning model:
+vanishing gradients and representational bottlenecks. In general, adding residual connections to any model that has more than 10 layers is likely to be beneficial.
+
+### 7.1.5 Layer weight sharing
+
+One more important feature of the functional API is the ability to reuse a layer
+instance several times. When you call a layer instance twice, instead of instantiating a
+new layer for each call, you reuse the same weights with every call. This allows you to
+build models that have shared branches—several branches that all share the same
+knowledge and perform the same operations. That is, they share the same representations and learn these representations simultaneously for different sets of inputs.
+
+### 7.1.6 Models as layers
+
+Importantly, in the functional API, models can be used as you’d use layers—effectively,
+you can think of a model as a “bigger layer.” This is true of both the Sequential and
+Model classes. This means you can call a model on an input tensor and retrieve an output tensor:
+
+When you call a model instance, you’re reusing the weights of the model—exactly like
+what happens when you call a layer instance. Calling an instance, whether it’s a layer
+instance or a model instance, will always reuse the existing learned representations of
+the instance—which is intuitive.
+
+### 7.1.7 Wrapping up
+
+This concludes our introduction to the Keras functional API—an essential tool for
+building advanced deep neural network architectures. Now you know the following:
+ To step out of the Sequential API whenever you need anything more than a linear stack of layers
+ How to build Keras models with several inputs, several outputs, and complex
+internal network topology, using the Keras functional API
+ How to reuse the weights of a layer or model across different processing
+branches, by calling the same layer or model instance several times
