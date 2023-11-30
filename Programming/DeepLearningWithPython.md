@@ -2345,7 +2345,7 @@ These three important use cases—multi-input models, multi-output models, and
 graph-like models—aren’t possible when using only the Sequential model class in
 Keras. But there’s another far more general and flexible way to use Keras: the functional API. This section explains in detail what it is, what it can do, and how to use it.
 
-### 7.1.1 Introduction to the functional API
+#### 7.1.1 Introduction to the functional API
 
 In the functional API, you directly manipulate tensors, and you use layers as functions
 that take tensors and return tensors
@@ -2363,7 +2363,7 @@ output tensor.
 When it comes to compiling, training, or evaluating such an instance of Model, the
 API is the same as that of Sequential:
 
-### 7.1.2 Multi-input models
+#### 7.1.2 Multi-input models
 
 The functional API can be used to build models that have multiple inputs. Typically,
 such models at some point merge their different input branches using a layer that can
@@ -2375,7 +2375,7 @@ and a text snippet (such as a news article) providing information to be used for
 answering the question. The model must then produce an answer: in the simplest possible setup, this is a one-word answer obtained via a softmax over some predefined
 vocabulary
 
-### 7.1.3 Multi-output models
+#### 7.1.3 Multi-output models
 
 In the same way, you can use the functional API to build models with multiple outputs
 (or multiple heads). A simple example is a network that attempts to simultaneously
@@ -2397,7 +2397,7 @@ losses’ values use different scales.
 Much as in the case of multi-input models, you can pass Numpy data to the model for
 training either via a list of arrays or via a dictionary of arrays.
 
-### 7.1.4 Directed acyclic graphs of layers
+#### 7.1.4 Directed acyclic graphs of layers
 
 With the functional API, not only can you build models with multiple inputs and multiple outputs, but you can also implement networks with a complex internal topology.
 Neural networks in Keras are allowed to be arbitrary directed acyclic graphs of layers. 
@@ -2428,7 +2428,7 @@ from Microsoft in their winning entry in the ILSVRC ImageNet challenge in late 2
 They tackle two common problems that plague any large-scale deep-learning model:
 vanishing gradients and representational bottlenecks. In general, adding residual connections to any model that has more than 10 layers is likely to be beneficial.
 
-### 7.1.5 Layer weight sharing
+#### 7.1.5 Layer weight sharing
 
 One more important feature of the functional API is the ability to reuse a layer
 instance several times. When you call a layer instance twice, instead of instantiating a
@@ -2436,7 +2436,7 @@ new layer for each call, you reuse the same weights with every call. This allows
 build models that have shared branches—several branches that all share the same
 knowledge and perform the same operations. That is, they share the same representations and learn these representations simultaneously for different sets of inputs.
 
-### 7.1.6 Models as layers
+#### 7.1.6 Models as layers
 
 Importantly, in the functional API, models can be used as you’d use layers—effectively,
 you can think of a model as a “bigger layer.” This is true of both the Sequential and
@@ -2447,7 +2447,7 @@ what happens when you call a layer instance. Calling an instance, whether it’s
 instance or a model instance, will always reuse the existing learned representations of
 the instance—which is intuitive.
 
-### 7.1.7 Wrapping up
+#### 7.1.7 Wrapping up
 
 This concludes our introduction to the Keras functional API—an essential tool for
 building advanced deep neural network architectures. Now you know the following:
@@ -2456,3 +2456,77 @@ building advanced deep neural network architectures. Now you know the following:
 internal network topology, using the Keras functional API
  How to reuse the weights of a layer or model across different processing
 branches, by calling the same layer or model instance several times
+
+### 7.2 Inspecting and monitoring deep-learning models using Keras callbacks and TensorBoard
+
+In this section, we’ll review ways to gain greater access to and control over what goes
+on inside your model during training. Launching a training run on a large dataset for
+tens of epochs using model.fit() or model.fit_generator() can be a bit like
+launching a paper airplane: past the initial impulse, you don’t have any control over
+its trajectory or its landing spot.
+
+ If you want to avoid bad outcomes (and thus wasted
+paper airplanes), it’s smarter to use not a paper plane, but a drone that can sense its
+environment, send data back to its operator, and automatically make steering decisions based on its current state. The techniques we present here will transform the call
+to model.fit() from a paper airplane into a smart, autonomous drone that can selfintrospect and dynamically take action.
+
+#### 7.2.1 Using callbacks to act on a model during training
+
+When you’re training a model, there are many things you can’t predict from the start.
+In particular, you can’t tell how many epochs will be needed to get to an optimal validation loss. The examples so far have adopted the strategy of training for enough
+epochs that you begin overfitting, using the first run to figure out the proper number
+of epochs to train for, and then finally launching a new training run from scratch
+using this optimal number. Of course, this approach is wasteful.
+
+A much better way to handle this is to stop training when you measure that the validation loss in no longer improving. This can be achieved using a Keras callback. A
+callback is an object (a class instance implementing specific methods) that is passed to
+the model in the call to fit and that is called by the model at various points during
+training. It has access to all the available data about the state of the model and its performance, and it can take action: interrupt training, save a model, load a different
+weight set, or otherwise alter the state of the model.
+
+Here are some examples of ways you can use callbacks:
+ Model checkpointing—Saving the current weights of the model at different points
+during training.
+ Early stopping—Interrupting training when the validation loss is no longer
+improving (and of course, saving the best model obtained during training).
+ Dynamically adjusting the value of certain parameters during training—Such as the
+learning rate of the optimizer.
+ Logging training and validation metrics during training, or visualizing the representations learned by the model as they’re updated—The Keras progress bar that you’re
+familiar with is a callback!
+
+You can use the EarlyStopping callback to interrupt training once a target metric
+being monitored has stopped improving for a fixed number of epochs.
+
+#### 7.2.2 Introduction to TensorBoard: the TensorFlow visualization framework
+
+To do good research or develop good models, you need rich, frequent feedback about
+what’s going on inside your models during your experiments. That’s the point of running experiments: to get information about how well a model performs—as much
+information as possible.
+
+Making progress is an iterative process, or loop: you start with
+an idea and express it as an experiment, attempting to validate or invalidate your idea.
+You run this experiment and process the information it generates. This inspires your
+next idea. The more iterations of this loop you’re able to run, the more refined and
+powerful your ideas become.
+
+This section introduces TensorBoard, a browser-based visualization tool that comes
+packaged with TensorFlow. Note that it’s only available for Keras models when you’re
+using Keras with the TensorFlow backend
+
+ The key purpose of TensorBoard is to help you visually monitor everything that
+goes on inside your model during training. If you’re monitoring more information
+than just the model’s final loss, you can develop a clearer vision of what the model
+does and doesn’t do, and you can make progress more quickly. TensorBoard gives you
+access to several neat features, all in your browser:
+
+ Visually monitoring metrics during training
+ Visualizing your model architecture
+ Visualizing histograms of activations and gradients
+ Exploring embeddings in 3D
+
+### 7.2.3 Wrapping up
+
+ Keras callbacks provide a simple way to monitor models during training and
+automatically take action based on the state of the model.
+ When you’re using TensorFlow, TensorBoard is a great way to visualize model
+activity in your browser. You can use it in Keras models via the TensorBoard callback.
