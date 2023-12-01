@@ -2524,9 +2524,116 @@ access to several neat features, all in your browser:
  Visualizing histograms of activations and gradients
  Exploring embeddings in 3D
 
-### 7.2.3 Wrapping up
+#### 7.2.3 Wrapping up
 
  Keras callbacks provide a simple way to monitor models during training and
 automatically take action based on the state of the model.
  When you’re using TensorFlow, TensorBoard is a great way to visualize model
 activity in your browser. You can use it in Keras models via the TensorBoard callback.
+
+### 7.3 Getting the most out of your models
+
+Trying out architectures blindly works well enough if you just need something that
+works okay. In this section, we’ll go beyond “works okay” to “works great and wins
+machine-learning competitions” by offering you a quick guide to a set of must-know
+techniques for building state-of-the-art deep-learning models
+
+#### 7.3.1 Advanced architecture patterns
+
+We covered one important design pattern in detail in the previous section: residual
+connections. There are two more design patterns you should know about: normalization and depthwise separable convolution.
+
+Normalization is a broad category of methods that seek to make different samples seen
+by a machine-learning model more similar to each other, which helps the model learn
+and generalize well to new data.
+
+The most common form of data normalization is one
+you’ve seen several times in this book already: centering the data on 0 by subtracting
+the mean from the data, and giving the data a unit standard deviation by dividing the
+data by its standard deviation
+
+What if I told you that there’s a layer you can use as a drop-in replacement for Conv2D
+that will make your model lighter (fewer trainable weight parameters) and faster
+(fewer floating-point operations) and cause it to perform a few percentage points better on its task? That is precisely what the depthwise separable convolution layer does
+(SeparableConv2D)
+
+This layer performs a spatial convolution on each channel of its
+input, independently, before mixing output channels via a pointwise convolution (a
+1 × 1 convolution), as shown in figure 7.16. This is equivalent to separating the learning of spatial features and the learning of channel-wise features, which makes a lot of
+sense if you assume that spatial locations in the input are highly correlated, but different channels are fairly independent. It requires significantly fewer parameters and
+involves fewer computations, thus resulting in smaller, speedier models. And because
+it’s a more representationally efficient way to perform convolution, it tends to learn
+better representations using less data, resulting in better-performing models.
+
+#### 7.3.2 Hyperparameter optimization
+
+When building a deep-learning model, you have to make many seemingly arbitrary
+decisions: How many layers should you stack? How many units or filters should go in
+each layer? Should you use relu as activation, or a different function? Should you use
+BatchNormalization after a given layer? How much dropout should you use? And so
+on. These architecture-level parameters are called hyperparameters to distinguish them
+from the parameters of a model, which are trained via backpropagation.
+
+ In practice, experienced machine-learning engineers and researchers build intuition over time as to what works and what doesn’t when it comes to these choices—
+they develop hyperparameter-tuning skills. But there are no formal rules. If you want
+to get to the very limit of what can be achieved on a given task, you can’t be content
+with arbitrary choices made by a fallible human. Your initial decisions are almost
+always suboptimal, even if you have good intuition. You can refine your choices by
+tweaking them by hand and retraining the model repeatedly—that’s what machinelearning engineers and researchers spend most of their time doing. But it shouldn’t
+be your job as a human to fiddle with hyperparameters all day—that is better left to a
+machine.
+
+ Thus you need to explore the space of possible decisions automatically, systematically, in a principled way. You need to search the architecture space and find the bestperforming ones empirically. That’s what the field of automatic hyperparameter optimization is about: it’s an entire field of research, and an important one.
+ The process of optimizing hyperparameters typically looks like this:
+1 Choose a set of hyperparameters (automatically).
+2 Build the corresponding model.
+3 Fit it to your training data, and measure the final performance on the validation data.
+4 Choose the next set of hyperparameters to try (automatically).
+5 Repeat.
+6 Eventually, measure performance on your test data.
+
+The key to this process is the algorithm that uses this history of validation performance, given various sets of hyperparameters, to choose the next set of hyperparameters to evaluate. Many different techniques are possible: Bayesian optimization,
+genetic algorithms, simple random search, and so on.
+
+Overall, hyperparameter optimization is a powerful technique that is an absolute
+requirement to get to state-of-the-art models on any task or to win machine-learning
+competitions. Think about it: once upon a time, people handcrafted the features that
+went into shallow machine-learning models. That was very much suboptimal. Now,
+deep learning automates the task of hierarchical feature engineering—features are
+learned using a feedback signal, not hand-tuned, and that’s the way it should be. In
+the same way, you shouldn’t handcraft your model architectures; you should optimize
+them in a principled way. At the time of writing, the field of automatic hyperparameter optimization is very young and immature, as deep learning was some years ago, but
+I expect it to boom in the next few years.
+
+#### 7.3.3 Model ensembling
+
+Another powerful technique for obtaining the best possible results on a task is model
+ensembling. Ensembling consists of pooling together the predictions of a set of different models, to produce better predictions. If you look at machine-learning competitions, in particular on Kaggle, you’ll see that the winners use very large ensembles of
+models that inevitably beat any single model, no matter how good.
+
+Ensembling relies on the assumption that different good models trained independently are likely to be good for different reasons: each model looks at slightly different aspects of the data to make its predictions, getting part of the “truth” but not all of
+it.
+
+One thing I have found to work well in practice—but that doesn’t generalize to
+every problem domain—is the use of an ensemble of tree-based methods (such as random forests or gradient-boosted trees) and deep neural networks.
+
+ In recent times, one style of basic ensemble that has been very successful in practice is the wide and deep category of models, blending deep learning with shallow learning. Such models consist of jointly training a deep neural network with a large linear
+model. The joint training of a family of diverse models is yet another option to
+achieve model ensembling. 
+
+#### 7.3.4 Wrapping up
+
+ When building high-performing deep convnets, you’ll need to use residual connections, batch normalization, and depthwise separable convolutions. In the
+future, it’s likely that depthwise separable convolutions will completely replace
+regular convolutions, whether for 1D, 2D, or 3D applications, due to their
+higher representational efficiency.
+ Building deep networks requires making many small hyperparameter and
+architecture choices, which together define how good your model will be.
+Rather than basing these choices on intuition or random chance, it’s better to
+systematically search hyperparameter space to find optimal choices. At this
+time, the process is expensive, and the tools to do it aren’t very good. But the
+Hyperopt and Hyperas libraries may be able to help you. When doing hyperparameter optimization, be mindful of validation-set overfitting!
+ Winning machine-learning competitions or otherwise obtaining the best possible results on a task can only be done with large ensembles of models. Ensembling via a well-optimized weighted average is usually good enough. Remember:
+diversity is strength. It’s largely pointless to ensemble very similar models; the
+best ensembles are sets of models that are as dissimilar as possible (while having
+as much predictive power as possible, naturally). 
