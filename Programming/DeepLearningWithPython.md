@@ -2637,3 +2637,142 @@ Hyperopt and Hyperas libraries may be able to help you. When doing hyperparamete
 diversity is strength. It’s largely pointless to ensemble very similar models; the
 best ensembles are sets of models that are as dissimilar as possible (while having
 as much predictive power as possible, naturally). 
+
+## 8 Generative Deep Learning
+
+The potential of artificial intelligence to emulate human thought processes goes
+beyond passive tasks such as object recognition and mostly reactive tasks such as
+driving a car. It extends well into creative activities.
+
+But replacing humans was always beside the point: artificial intelligence isn’t
+about replacing our own intelligence with something else, it’s about bringing into our
+lives and work more intelligence—intelligence of a different kind. In many fields, but
+especially in creative ones, AI will be used by humans as a tool to augment their own
+capabilities: more augmented intelligence than artificial intelligence
+
+ A large part of artistic creation consists of simple pattern recognition and technical
+skill. And that’s precisely the part of the process that many find less attractive or even
+dispensable. That’s where AI comes in. Our perceptual modalities, our language, and
+our artwork all have statistical structure. Learning this structure is what deep-learning
+algorithms excel at. Machine-learning models can learn the statistical latent space of
+images, music, and stories, and they can then sample from this space, creating new artworks with characteristics similar to those the model has seen in its training data. 
+
+In this chapter, we’ll explore from various angles the potential of deep learning to
+augment artistic creation. We’ll review sequence data generation (which can be used
+to generate text or music), DeepDream, and image generation using both variational
+autoencoders and generative adversarial networks. 
+
+### 8.1 Text generation with LSTM
+
+In this section, we’ll explore how recurrent neural networks can be used to generate
+sequence data. We’ll use text generation as an example, but the exact same techniques can be generalized to any kind of sequence data: you could apply it to
+sequences of musical notes in order to generate new music, to timeseries of brushstroke data (for example, recorded while an artist paints on an iPad) to generate
+paintings stroke by stroke, and so on
+
+ Sequence data generation is in no way limited to artistic content generation. It
+has been successfully applied to speech synthesis and to dialogue generation for chatbots. The Smart Reply feature that Google released in 2016, capable of automatically
+generating a selection of quick replies to emails or text messages, is powered by similar techniques.
+
+#### 8.1.1 A brief history of generative recurrent networks
+
+In late 2014, few people had ever seen the initials LSTM, even in the machine-learning
+community. Successful applications of sequence data generation with recurrent networks only began to appear in the mainstream in 2016. But these techniques have a
+fairly long history, starting with the development of the LSTM algorithm in 1997.2
+ This
+new algorithm was used early on to generate text character by character.
+
+Douglas Eck, then at Schmidhuber’s lab in Switzerland, applied LSTM to
+music generation for the first time, with promising results. Eck is now a researcher at
+Google Brain, and in 2016 he started a new research group there, called Magenta,
+focused on applying modern deep-learning techniques to produce engaging music.
+Sometimes, good ideas take 15 years to get started
+
+ Since then, recurrent neural networks have been successfully used for music generation, dialogue generation, image generation, speech synthesis, and molecule design.
+They were even used to produce a movie script that was then cast with live actors. 
+
+#### 8.1.2 How do you generate sequence data?
+
+The universal way to generate sequence data in deep learning is to train a network (usually an RNN or a convnet) to predict the next token or next few tokens in a sequence,
+using the previous tokens as input. For instance, given the input “the cat is on the ma,”
+the network is trained to predict the target t, the next character. As usual when working
+with text data, tokens are typically words or characters, and any network that can model
+the probability of the next token given the previous ones is called a language model. A
+language model captures the latent space of language: its statistical structure.
+
+Once you have such a trained language model, you can sample from it (generate
+new sequences): you feed it an initial string of text (called conditioning data), ask it to
+generate the next character or the next word (you can even generate several tokens at
+once), add the generated output back to the input data, and repeat the process many
+times (see figure 8.1). This loop allows you to generate sequences of arbitrary length
+that reflect the structure of the data on which the model was trained: sequences that
+look almost like human-written sentences.
+
+ In the example we present in this section,
+you’ll take a LSTM layer, feed it strings of N characters extracted from a text corpus,
+and train it to predict character N + 1. The output of the model will be a softmax over
+all possible characters: a probability distribution for the next character. This LSTM is
+called a character-level neural language model. 
+
+#### 8.1.3 The importance of the sampling strategy
+
+When generating text, the way you choose the next character is crucially important. A
+naive approach is greedy sampling, consisting of always choosing the most likely next
+character. But such an approach results in repetitive, predictable strings that don’t
+look like coherent language. A more interesting approach makes slightly more surprising choices: it introduces randomness in the sampling process, by sampling from
+the probability distribution for the next character. This is called stochastic sampling
+(recall that stochasticity is what we call randomness in this field). 
+
+In such a setup, if e has
+a probability 0.3 of being the next character, according to the model, you’ll choose it 30% of the time.
+
+Sampling probabilistically from the softmax output of the model is neat: it allows
+even unlikely characters to be sampled some of the time, generating more interestinglooking sentences and sometimes showing creativity by coming up with new, realisticsounding words that didn’t occur in the training data. But there’s one issue with this
+strategy: it doesn’t offer a way to control the amount of randomness in the sampling process
+
+ Less
+entropy will give the generated sequences a more predictable structure (and thus they
+will potentially be more realistic looking), whereas more entropy will result in more
+surprising and creative sequences. When sampling from generative models, it’s always
+good to explore different amounts of randomness in the generation process. Because
+we—humans—are the ultimate judges of how interesting the generated data is, interestingness is highly subjective, and there’s no telling in advance where the point of
+optimal entropy lies.
+
+ In order to control the amount of stochasticity in the sampling process, we’ll introduce a parameter called the softmax temperature that characterizes the entropy of the
+probability distribution used for sampling: it characterizes how surprising or predictable the choice of the next character will be. Given a temperature value, a new probability distribution is computed from the original one (the softmax output of the
+model) by reweighting it in the following way.
+
+Higher temperatures result in sampling distributions of higher entropy that will generate more
+surprising and unstructured generated data, whereas a lower temperature will result in less randomness and much more predictable generated data
+
+#### 8.1.4 Implementing character-level LSTM text generation
+
+Let’s put these ideas into practice in a Keras implementation. The first thing you need
+is a lot of text data that you can use to learn a language model
+
+As you can see, a low temperature value results in extremely repetitive and predictable
+text, but local structure is highly realistic: in particular, all words (a word being a local
+pattern of characters) are real English words. With higher temperatures, the generated text becomes more interesting, surprising, even creative; it sometimes invents
+completely new words that sound somewhat plausible (such as eterned and troveration).
+With a high temperature, the local structure starts to break down, and most words
+look like semi-random strings of characters. Without a doubt, 0.5 is the most interesting temperature for text generation in this specific setup. Always experiment with
+multiple sampling strategies! A clever balance between learned structure and randomness is what makes generation interesting.
+
+Note that by training a bigger model, longer, on more data, you can achieve generated samples that look much more coherent and realistic than this one. But, of
+course, don’t expect to ever generate any meaningful text, other than by random
+chance: all you’re doing is sampling data from a statistical model of which characters
+come after which characters. Language is a communication channel, and there’s a
+distinction between what communications are about and the statistical structure of
+the messages in which communications are encoded. To evidence this distinction,
+here’s a thought experiment: what if human language did a better job of compressing
+communications, much like computers do with most digital communications?
+Language would be no less meaningful, but it would lack any intrinsic statistical structure, thus making it impossible to learn a language model as you just did. 
+
+#### 8.1.5 Wrapping up
+
+ You can generate discrete sequence data by training a model to predict the next
+tokens(s), given previous tokens.
+ In the case of text, such a model is called a language model. It can be based on
+either words or characters.
+ Sampling the next token requires balance between adhering to what the model
+judges likely, and introducing randomness.
+ One way to handle this is the notion of softmax temperature. Always experiment with different temperatures to find the right one. 
