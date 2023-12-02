@@ -2776,3 +2776,41 @@ either words or characters.
  Sampling the next token requires balance between adhering to what the model
 judges likely, and introducing randomness.
  One way to handle this is the notion of softmax temperature. Always experiment with different temperatures to find the right one. 
+
+### 8.2 DeepDream
+
+DeepDream is an artistic image-modification technique that uses the representations
+learned by convolutional neural networks. It was first released by Google in the summer of 2015, as an implementation written using the Caffe deep-learning library (this
+was several months before the first public release of TensorFlow).4
+ It quickly became
+an internet sensation thanks to the trippy pictures it could generate (see, for example,
+figure 8.3), full of algorithmic pareidolia artifacts, bird feathers, and dog eyes—a
+byproduct of the fact that the DeepDream convnet was trained on ImageNet, where
+dog breeds and bird species are vastly overrepresented.
+
+The DeepDream algorithm is almost identical to the convnet filter-visualization technique introduced in chapter 5, consisting of running a convnet in reverse: doing gradient ascent on the input to the convnet in order to maximize the activation of a
+specific filter in an upper layer of the convnet. 
+
+DeepDream uses this same idea, with a
+few simple differences:
+ With DeepDream, you try to maximize the activation of entire layers rather
+than that of a specific filter, thus mixing together visualizations of large numbers of features at once.
+ You start not from blank, slightly noisy input, but rather from an existing
+image—thus the resulting effects latch on to preexisting visual patterns, distorting elements of the image in a somewhat artistic fashion.
+ The input images are processed at different scales (called octaves), which
+improves the quality of the visualizations.
+
+#### 8.2.1 Implementing DeepDream in Keras
+
+You’ll start from a convnet pretrained on ImageNet. In Keras, many such convnets are
+available: VGG16, VGG19, Xception, ResNet50, and so on. You can implement DeepDream with any of them, but your convnet of choice will naturally affect your visualizations, because different convnet architectures result in different learned features. The
+convnet used in the original DeepDream release was an Inception model, and in practice Inception is known to produce nice-looking DeepDreams, so you’ll use the Inception V3 model that comes with Keras.
+
+#### 8.2.2 Wrapping up
+
+ DeepDream consists of running a convnet in reverse to generate inputs based
+on the representations learned by the network.
+ The results produced are fun and somewhat similar to the visual artifacts
+induced in humans by the disruption of the visual cortex via psychedelics.
+ Note that the process isn’t specific to image models or even to convnets. It can
+be done for speech, music, and more. 
