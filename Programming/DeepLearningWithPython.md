@@ -2814,3 +2814,104 @@ on the representations learned by the network.
 induced in humans by the disruption of the visual cortex via psychedelics.
  Note that the process isn’t specific to image models or even to convnets. It can
 be done for speech, music, and more. 
+
+### 8.3 Neural style transfer
+
+In addition to DeepDream, another major development in deep-learning-driven
+image modification is neural style transfer, introduced by Leon Gatys et al. in the summer of 2015.
+
+Neural style transfer consists of applying the style of a reference image to a target
+image while conserving the content of the target image
+
+In this context, style essentially means textures, colors, and visual patterns in the image, at
+various spatial scales; and the content is the higher-level macrostructure of the image.
+
+The idea of style transfer, which is tightly related to that of texture generation, has
+had a long history in the image-processing community prior to the development of
+neural style transfer in 2015. But as it turns out, the deep-learning-based implementations of style transfer offer results unparalleled by what had been previously achieved
+with classical computer-vision techniques, and they triggered an amazing renaissance
+in creative applications of computer vision.
+
+ The key notion behind implementing style transfer is the same idea that’s central
+to all deep-learning algorithms: you define a loss function to specify what you want to
+achieve, and you minimize this loss. You know what you want to achieve: conserving
+the content of the original image while adopting the style of the reference image. If
+we were able to mathematically define content and style, then an appropriate loss function to minimize would be the following:
+
+Here, distance is a norm function such as the L2 norm, content is a function that
+takes an image and computes a representation of its content, and style is a function
+that takes an image and computes a representation of its style. Minimizing this
+loss causes style(generated_image) to be close to style(reference_image), and
+content(generated_image) is close to content(generated_image), thus achieving
+style transfer as we defined it.
+
+#### 8.3.1 The content loss
+
+As you already know, activations from earlier layers in a network contain local information about the image, whereas activations from higher layers contain increasingly global,
+abstract information. Formulated in a different way, the activations of the different layers of a convnet provide a decomposition of the contents of an image over different spatial scales. Therefore, you’d expect the content of an image, which is more global and
+abstract, to be captured by the representations of the upper layers in a convnet.
+
+ A good candidate for content loss is thus the L2 norm between the activations of
+an upper layer in a pretrained convnet, computed over the target image, and the activations of the same layer computed over the generated image. This guarantees that, as
+seen from the upper layer, the generated image will look similar to the original target
+image. Assuming that what the upper layers of a convnet see is really the content of
+their input images, then this works as a way to preserve image content. 
+
+#### 8.3.2 The style loss
+
+The content loss only uses a single upper layer, but the style loss as defined by Gatys
+et al. uses multiple layers of a convnet: you try to capture the appearance of the stylereference image at all spatial scales extracted by the convnet, not just a single scale.
+
+For the style loss, Gatys et al. use the Gram matrix of a layer’s activations: the inner
+product of the feature maps of a given layer. This inner product can be understood as
+representing a map of the correlations between the layer’s features. These feature correlations capture the statistics of the patterns of a particular spatial scale, which empirically correspond to the appearance of the textures found at this scale.
+
+ Hence, the style loss aims to preserve similar internal correlations within the activations of different layers, across the style-reference image and the generated image. In
+turn, this guarantees that the textures found at different spatial scales look similar
+across the style-reference image and the generated image.
+
+In short, you can use a pretrained convnet to define a loss that will do the following:
+ Preserve content by maintaining similar high-level layer activations between the
+target content image and the generated image. The convnet should “see” both
+the target image and the generated image as containing the same things.
+ Preserve style by maintaining similar correlations within activations for both lowlevel layers and high-level layers. Feature correlations capture textures: the generated image and the style-reference image should share the same textures at
+different spatial scales.
+
+#### 8.3.3 Neural style transfer in Keras
+
+Neural style transfer can be implemented using any pretrained convnet. Here, you’ll
+use the VGG19 network used by Gatys et al. VGG19 is a simple variant of the VGG16 network introduced in chapter 5, with three more convolutional layers.
+ This is the general process:
+1 Set up a network that computes VGG19 layer activations for the style-reference
+image, the target image, and the generated image at the same time.
+2 Use the layer activations computed over these three images to define the loss
+function described earlier, which you’ll minimize in order to achieve style
+transfer.
+3 Set up a gradient-descent process to minimize this loss function.
+
+Keep in mind that what this technique achieves is
+merely a form of image retexturing, or texture transfer. It works best with stylereference images that are strongly textured and highly self-similar, and with content
+targets that don’t require high levels of detail in order to be recognizable. It typically
+can’t achieve fairly abstract feats such as transferring the style of one portrait to
+another. The algorithm is closer to classical signal processing than to AI, so don’t
+expect it to work like magic!
+
+Additionally, note that running this style-transfer algorithm is slow. But the transformation operated by the setup is simple enough that it can be learned by a small, fast
+feedforward convnet as well—as long as you have appropriate training data available.
+Fast style transfer can thus be achieved by first spending a lot of compute cycles to
+generate input-output training examples for a fixed style-reference image, using the
+method outlined here, and then training a simple convnet to learn this style-specific
+transformation. Once that’s done, stylizing a given image is instantaneous: it’s just a
+forward pass of this small convnet. 
+
+#### 8.3.4 Wrapping up
+
+ Style transfer consists of creating a new image that preserves the contents of a
+target image while also capturing the style of a reference image.
+ Content can be captured by the high-level activations of a convnet.
+ Style can be captured by the internal correlations of the activations of different
+layers of a convnet.
+ Hence, deep learning allows style transfer to be formulated as an optimization
+process using a loss defined with a pretrained convnet.
+ Starting from this basic idea, many variants and refinements are possible.
+
