@@ -3131,3 +3131,267 @@ extensive tuning.
 latent space they learn doesn’t have a neat continuous structure and thus may
 not be suited for certain practical applications, such as image editing via latentspace concept vectors.
 
+## 9 Conclusions
+
+This last chapter will summarize and
+review core concepts while also expanding your horizons beyond the relatively basic
+notions you’ve learned so far. Understanding deep learning and AI is a journey, and
+finishing this book is merely the first step on it. I want to make sure you realize this
+and are properly equipped to take the next steps of this journey on your own.
+
+ We’ll start with a bird’s-eye view of what you should take away from this book.
+This should refresh your memory regarding some of the concepts you’ve learned.
+Next, we’ll present an overview of some key limitations of deep learning. To use a
+tool appropriately, you should not only understand what it can do but also be aware
+of what it can’t do. Finally, I’ll offer some speculative thoughts about the future evolution of the fields of deep learning, machine learning, and AI. This should be
+especially interesting to you if you’d like to get into fundamental research. The
+chapter ends with a short list of resources and strategies for learning further about
+AI and staying up to date with new advances.
+
+### 9.1 Key concepts in review
+
+This section briefly synthesizes the key takeaways from this book. If you ever need a
+quick refresher to help you recall what you’ve learned, you can read these few pages
+
+#### 9.1.1 Various approaches to AI
+
+First of all, deep learning isn’t synonymous with AI or even with machine learning.
+Artificial intelligence is an ancient, broad field that can generally be defined as “all
+attempts to automate cognitive processes”—in other words, the automation of
+thought. This can range from the very basic, such as an Excel spreadsheet, to the very
+advanced, like a humanoid robot that can walk and talk.
+
+Machine learning is a specific subfield of AI that aims at automatically developing
+programs (called models) purely from exposure to training data. This process of turning data into a program is called learning. Although machine learning has been
+around for a long time, it only started to take off in the 1990s.
+
+Deep learning is one of many branches of machine learning, where the models are
+long chains of geometric functions, applied one after the other. These operations are
+structured into modules called layers: deep-learning models are typically stacks of layers—or, more generally, graphs of layers. These layers are parameterized by weights,
+which are the parameters learned during training. The knowledge of a model is stored
+in its weights, and the process of learning consists of finding good values for these
+weights.
+
+#### 9.1.2 What makes deep learning special within the field of machine learning
+
+In the span of only a few years, deep learning has achieved tremendous breakthroughs across a wide range of tasks that have been historically perceived as
+extremely difficult for computers, especially in the area of machine perception:
+extracting useful information from images, videos, sound, and more. Given sufficient
+training data (in particular, training data appropriately labeled by humans), it’s possible to extract from perceptual data almost anything that a human could extract.
+Hence, it’s sometimes said that deep learning has solved perception, although that’s true
+only for a fairly narrow definition of perception.
+
+ Due to its unprecedented technical successes, deep learning has singlehandedly
+brought about the third and by far the largest AI summer: a period of intense interest,
+investment, and hype in the field of AI. As this book is being written, we’re in the middle
+of it. Whether this period will end in the near future, and what happens after it ends,
+are topics of debate. One thing is certain: in stark contrast with previous AI summers,
+deep learning has provided enormous business value to a number of large technology
+companies, enabling human-level speech recognition, smart assistants, human-level
+image classification, vastly improved machine translation, and more. The hype may
+(and likely will) recede, but the sustained economic and technological impact of deep
+learning will remain. In that sense, deep learning could be analogous to the internet:
+it may be overly hyped up for a few years, but in the longer term it will still be a major
+revolution that will transform our economy and our lives.  I’m particularly optimistic about deep learning because even if we were to make no
+further technological progress in the next decade, deploying existing algorithms to
+every applicable problem would be a game changer for most industries. Deep learning is nothing short of a revolution, and progress is currently happening at an incredibly fast rate, due to an exponential investment in resources and headcount. From
+where I stand, the future looks bright, although short-term expectations are somewhat
+overoptimistic; deploying deep learning to the full extent of its potential will take well
+over a decade
+
+#### 9.1.3 How to think about deep learning
+
+The most surprising thing about deep learning is how simple it is. Ten years ago, no
+one expected that we would achieve such amazing results on machine-perception
+problems by using simple parametric models trained with gradient descent. Now, it
+turns out that all you need is sufficiently large parametric models trained with gradient descent on sufficiently many examples. As Feynman once said about the universe,
+“It’s not complicated, it’s just a lot of it.”1
+
+ In deep learning, everything is a vector: everything is a point in a geometric space.
+Model inputs (text, images, and so on) and targets are first vectorized: turned into an
+initial input vector space and target vector space. Each layer in a deep-learning model
+operates one simple geometric transformation on the data that goes through it.
+
+Together, the chain of layers in the model forms one complex geometric transformation, broken down into a series of simple ones. This complex transformation attempts
+to map the input space to the target space, one point at a time. This transformation is
+parameterized by the weights of the layers, which are iteratively updated based on how
+well the model is currently performing. A key characteristic of this geometric transformation is that it must be differentiable, which is required in order for us to be able to
+learn its parameters via gradient descent. Intuitively, this means the geometric morphing from inputs to outputs must be smooth and continuous—a significant constraint.
+
+The entire process of applying this complex geometric transformation to the input
+data can be visualized in 3D by imagining a person trying to uncrumple a paper ball:
+the crumpled paper ball is the manifold of the input data that the model starts with.
+Each movement operated by the person on the paper ball is similar to a simple geometric transformation operated by one layer. The full uncrumpling gesture sequence
+is the complex transformation of the entire model. 
+
+ That’s the magic of deep learning: turning meaning into vectors, into geometric
+spaces, and then incrementally learning complex geometric transformations that map
+one space to another. All you need are spaces of sufficiently high dimensionality in
+order to capture the full scope of the relationships found in the original data.
+
+ The whole thing hinges on a single core idea: that meaning is derived from the pairwise
+relationship between things (between words in a language, between pixels in an image,
+and so on) and that these relationships can be captured by a distance function. But note that
+whether the brain implements meaning via geometric spaces is an entirely separate
+question. Vector spaces are efficient to work with from a computational standpoint,
+but different data structures for intelligence can easily be envisioned—in particular,
+graphs. Neural networks initially emerged from the idea of using graphs as a way to
+encode meaning, which is why they’re named neural networks; the surrounding field of
+research used to be called connectionism. Nowadays the name neural network exists
+purely for historical reasons—it’s an extremely misleading name because they’re neither neural nor networks. In particular, neural networks have hardly anything to do
+with the brain. A more appropriate name would have been layered representations learning or hierarchical representations learning, or maybe even deep differentiable models or
+chained geometric transforms, to emphasize the fact that continuous geometric space
+manipulation is at their core. 
+
+#### 9.1.4 Key enabling technologies
+
+The technological revolution that’s currently unfolding didn’t start with any single
+breakthrough invention. Rather, like any other revolution, it’s the product of a vast
+accumulation of enabling factors—slowly at first, and then suddenly. In the case of
+deep learning, we can point out the following key factors:
+ Incremental algorithmic innovations, first spread over two decades (starting
+with backpropagation) and then happening increasingly faster as more
+research effort was poured into deep learning after 2012.
+ The availability of large amounts of perceptual data, which is a requirement in
+order to realize that sufficiently large models trained on sufficiently large data
+are all we need. This is in turn a byproduct of the rise of the consumer internet
+and Moore’s law applied to storage media.
+ The availability of fast, highly parallel computation hardware at a low price,
+especially the GPUs produced by NVIDIA—first gaming GPUs and then chips
+designed from the ground up for deep learning. Early on, NVIDIA CEO Jensen
+Huang took note of the deep-learning boom and decided to bet the company’s
+future on it.
+ A complex stack of software layers that makes this computational power available
+to humans: the CUDA language, frameworks like TensorFlow that do automatic
+differentiation, and Keras, which makes deep learning accessible to most people.
+
+In the future, deep learning will not only be used by specialists—researchers, graduate
+students, and engineers with an academic profile—but will also be a tool in the toolbox of every developer, much like web technology today. Everyone needs to build
+intelligent apps: just as every business today needs a website, every product will need
+to intelligently make sense of user-generated data. Bringing about this future will
+require us to build tools that make deep learning radically easy to use and accessible
+to anyone with basic coding abilities. Keras is the first major step in that direction.
+
+#### 9.1.5 The universal machine-learning workflow
+
+Having access to an extremely powerful tool for creating models that map any input
+space to any target space is great, but the difficult part of the machine-learning workflow is often everything that comes before designing and training such models (and,
+for production models, what comes after, as well). Understanding the problem
+domain so as to be able to determine what to attempt to predict, given what data, and
+how to measure success, is a prerequisite for any successful application of machine
+learning, and it isn’t something that advanced tools like Keras and TensorFlow can
+help you with. As a reminder, here’s a quick summary of the typical machine-learning
+workflow as described in chapter 4:
+1 Define the problem: What data is available, and what are you trying to predict?
+Will you need to collect more data or hire people to manually label a dataset?
+2 Identify a way to reliably measure success on your goal. For simple tasks, this
+may be prediction accuracy, but in many cases it will require sophisticated
+domain-specific metrics.
+3 Prepare the validation process that you’ll use to evaluate your models. In particular, you should define a training set, a validation set, and a test set. The validation- and test-set labels shouldn’t leak into the training data: for instance, with
+temporal prediction, the validation and test data should be posterior to the
+training data.
+4 Vectorize the data by turning it into vectors and preprocessing it in a way that
+makes it more easily approachable by a neural network (normalization, and so
+on).
+5 Develop a first model that beats a trivial common-sense baseline, thus demonstrating that machine learning can work on your problem. This may not always
+be the case!
+6 Gradually refine your model architecture by tuning hyperparameters and adding regularization. Make changes based on performance on the validation data
+only, not the test data or the training data. Remember that you should get your
+model to overfit (thus identifying a model capacity level that’s greater than you
+need) and only then begin to add regularization or downsize your model.
+7 Be aware of validation-set overfitting when turning hyperparameters: the fact
+that your hyperparameters may end up being overspecialized to the validation
+set. Avoiding this is the purpose of having a separate test set!
+
+#### 9.1.6 Key network architectures
+
+The three families of network architectures that you should be familiar with are densely
+connected networks, convolutional networks, and recurrent networks. Each type of network is
+meant for a specific input modality: a network architecture (dense, convolutional,
+recurrent) encodes assumptions about the structure of the data: a hypothesis space within
+which the search for a good model will proceed.
+
+Whether a given architecture will
+work on a given problem depends entirely on the match between the structure of the
+data and the assumptions of the network architecture.
+
+Here’s a quick overview of the mapping
+between input modalities and appropriate network architectures:
+ Vector data—Densely connected network (Dense layers).
+ Image data—2D convnets.
+ Sound data (for example, waveform)—Either 1D convnets (preferred) or RNNs.
+ Text data—Either 1D convnets (preferred) or RNNs.
+ Timeseries data—Either RNNs (preferred) or 1D convnets.
+ Other types of sequence data—Either RNNs or 1D convnets. Prefer RNNs if data
+ordering is strongly meaningful (for example, for timeseries, but not for text).
+ Video data—Either 3D convnets (if you need to capture motion effects) or a
+combination of a frame-level 2D convnet for feature extraction followed by
+either an RNN or a 1D convnet to process the resulting sequences.
+ Volumetric data—3D convnets.
+
+A densely connected network is a stack of Dense layers, meant to process vector data
+(batches of vectors). Such networks assume no specific structure in the input features:
+they’re called densely connected because the units of a Dense layer are connected to every
+other unit. The layer attempts to map relationships between any two input features; this
+is unlike a 2D convolution layer, for instance, which only looks at local relationships.
+
+Convolution layers look at spatially local patterns by applying the same geometric
+transformation to different spatial locations (patches) in an input tensor. This results
+in representations that are translation invariant, making convolution layers highly data
+efficient and modular. This idea is applicable to spaces of any dimensionality: 1D
+(sequences), 2D (images), 3D (volumes), and so on.
+
+Recurrent neural networks (RNNs) work by processing sequences of inputs one timestep at
+a time and maintaining a state throughout (a state is typically a vector or set of vectors:
+a point in a geometric space of states). They should be used preferentially over 1D convnets in the case of sequences where patterns of interest aren’t invariant by temporal
+translation (for instance, timeseries data where the recent past is more important than
+the distant past).
+
+#### 9.1.7 The space of possibilities
+
+ Mapping vector data to vector data
+– Predictive healthcare—Mapping patient medical records to predictions of
+patient outcomes
+– Behavioral targeting—Mapping a set of website attributes with data on how
+long a user will spend on the website
+– Product quality control—Mapping a set of attributes relative to an instance of a
+manufactured product with the probability that the product will fail by next
+year
+ Mapping image data to vector data
+– Doctor assistant—Mapping slides of medical images with a prediction about
+the presence of a tumor
+– Self-driving vehicle—Mapping car dash-cam video frames to steering wheel
+angle commands
+– Board game AI—Mapping Go and chess boards to the next player move
+– Diet helper—Mapping pictures of a dish to its calorie count
+– Age prediction—Mapping selfies to the age of the person
+ Mapping timeseries data to vector data
+– Weather prediction—Mapping timeseries of weather data in a grid of locations
+of weather data the following week at a specific location
+– Brain-computer interfaces—Mapping timeseries of magnetoencephalogram
+(MEG) data to computer commands
+– Behavioral targeting—Mapping timeseries of user interactions on a website to
+the probability that a user will buy something
+ Mapping text to text
+– Smart reply—Mapping emails to possible one-line replies
+– Answering questions—Mapping general-knowledge questions to answers
+– Summarization—Mapping a long article to a short summary of the article
+ Mapping images to text
+– Captioning—Mapping images to short captions describing the contents of
+the images
+ Mapping text to images
+– Conditioned image generation—Mapping a short text description to images
+matching the description
+– Logo generation/selection—Mapping the name and description of a company
+to the company’s logo
+ Mapping images to images
+– Super-resolution—Mapping downsized images to higher-resolution versions of
+the same images
+– Visual depth sensing—Mapping images of indoor environments to maps of
+depth predictions
+ Mapping images and text to text
+– Visual QA—Mapping images and natural-language questions about the contents of images to natural-language answers
+ Mapping video and text to text
+– Video QA—Mapping short videos and natural-language questions about the
+contents of videos to natural-language answers
+
