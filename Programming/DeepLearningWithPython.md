@@ -3395,3 +3395,98 @@ depth predictions
 – Video QA—Mapping short videos and natural-language questions about the
 contents of videos to natural-language answers
 
+### 9.2 The limitations of deep learning
+
+The space of applications that can be implemented with deep learning is nearly
+infinite. And yet, many applications are completely out of reach for current deeplearning techniques—even given vast amounts of human-annotated data. Say, for
+instance, that you could assemble a dataset of hundreds of thousands—even millions—of English-language descriptions of the features of a software product, written
+by a product manager, as well as the corresponding source code developed by a team
+of engineers to meet these requirements. Even with this data, you could not train a
+deep-learning model to read a product description and generate the appropriate
+codebase.
+
+That’s just one example among many. In general, anything that requires
+reasoning—like programming or applying the scientific method—long-term planning, and algorithmic data manipulation is out of reach for deep-learning models, no
+matter how much data you throw at them. Even learning a sorting algorithm with a
+deep neural network is tremendously difficult.
+
+ This is because a deep-learning model is just a chain of simple, continuous geometric
+transformations mapping one vector space into another. All it can do is map one data
+manifold X into another manifold Y, assuming the existence of a learnable continuous
+transform from X to Y. A deep-learning model can be interpreted as a kind of program; but, inversely, most programs can’t be expressed as deep-learning models—for most
+tasks, either there exists no corresponding deep-neural network that solves the task or,
+even if one exists, it may not be learnable: the corresponding geometric transform may
+be far too complex, or there may not be appropriate data available to learn it
+
+Scaling up current deep-learning techniques by stacking more layers and using
+more training data can only superficially palliate some of these issues. It won’t solve
+the more fundamental problems that deep-learning models are limited in what they
+can represent and that most of the programs you may wish to learn can’t be expressed
+as a continuous geometric morphing of a data manifold.
+
+#### 9.2.1 The risk of anthropomorphizing machine-learning models
+
+One real risk with contemporary AI is misinterpreting what deep-learning models do
+and overestimating their abilities. A fundamental feature of humans is our theory of
+mind: our tendency to project intentions, beliefs, and knowledge on the things around
+us. Drawing a smiley face on a rock suddenly makes it “happy”—in our minds. Applied
+to deep learning, this means that, for instance, when we’re able to somewhat successfully train a model to generate captions to describe pictures, we’re led to believe that
+the model “understands” the contents of the pictures and the captions it generates.
+
+In particular, this is highlighted by adversarial examples, which are samples fed to a
+deep-learning network that are designed to trick the model into misclassifying them.
+
+In short, deep-learning models don’t have any understanding of their input—at least,
+not in a human sense. Our own understanding of images, sounds, and language is
+grounded in our sensorimotor experience as humans. Machine-learning models have
+no access to such experiences and thus can’t understand their inputs in a humanrelatable way. By annotating large numbers of training examples to feed into our models, we get them to learn a geometric transform that maps data to human concepts on
+a specific set of examples, but this mapping is a simplistic sketch of the original model
+in our minds—the one developed from our experience as embodied agents.
+
+As a machine-learning practitioner, always be mindful of this, and never fall into the
+trap of believing that neural networks understand the task they perform—they don’t,
+at least not in a way that would make sense to us. They were trained on a different, far
+narrower task than the one we wanted to teach them: that of mapping training inputs
+to training targets, point by point. Show them anything that deviates from their training data, and they will break in absurd ways. 
+
+#### 9.2.2 Local generalization vs. extreme generalization
+
+There are fundamental differences between the straightforward geometric morphing
+from input to output that deep-learning models do, and the way humans think and
+learn. It isn’t only the fact that humans learn by themselves from embodied experience instead of being presented with explicit training examples. In addition to the different learning processes, there’s a basic difference in the nature of the underlying
+representations.
+
+Humans are capable of far more than mapping immediate stimuli to immediate
+responses, as a deep network, or maybe an insect, would. We maintain complex, abstract
+models of our current situation, of ourselves, and of other people, and can use these
+models to anticipate different possible futures and perform long-term planning
+
+This ability to handle hypotheticals, to expand our mental model
+space far beyond what we can experience directly—to perform abstraction and reasoning—is arguably the defining characteristic of human cognition. I call it extreme generalization: an ability to adapt to novel, never-before-experienced situations using little data
+or even no new data at all.
+
+This stands in sharp contrast with what deep nets do, which I call local generalization
+(see figure 9.4). The mapping from inputs to outputs performed by a deep net quickly
+stops making sense if new inputs differ even slightly from what the net saw at training
+time. Consider, for instance, the problem of learning the appropriate launch parameters to get a rocket to land on the moon. If you used a deep net for this task and trained
+it using supervised learning or reinforcement learning, you’d have to feed it thousands
+or even millions of launch trials: you’d need to expose it to a dense sampling of the input
+space, in order for it to learn a reliable mapping from input space to output space.
+
+In short, despite our progress on machine perception, we’re still far from humanlevel AI. Our models can only perform local generalization, adapting to new situations that must be similar to past data, whereas human cognition is capable of
+extreme generalization, quickly adapting to radically novel situations and planning
+for long-term future situations. 
+
+#### 9.2.3 Wrapping up
+
+Here’s what you should remember: the only real success of deep learning so far has
+been the ability to map space X to space Y using a continuous geometric transform,
+given large amounts of human-annotated data. Doing this well is a game-changer for
+essentially every industry, but it’s still a long way from human-level AI.
+
+ To lift some of the limitations we have discussed and create AI that can compete
+with human brains, we need to move away from straightforward input-to-output mappings and on to reasoning and abstraction. A likely appropriate substrate for abstract
+modeling of various situations and concepts is that of computer programs. We said
+previously that machine-learning models can be defined as learnable programs; currently we can only learn programs that belong to a narrow and specific subset of all
+possible programs. But what if we could learn any program, in a modular and reusable
+way? Let’s see in the next section what the road ahead may look like
