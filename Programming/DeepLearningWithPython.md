@@ -3490,3 +3490,116 @@ modeling of various situations and concepts is that of computer programs. We sai
 previously that machine-learning models can be defined as learnable programs; currently we can only learn programs that belong to a narrow and specific subset of all
 possible programs. But what if we could learn any program, in a modular and reusable
 way? Let’s see in the next section what the road ahead may look like
+
+### 9.3 The future of deep learning
+
+This is a more speculative section aimed at opening horizons for people who want to
+join a research program or begin doing independent research. Given what we know of
+how deep nets work, their limitations, and the current state of the research landscape,
+can we predict where things are headed in the medium term? Following are some
+purely personal thoughts. 
+
+ Models closer to general-purpose computer programs, built on top of far richer primitives than the current differentiable layers. This is how we’ll get to reasoning and
+abstraction, the lack of which is the fundamental weakness of current models.
+ New forms of learning that make the previous point possible, allowing models to move
+away from differentiable transforms.
+ Models that require less involvement from human engineers. It shouldn’t be your job to
+tune knobs endlessly.
+ Greater, systematic reuse of previously learned features and architectures, such as metalearning systems using reusable and modular program subroutines.
+
+Additionally, note that these considerations aren’t specific to the sort of supervised
+learning that has been the bread and butter of deep learning so far—rather, they’re
+applicable to any form of machine learning, including unsupervised, self-supervised,
+and reinforcement learning. It isn’t fundamentally important where your labels come
+from or what your training loop looks like; these different branches of machine learning are different facets of the same construct.
+
+#### 9.3.1 Models as programs
+
+As noted in the previous section, a necessary transformational development that we
+can expect in the field of machine learning is a move away from models that perform
+purely pattern recognition and can only achieve local generalization, toward models capable of abstraction and reasoning that can achieve extreme generalization.
+
+Current AI programs that are capable of basic forms of reasoning are all hardcoded by human
+programmers: for instance, software that relies on search algorithms, graph manipulation, and formal logic.
+
+ Instead, we’ll have a blend of formal algorithmic modules that provide reasoning and abstraction capabilities, and geometric modules that provide informal
+intuition and pattern-recognition capabilities. The entire system will be learned with
+little or no human involvement.
+
+#### 9.3.2 Beyond backpropagation and differentiable layers
+
+If machine-learning models become more like programs, then they will mostly no longer be differentiable—these programs will still use continuous geometric layers as subroutines, which will be differentiable, but the model as a whole won’t be. As a result,
+using backpropagation to adjust weight values in a fixed, hardcoded network can’t be
+the method of choice for training models in the future
+
+ We need to figure out how to train non-differentiable systems efficiently. Current approaches include genetic algorithms, evolution strategies, certain reinforcement-learning methods, and alternating direction method of multipliers (ADMM).
+ 
+ In addition, backpropagation is end to end, which is a great thing for learning
+good chained transformations but is computationally inefficient because it doesn’t
+fully take advantage of the modularity of deep networks. To make something more
+efficient, there’s one universal recipe: introduce modularity and hierarchy. So we can
+make backpropagation more efficient by introducing decoupled training modules
+with a synchronization mechanism between them, organized in a hierarchical fashion.
+
+#### 9.3.3 Automated machine learning
+
+In the future, model architectures will be learned rather than be handcrafted by engineer-artisans. Learning architectures goes hand in hand with the use of richer sets of
+primitives and program-like machine-learning models.
+
+ Currently, most of the job of a deep-learning engineer consists of munging data
+with Python scripts and then tuning the architecture and hyperparameters of a deep
+network at length to get a working model—or even to get a state-of-the-art model, if
+the engineer is that ambitious.
+
+ Hyperparameter tuning, however, is a simple search procedure; and in that case we know what the engineer wants to achieve: it’s defined by the
+loss function of the network being tuned. It’s already common practice to set up basic
+AutoML systems that take care of most model knob tuning
+
+ At the most basic level, such a system would tune the number of layers in a stack,
+their order, and the number of units or filters in each layer. This is commonly done
+with libraries such as Hyperopt, 
+
+#### 9.3.4 Lifelong learning and modular subroutine reuse
+
+If models become more complex and are built on top of richer algorithmic primitives,
+then this increased complexity will require higher reuse between tasks, rather than
+training a new model from scratch every time we have a new task or a new dataset.
+
+Many datasets don’t contain enough information for us to develop a new, complex
+model from scratch, and it will be necessary to use information from previously
+encountered dataset
+
+ A remarkable observation has been made repeatedly in recent years: training the
+same model to do several loosely connected tasks at the same time results in a model
+that’s better at each task.
+
+#### 9.3.5 The long-term vision
+
+In short, here’s my long-term vision for machine learning:
+ Models will be more like programs and will have capabilities that go far beyond
+the continuous geometric transformations of the input data we currently work
+with. These programs will arguably be much closer to the abstract mental models that humans maintain about their surroundings and themselves, and they
+will be capable of stronger generalization due to their rich algorithmic nature.
+ In particular, models will blend algorithmic modules providing formal reasoning,
+search, and abstraction capabilities with geometric modules providing informal
+intuition and pattern-recognition capabilities. AlphaGo (a system that required
+a lot of manual software engineering and human-made design decisions) provides an early example of what such a blend of symbolic and geometric AI could
+look like.
+ Such models will be grown automatically rather than hardcoded by human engineers, using modular parts stored in a global library of reusable subroutines—a
+library evolved by learning high-performing models on thousands of previous
+tasks and datasets. As frequent problem-solving patterns are identified by the
+meta-learning system, they will be turned into reusable subroutines—much like
+functions and classes in software engineering—and added to the global library.
+This will achieve abstraction.
+ This global library and associated model-growing system will be able to achieve
+some form of human-like extreme generalization: given a new task or situation,
+the system will be able to assemble a new working model appropriate for the
+task using very little data, thanks to rich program-like primitives that generalize
+well, and extensive experience with similar tasks. In the same way, humans can
+quickly learn to play a complex new video game if they have experience with
+many previous games, because the models derived from this previous experience are abstract and program-like, rather than a basic mapping between stimuli and action.
+ As such, this perpetually learning model-growing system can be interpreted as
+an artificial general intelligence (AGI). But don’t expect any singularitarian robot
+apocalypse to ensue: that’s pure fantasy, coming from a long series of profound
+misunderstandings of both intelligence and technology. Such a critique, however, doesn’t belong in this book.
+
