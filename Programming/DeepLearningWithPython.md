@@ -3603,3 +3603,68 @@ an artificial general intelligence (AGI). But don’t expect any singularitarian
 apocalypse to ensue: that’s pure fantasy, coming from a long series of profound
 misunderstandings of both intelligence and technology. Such a critique, however, doesn’t belong in this book.
 
+### 9.4 Staying up to date in a fast-moving field
+
+As final parting words, I want to give you some pointers about how to keep learning
+and updating your knowledge and skills after you’ve turned the last page of this book.
+The field of modern deep learning, as we know it today, is only a few years old, despite
+a long, slow prehistory stretching back decades. With an exponential increase in
+financial resources and research headcount since 2013, the field as a whole is now
+moving at a frenetic pace. What you’ve learned in this book won’t stay relevant forever, and it isn’t all you’ll need for the rest of your career.
+
+#### 9.4.1 Practice on real-world problems using Kaggle
+
+One effective way to acquire real-world experience is to try your hand at machinelearning competitions on Kaggle (https://kaggle.com). The only real way to learn is
+through practice and actual coding—that’s the philosophy of this book, and Kaggle
+competitions are the natural continuation of this. On Kaggle, you’ll find an array of
+constantly renewed data-science competitions, many of which involve deep learning,
+prepared by companies interested in obtaining novel solutions to some of their most
+challenging machine-learning problems. Fairly large monetary prizes are offered to
+top entrants.
+
+ Most competitions are won using either the XGBoost library (for shallow machine
+learning) or Keras (for deep learning). So you’ll fit right in! By participating in a few
+competitions, maybe as part of a team, you’ll become more familiar with the practical
+side of some of the advanced best practices described in this book, especially hyperparameter tuning, avoiding validation-set overfitting, and model ensembling. 
+
+#### 9.4.2 Read about the latest developments on arXiv
+
+Deep-learning research, in contrast with some other scientific fields, takes places completely in the open. Papers are made publicly and freely accessible as soon as they’re
+finalized, and a lot of related software is open source. arXiv (https://arxiv.org)—pronounced “archive” (the X stands for the Greek chi)—is an open-access preprint server
+for physics, mathematics, and computer science research papers
+
+It has become the
+de facto way to stay up to date on the bleeding edge of machine learning and deep
+learning. The large majority of deep-learning researchers upload any paper they write
+to arXiv shortly after completion. This allows them to plant a flag and claim a specific
+finding without waiting for a conference acceptance (which takes months), which is
+necessary given the fast pace of research and the intense competition in the field. It
+also allows the field to move extremely fast: all new findings are immediately available
+for all to see and to build on.
+
+An important downside is that the sheer quantity of new papers posted every day
+on arXiv makes it impossible to even skim them all; and the fact that they aren’t peer
+reviewed makes it difficult to identify those that are both important and high quality.
+
+#### 9.4.3 Explore the Keras ecosystem
+
+9.4.3 Explore the Keras ecosystem
+With about 200,000 users as of November 2017 and growing fast, Keras has a large
+ecosystem of tutorials, guides, and related open source projects:
+ Your main reference for working with Keras is the online documentation at
+https://keras.io. The Keras source code can be found at https://github.com/
+fchollet/keras.
+ You can ask for help and join deep-learning discussions on the Keras Slack
+channel: https://kerasteam.slack.com.
+ The Keras blog, https://blog.keras.io, offers Keras tutorials and other articles
+related to deep learning.
+ You can follow me on Twitter: @fchollet. 
+
+### 9.5 Final words
+
+This is the end of Deep Learning with Python! I hope you’ve learned a thing or two about
+machine learning, deep learning, Keras, and maybe even cognition in general. Learning is a lifelong journey, especially in the field of AI, where we have far more unknowns
+on our hands than certitudes. So please go on learning, questioning, and researching.
+Never stop. Because even given the progress made so far, most of the fundamental
+questions in AI remain unanswered. Many haven’t even been properly asked yet.
+
