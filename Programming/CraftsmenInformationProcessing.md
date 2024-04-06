@@ -5,7 +5,7 @@
 | Author           | 길벗알앤디          |
 | Publication Date | 2022           |
 | Page Count       | 292            |
-| Genre            | on-Fiction     |
+| Genre            | Non-Fiction    |
 | ISBN             | 978-1081582166 |
 | Date Read        | 2022-12-06     |
 | Date Finished    | NA             |
