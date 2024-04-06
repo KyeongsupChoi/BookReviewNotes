@@ -8,7 +8,7 @@
 | Genre            | Non-Fiction               |
 | ISBN             | 978-1617294433            |
 | Date Read        | 2023-04-18                |
-| Date Finished    | NA                        |
+| Date Finished    | 2023-12-07                |
 
 
 ## Summary
