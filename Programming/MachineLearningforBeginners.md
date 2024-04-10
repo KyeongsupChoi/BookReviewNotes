@@ -1,4 +1,4 @@
-# Machine Learning Book
+# Machine Learning for Beginners
 
 | Title            | Machine Learning for Beginners |
 |------------------|--------------------------------|
