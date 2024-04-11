@@ -7,7 +7,7 @@
 | Page Count       | 288                   |
 | Genre            | Non-Fiction           |
 | ISBN             | 978-89-6848-219-9     |
-| Date Read        | 2024-04-24            |
+| Date Read        | 2024-04-09            |
 | Date Finished    | NA                    |
 
 

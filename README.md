@@ -10,16 +10,19 @@ Notes and Reviews on Books I read
    |
    |-- Non-Fiction/                          
    |    |
-   |    |-- StolenFocus [Complete]
-   |    |-- AtlasoftheHeart                                       
+   |    |-- AtlasoftheHeart  
+   |    |-- StolenFocus [Complete]                                 
    |
    |-- Programming/  
    |    |                        
-   |    |-- CraftsmenInformationProcessing                        
-   |    |-- DeveloperPrinciple                         
+   |    |-- CraftsmenInformationProcessing    
+   |    |-- DataScientistPrinciples             
+   |    |-- DeepLearningWithPython                  
+   |    |-- DeveloperPrinciples                         
    |    |-- DjangoForProfessionals       
-   |    |-- MachineLearningBook [Complete] 
-   |    |-- DeepLearningWithPython
+   |    |-- EnglishForDevelopers 
+   |    |-- MachineLearningForBeginners [Complete] 
+
    |
    |                          
    |-- ************************************************************************

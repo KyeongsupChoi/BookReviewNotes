@@ -1,14 +1,14 @@
-# Developer Principle
+# Developer Principles
 
-| Title            | Developer Principle |
-|------------------|---------------------|
-| Author           | Various Authors     |
-| Publication Date | 2022                |
-| Page Count       | 251                 |
-| Genre            | Non-Fiction         |
-| ISBN             | 979-1191905236      |
-| Date Read        | 2023-02-20          |
-| Date Finished    | NA                  |
+| Title            | Developer Principles |
+|------------------|----------------------|
+| Author           | Various Authors      |
+| Publication Date | 2022                 |
+| Page Count       | 251                  |
+| Genre            | Non-Fiction          |
+| ISBN             | 979-1191905236       |
+| Date Read        | 2023-02-20           |
+| Date Finished    | NA                   |
 
 ## Description
 
