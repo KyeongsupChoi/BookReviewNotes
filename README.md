@@ -1,5 +1,5 @@
 # BookReviewNotes
-Notes and Reviews on Books I read
+Thoughts and summary for books
 
 ```bash
 < PROJECT ROOT >
