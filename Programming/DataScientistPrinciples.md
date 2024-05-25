@@ -8,7 +8,7 @@
 | Genre            | Non-Fiction       |
 | ISBN             | 979-11-91905-33-5 |
 | Date Read        | 2024-04-12        |
-| Date Finished    | NA                |
+| Date Finished    | 2024-05-26        |
 
 
 ## Summary
