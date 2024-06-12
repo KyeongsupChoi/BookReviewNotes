@@ -1,6 +1,6 @@
-# Atlas of the Heart
+# Samsung Rising
 
-| Title            | Atlas of the Heart      |
+| Title            | Samsung Rising    |
 |------------------|-------------------|
 | Author           | Brené Brown       |
 | Publication Date | 2021              |
