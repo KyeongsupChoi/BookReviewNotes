@@ -11,13 +11,14 @@ Thoughts and summary for books
    |-- Non-Fiction/                          
    |    |
    |    |-- AtlasoftheHeart  
+   |    |-- SamsungRising
    |    |-- StolenFocus [Complete]                                 
    |
    |-- Programming/  
    |    |                        
    |    |-- CraftsmenInformationProcessing    
-   |    |-- DataScientistPrinciples             
-   |    |-- DeepLearningWithPython                  
+   |    |-- DataScientistPrinciples  [Complete]           
+   |    |-- DeepLearningWithPython [Complete]                   
    |    |-- DeveloperPrinciples                         
    |    |-- DjangoForProfessionals       
    |    |-- EnglishForDevelopers 
