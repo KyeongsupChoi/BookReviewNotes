@@ -18,5 +18,23 @@
 
 ### Introduction
 
-### #1: Places We Go When Things Are Uncertain or Too Much 
+### 1 | Galaxy Death Star
+
+### 2 | Shadow of Empire
+
+### 3 | Dynasty Ascendant
+
+### 4 | The Confucian and the Hippie
+
+### | 
+
+### | 
+
+### | 
+
+### | 
+
+### | 
+
+### | 
 
