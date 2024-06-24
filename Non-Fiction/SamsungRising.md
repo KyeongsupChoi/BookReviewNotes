@@ -24,17 +24,54 @@
 
 ### 3 | Dynasty Ascendant
 
-### 4 | The Confucian and the Hippie
+### 4 | March of the Samsung Men
 
-### | 
+### 5 | The Confucian and the Hippie
 
-### | 
+### 6 | The Fifth Horseman
 
-### | 
+### 7 | The Scion
 
-### | 
+### 8 | Glorious Chairman!
 
-### | 
+### 9 | Church of Samsung
 
-### | 
+### 10 | Go West, Young Heir
 
+### 11 | Seoul Searching
+
+### 12 | Design Revolution
+
+### 13 | My Boss the Shit Kicker
+
+### 14 | Sony Wars
+
+### 15 | Bordeaux
+
+### 16 | Unholy Alliance
+
+### 17 |
+
+### 18 |
+
+### 19 |
+
+### 20 |
+
+### 21 |
+
+### 22 |
+
+### 23 |
+
+### 24|
+ 
+### 25 |
+
+### 26 |
+
+### 27 |
+
+### 28 |
+
+### 29 |
