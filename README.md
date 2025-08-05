@@ -6,7 +6,8 @@ Thoughts and summary for books
    |
    |-- Fiction/                              
    |    |
-   |    |-- SeaOfTranquility [Complete]                                 
+   |    |-- SeaOfTranquility [Complete]
+   |    |-- TheMidnightBookshop                             
    |
    |-- Non-Fiction/                          
    |    |
