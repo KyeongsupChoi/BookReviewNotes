@@ -1,6 +1,6 @@
 # The Midnight Bookshop
 
-| Title            | Sea of Tranquility   |
+| Title            | The Midnight Bookshop   |
 |------------------|----------------------|
 | Author           | Emily St. John Mandel |
 | Publication Date | 2022                 |
