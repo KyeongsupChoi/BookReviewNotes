@@ -7,7 +7,7 @@ Thoughts and summary for books
    |-- Fiction/                              
    |    |
    |    |-- SeaOfTranquility [Complete]
-   |    |-- TheMidnightBookshop                             
+   |    |-- TheMidnightBookshop [Complete]                     
    |
    |-- Non-Fiction/                          
    |    |
@@ -24,8 +24,12 @@ Thoughts and summary for books
    |    |-- DjangoForProfessionals       
    |    |-- EnglishForDevelopers 
    |    |-- MachineLearningForBeginners [Complete] 
-
+   |
    |
    |                          
    |-- ************************************************************************
 ```
+
+## To Read List
+
+-Designing Machine Learning Systems
