@@ -33,3 +33,7 @@ Thoughts and summary for books
 ## To Read List
 
 -Designing Machine Learning Systems
+
+-Clean code
+
+-LLM Book
