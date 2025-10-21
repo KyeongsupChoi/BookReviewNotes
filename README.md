@@ -36,7 +36,7 @@ Thoughts and summary for books
 
 -Clean code
 
--LLM Book
+-Hands on Large
 
 
 🧠 1. Core Machine Learning Foundations
