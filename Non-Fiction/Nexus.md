@@ -2,7 +2,7 @@
 
 | Title            | Nexus                               |
 |------------------|-------------------------------------|
-| Author           | Geoffrey Cain                       |
+| Author           | Yuval Noah Harris                   |
 | Publication Date | 2020                                |
 | Page Count       | 383                                 |
 | Genre            | Non-Fiction                         |
