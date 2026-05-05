@@ -8,7 +8,7 @@
 | Genre            | Nonfiction / Psychology |
 | ISBN             | 9780593229309        |
 | Date Read        |                      |
-| Date Finished    |                      |
+| Date Finished    | 2026-05-03                     |
 
 ## Description
 
