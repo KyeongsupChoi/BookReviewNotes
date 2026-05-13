@@ -40,3 +40,4 @@ This section emphasizes understanding people's strengths, using "the Big Five" p
 
 ## Thoughts and Opinions
 
+would be good for my emotional growth
