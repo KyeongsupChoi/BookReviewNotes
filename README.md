@@ -13,7 +13,8 @@ Thoughts and summary for books
    |    |
    |    |-- AtlasoftheHeart  
    |    |-- SamsungRising
-   |    |-- StolenFocus [Complete]                                 
+   |    |-- StolenFocus [Complete]
+   |    |-- EverythingisTuberculosis                      
    |
    |-- Programming/  
    |    |                        
