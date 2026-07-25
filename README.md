@@ -6,6 +6,7 @@ Thoughts and summary for books
    |
    |-- Fiction/                              
    |    |
+   |    |-- InTheLivesofPuppets [Complete]
    |    |-- SeaOfTranquility [Complete]
    |    |-- TheMidnightBookshop [Complete]                     
    |
