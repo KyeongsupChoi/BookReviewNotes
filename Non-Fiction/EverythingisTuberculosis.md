@@ -1,12 +1,12 @@
 # Atlas of the Heart
 
-| Title            | Atlas of the Heart      |
+| Title            | Everything is Tuberculosis      |
 |------------------|-------------------|
-| Author           | Brené Brown       |
-| Publication Date | 2021              |
-| Page Count       | 336               |
+| Author           | John Green       |
+| Publication Date | 2025         |
+| Page Count       | 208         |
 | Genre            | Non-Fiction       |
-| ISBN             | 978-0-399-59255-3 |
+| ISBN             | 978-0-525-42605-9 |
 | Date Read        | 2026-06-27        |
 | Date Finished    | 2026-07-20              |
 
