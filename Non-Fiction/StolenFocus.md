@@ -6,7 +6,7 @@
 | Publication Date | 2022             |
 | Page Count       | 366              |
 | Genre            | Non-Fiction      |
-| ISBN             | 978-18384153-1-0 |
+| ISBN             | 9780593138519    |
 | Date Read        | 2023-03-03       |
 | Date Finished    | 2023-03-20       |
 
@@ -64,7 +64,7 @@ Book investigating the shrinking attention span of people and the root cause.
 
 - One of the worst offenders is the design of infinite scroll.  
 
-### Cause Six: The Rise of Technology That Can Track And Manipulate You (Part Two)
+### Cause Seven: The Rise of Technology That Can Track And Manipulate You (Part Two)
 
 - Big Tech companies make money through advertising and showing more and more personalized ads.
 

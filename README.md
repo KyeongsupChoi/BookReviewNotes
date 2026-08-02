@@ -8,7 +8,7 @@ Thoughts and summary for books
    |    |
    |    |-- InTheLivesofPuppets [Complete]
    |    |-- SeaOfTranquility [Complete]
-   |    |-- TheMidnightBookshop [Complete]                     
+   |    |-- TheMidnightBookshop                     
    |
    |-- Non-Fiction/
    |    |
