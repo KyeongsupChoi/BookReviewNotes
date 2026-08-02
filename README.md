@@ -10,12 +10,14 @@ Thoughts and summary for books
    |    |-- SeaOfTranquility [Complete]
    |    |-- TheMidnightBookshop [Complete]                     
    |
-   |-- Non-Fiction/                          
+   |-- Non-Fiction/
    |    |
-   |    |-- AtlasoftheHeart  
+   |    |-- AtlasoftheHeart
+   |    |-- EverythingisTuberculosis
+   |    |-- HowToKnowAPerson
+   |    |-- Nexus
    |    |-- SamsungRising
    |    |-- StolenFocus [Complete]
-   |    |-- EverythingisTuberculosis                      
    |
    |-- Programming/  
    |    |                        
