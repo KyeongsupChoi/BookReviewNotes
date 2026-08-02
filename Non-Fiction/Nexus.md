@@ -16,62 +16,34 @@
 
 ## Summary
 
-### Introduction
+### Prologue
 
-### 1 | Galaxy Death Star
+### Part I: Human Networks
 
-### 2 | Shadow of Empire
+### 1 | What Is Information?
 
-### 3 | Dynasty Ascendant
+### 2 | Stories: Unlimited Connections
 
-### 4 | March of the Samsung Men
+### 3 | Documents: The Bite of the Paper Tigers
 
-### 5 | The Confucian and the Hippie
+### 4 | Errors: The Fantasy of Infallibility
 
-### 6 | The Fifth Horseman
+### 5 | Decisions: A Brief History of Democracy and Totalitarianism
 
-### 7 | The Scion
+### Part II: The Inorganic Network
 
-### 8 | Glorious Chairman!
+### 6 | The New Members: How Computers Are Different from Printing Presses
 
-### 9 | Church of Samsung
+### 7 | Relentless: The Network Is Always On
 
-### 10 | Go West, Young Heir
+### 8 | Fallible: The Network Is Often Wrong
 
-### 11 | Seoul Searching
+### Part III: Computer Politics
 
-### 12 | Design Revolution
+### 9 | Democracies: Can We Still Hold a Conversation?
 
-### 13 | My Boss the Shit Kicker
+### 10 | Totalitarianism: All Power to the Algorithms?
 
-### 14 | Sony Wars
+### 11 | The Silicon Curtain: Global Empire or Global Split?
 
-### 15 | Bordeaux
-
-### 16 | Unholy Alliance
-
-### 17 |
-
-### 18 |
-
-### 19 |
-
-### 20 |
-
-### 21 |
-
-### 22 |
-
-### 23 |
-
-### 24|
- 
-### 25 |
-
-### 26 |
-
-### 27 |
-
-### 28 |
-
-### 29 |
+### Epilogue
