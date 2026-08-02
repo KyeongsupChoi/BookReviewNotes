@@ -1,18 +1,18 @@
 # The Midnight Bookshop
 
 | Title            | The Midnight Bookshop   |
-|------------------|----------------------|
-| Author           | Emily St. John Mandel |
-| Publication Date | 2022                 |
-| Page Count       | 255                  |
-| Genre            | Fiction              |
-| ISBN             | 9780593321447        |
-| Date Read        | 2023-03-17           |
-| Date Finished    | 2023-03-23           |
+|------------------|-------------------------|
+| Author           | Amanda James            |
+| Publication Date | 2025                    |
+| Page Count       |                         |
+| Genre            | Fiction                 |
+| ISBN             | 9780008757625           |
+| Date Read        |                         |
+| Date Finished    |                         |
 
 ## Description
 
-Speculative fiction
+Magical realism novel about three strangers who meet in a mysterious bookshop and discover that books can change their lives.
 
 ## Summary
 

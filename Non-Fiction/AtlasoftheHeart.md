@@ -101,24 +101,6 @@ questions.
 Bragitude: intentionally tying words of gratitude toward the
 listener following discussion of personal successes
 
-### Cause Three: The Rise of Physical and Mental Exhaustion
-
-### Cause Four: The Collapse of Sustained Reading
-
-### Cause Five: The Disruption of Mind-Wandering
-
-### Cause Six: The Rise of Technology That Can Track And Manipulate You (Part One)
-
-### Cause Seven: The Rise of Technology That Can Track And Manipulate You (Part Two)
-
-### Cause Eight: The Rise of Cruel Optimism(or: Why Individual Changes are an Important Start, But Not Enough)
-
-### Cause Nine and Ten: Our Deteriorating Diets and Rising Pollution: 
-
-### Cause Eleven: The Rise of ADHD and How We Are Responding to it
-
-### Cause Twelve: The Confinement of Out Children, Both Physically and Psychologically
-
 ## Thoughts and Opinions
 
 -Very important book and need to apply lessons.

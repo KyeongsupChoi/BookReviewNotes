@@ -1,18 +1,18 @@
-# Samsung Rising
+# Nexus
 
 | Title            | Nexus                               |
 |------------------|-------------------------------------|
-| Author           | Yuval Noah Harris                   |
-| Publication Date | 2020                                |
-| Page Count       | 383                                 |
+| Author           | Yuval Noah Harari                   |
+| Publication Date | 2024                                |
+| Page Count       | 528                                 |
 | Genre            | Non-Fiction                         |
-| ISBN             | 978-0-593-23670-3 |
+| ISBN             | 9780593534533                       |
 | Date Read        | 2026-04-09                          |
 | Date Finished    | NA                                  |
 
 ## Description
 
-- Book on Samsung history
+- A Brief History of Information Networks from the Stone Age to AI
 
 ## Summary
 

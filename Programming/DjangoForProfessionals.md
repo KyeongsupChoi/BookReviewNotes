@@ -6,7 +6,7 @@
 | Publication Date | 2022                     |
 | Page Count       | 292                      |
 | Genre            | Non-Fiction              |
-| ISBN             | 978-1081582166           |
+| ISBN             | 978-1735467238           |
 | Date Read        | 2022-09-15               |
 | Date Finished    | NA                       |
 
